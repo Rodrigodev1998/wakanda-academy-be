@@ -1,0 +1,10 @@
+server:
+ port: 8080
+ servlet:
+    context-path: /wakanda-academy/app
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      uri: mongodb://root:root@127.0.0.1:27017/wakanda?authSource=admin
