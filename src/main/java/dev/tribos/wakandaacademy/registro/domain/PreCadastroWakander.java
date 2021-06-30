@@ -1,11 +1,10 @@
 package dev.tribos.wakandaacademy.registro.domain;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Builder;
 import lombok.Getter;
 
 @Builder
-
 @Getter
 public class PreCadastroWakander {
 
@@ -13,6 +12,6 @@ public class PreCadastroWakander {
 	private String experienciaemprego;
 	private Boolean trabalhoProgramacao;
 	private String sobreWakanda;
-	private String Participar;
+	private String participar;
 
 }

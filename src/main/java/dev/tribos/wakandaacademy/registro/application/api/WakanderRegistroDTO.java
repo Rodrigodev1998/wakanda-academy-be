@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.registro.application.api;
 
-import dev.tribos.wakandaacademy.registro.domain.TipoRelacionamento;
 import dev.tribos.wakandaacademy.registro.domain.Wakander;
 import lombok.Getter;
 
@@ -11,13 +10,13 @@ public class WakanderRegistroDTO {
 	private String nome;
 	private String email;
 	private Integer idade;
-	private TipoRelacionamento relacionamento;
+	private String relacionamento;
 	private Boolean filhos;
 	private String vidaAcademica;
 	private String experienciaemprego;
 	private Boolean trabalhoProgramacao;
 	private String sobreWakanda;
-	private String Participar;
+	private String participar;
 
 	public WakanderRegistroDTO(Wakander wakander) {
 		this.nome = wakander.getNome();
@@ -29,7 +28,7 @@ public class WakanderRegistroDTO {
 		this.experienciaemprego = wakander.getPreCadastro().getExperienciaemprego();
 		this.trabalhoProgramacao = wakander.getPreCadastro().getTrabalhoProgramacao();
 		this.sobreWakanda = wakander.getPreCadastro().getSobreWakanda();
-		this.Participar = wakander.getPreCadastro().getParticipar();
+		this.participar = wakander.getPreCadastro().getParticipar();
 
 	}
 

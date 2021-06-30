@@ -6,5 +6,5 @@ import dev.tribos.wakandaacademy.registro.domain.Wakander;
 
 public interface RegistroRepository {
 
-	Wakander save(Wakander registro);
+	Wakander save(Wakander wakander);
 }

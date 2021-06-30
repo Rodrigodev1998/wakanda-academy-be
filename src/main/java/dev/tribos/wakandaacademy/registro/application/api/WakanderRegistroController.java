@@ -23,7 +23,7 @@ public class WakanderRegistroController implements WakanderRegistroAPI {
 			UriComponentsBuilder uriBuilder) {
 		log.info("[Inicia] WakanderPreRegistroDTO - preCadastroWakander");
 		Wakander wakander = wakanderRegistroService.preCadastroWakander(wakanderPreRegistroFormr.toRegistro());
-		URI uri = uriBuilder.path("/registro/{id}").buildAndExpand(wakander.getNome()).toUri();
+		URI uri = uriBuilder.path("/wakander/{Nome}").buildAndExpand(wakander.getNome()).toUri();
 		log.info("[Finaliza] CidadaoRestController - preCadastraCidadao");
 		return ResponseEntity.created(uri).body(new WakanderRegistroDTO(wakander));
 	}
