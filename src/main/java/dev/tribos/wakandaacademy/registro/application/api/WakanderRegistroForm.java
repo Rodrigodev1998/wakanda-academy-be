@@ -1,26 +1,39 @@
 package dev.tribos.wakandaacademy.registro.application.api;
 
-import dev.tribos.wakandaacademy.registro.domain.Registro;
+import java.util.UUID;
+
+import dev.tribos.wakandaacademy.registro.domain.PreCadastroWakander;
+import dev.tribos.wakandaacademy.registro.domain.Relacionamento;
+import dev.tribos.wakandaacademy.registro.domain.TipoRelacionamento;
+import dev.tribos.wakandaacademy.registro.domain.Wakander;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 public class WakanderRegistroForm {
 
+	private UUID id;
+
 	private String nome;
 	private String email;
 	private Integer idade;
-	private String relacionamento;
+	private TipoRelacionamento relacionamento;
 	private Boolean filhos;
-	private String vidaAcademica;
-	private String experienciaDeEmprego;
-	private Boolean trabalhoComProgramacao;
-	private String oqueEntendeuSobreWakanda;
-	private String porqueParticiparDoWakanda;
+	
+	
+	private PreCadastroWakander preCadastro;
 
-	public Registro toRegistro() {
-		return Registro.builder().nome(nome).email(email).idade(idade).relacionamento(relacionamento).filhos(filhos)
-				.vidaAcademica(vidaAcademica).experienciaDeEmprego(experienciaDeEmprego)
-				.trabalhoComProgramacao(trabalhoComProgramacao).oqueEntendeuSobreWakanda(oqueEntendeuSobreWakanda)
-				.porqueParticiparDoWakanda(porqueParticiparDoWakanda).build();
+	
+
+	public Wakander toRegistro() {
+		return Wakander.builder()
+				.nome(nome)
+				.email(email)
+				.idade(idade)
+				.filhos(filhos)
+				.relacionamento(relacionamento)
+				.preCadastro(preCadastro)					
+				.build();
+				
 	}
 }

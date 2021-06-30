@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import dev.tribos.wakandaacademy.registro.application.service.WakanderRegistroService;
-import dev.tribos.wakandaacademy.registro.domain.Registro;
+import dev.tribos.wakandaacademy.registro.domain.Wakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -22,10 +22,10 @@ public class WakanderRegistroController implements WakanderRegistroAPI {
 	public ResponseEntity<WakanderRegistroDTO> preCadastroWakander(WakanderRegistroForm wakanderPreRegistroFormr,
 			UriComponentsBuilder uriBuilder) {
 		log.info("[Inicia] WakanderPreRegistroDTO - preCadastroWakander");
-		Registro registro = wakanderRegistroService.preCadastroWakander(wakanderPreRegistroFormr.toRegistro());
-		URI uri = uriBuilder.path("/registro/{id}").buildAndExpand(registro.getId()).toUri();
+		Wakander wakander = wakanderRegistroService.preCadastroWakander(wakanderPreRegistroFormr.toRegistro());
+		URI uri = uriBuilder.path("/registro/{id}").buildAndExpand(wakander.getNome()).toUri();
 		log.info("[Finaliza] CidadaoRestController - preCadastraCidadao");
-		return ResponseEntity.created(uri).body(new WakanderRegistroDTO(registro));
+		return ResponseEntity.created(uri).body(new WakanderRegistroDTO(wakander));
 	}
 
 }

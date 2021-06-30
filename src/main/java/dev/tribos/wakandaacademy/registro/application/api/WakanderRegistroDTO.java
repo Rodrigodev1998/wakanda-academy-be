@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.registro.application.api;
 
-import dev.tribos.wakandaacademy.registro.domain.Registro;
+import dev.tribos.wakandaacademy.registro.domain.TipoRelacionamento;
+import dev.tribos.wakandaacademy.registro.domain.Wakander;
 import lombok.Getter;
 
 @Getter
@@ -10,7 +11,7 @@ public class WakanderRegistroDTO {
 	private String nome;
 	private String email;
 	private Integer idade;
-	private String relacionamento;
+	private TipoRelacionamento relacionamento;
 	private Boolean filhos;
 	private String vidaAcademica;
 	private String experienciaemprego;
@@ -18,17 +19,17 @@ public class WakanderRegistroDTO {
 	private String sobreWakanda;
 	private String Participar;
 
-	public WakanderRegistroDTO(Registro registro) {
-		this.nome = registro.getNome();
-		this.email = registro.getEmail();
-		this.idade = registro.getIdade();
-		this.relacionamento = registro.getRelacionamento();
-		this.filhos = registro.getFilhos();
-		this.vidaAcademica = registro.getVidaAcademica();
-		this.experienciaemprego = registro.getExperienciaDeEmprego();
-		this.trabalhoProgramacao = registro.getTrabalhoComProgramacao();
-		this.sobreWakanda = registro.getOqueEntendeuSobreWakanda();
-		this.Participar = registro.getPorqueParticiparDoWakanda();
+	public WakanderRegistroDTO(Wakander wakander) {
+		this.nome = wakander.getNome();
+		this.email = wakander.getEmail();
+		this.idade = wakander.getIdade();
+		this.relacionamento = wakander.getRelacionamento();
+		this.filhos = wakander.getFilhos();
+		this.vidaAcademica = wakander.getPreCadastro().getVidaAcademica();
+		this.experienciaemprego = wakander.getPreCadastro().getExperienciaemprego();
+		this.trabalhoProgramacao = wakander.getPreCadastro().getTrabalhoProgramacao();
+		this.sobreWakanda = wakander.getPreCadastro().getSobreWakanda();
+		this.Participar = wakander.getPreCadastro().getParticipar();
 
 	}
 
