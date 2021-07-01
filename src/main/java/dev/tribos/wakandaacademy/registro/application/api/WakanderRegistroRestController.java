@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RestController
 @AllArgsConstructor
-public class WakanderRegistroController implements WakanderRegistroAPI {
+public class WakanderRegistroRestController implements WakanderRegistroAPI {
 
 	private WakanderRegistroService wakanderRegistroService;
 
@@ -23,7 +23,7 @@ public class WakanderRegistroController implements WakanderRegistroAPI {
 			UriComponentsBuilder uriBuilder) {
 		log.info("[Inicia] WakanderPreRegistroDTO - preCadastroWakander");
 		Wakander wakander = wakanderRegistroService.preCadastroWakander(wakanderPreRegistroFormr.toRegistro());
-		URI uri = uriBuilder.path("/wakander/{Nome}").buildAndExpand(wakander.getNome()).toUri();
+		URI uri = uriBuilder.path("/wakander/{id}").buildAndExpand(wakander.getId()).toUri();
 		log.info("[Finaliza] CidadaoRestController - preCadastraCidadao");
 		return ResponseEntity.created(uri).body(new WakanderRegistroDTO(wakander));
 	}

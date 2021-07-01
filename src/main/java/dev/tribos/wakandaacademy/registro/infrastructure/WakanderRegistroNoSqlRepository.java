@@ -10,14 +10,14 @@ import lombok.extern.log4j.Log4j2;
 @AllArgsConstructor
 @Log4j2
 @Component
-public class WakanderRegistroJpaRepository implements RegistroRepository {
+public class WakanderRegistroNoSqlRepository implements RegistroRepository {
 
-	private WakanderRegistroSpringDataRepository wakanderPreRegistroSpringDataRepository;
+	private WakanderRegistroSpringDataMongoDBRepository wakanderRegistroSpringDataMongoDBRepository;
 
 	@Override
 	public Wakander save(Wakander registro) {
 		log.info("[Inicia] CidadaoJpaRepository - save");
-		Wakander registroSalvo = wakanderPreRegistroSpringDataRepository.save(registro);
+		Wakander registroSalvo = wakanderRegistroSpringDataMongoDBRepository.save(registro);
 		log.info("[Finaliza] CidadaoJpaRepository - save");
 		return registroSalvo;
 	}
