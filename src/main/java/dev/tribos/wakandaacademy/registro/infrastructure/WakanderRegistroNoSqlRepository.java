@@ -16,9 +16,9 @@ public class WakanderRegistroNoSqlRepository implements RegistroRepository {
 
 	@Override
 	public Wakander save(Wakander registro) {
-		log.info("[Inicia] CidadaoJpaRepository - save");
+		log.info("[Inicia] WakanderRegistroNoSqlRepository - save");
 		Wakander registroSalvo = wakanderRegistroSpringDataMongoDBRepository.save(registro);
-		log.info("[Finaliza] CidadaoJpaRepository - save");
+		log.info("[Finaliza] WakanderRegistroNoSqlRepository - save");
 		return registroSalvo;
 	}
 
