@@ -17,7 +17,7 @@ import lombok.Getter;
 @Document(collection = "Wakander")
 public class Wakander {
 	@MongoId()
-	private String Id;
+	private String codigo;
 	
 	@NotEmpty(message = "o nome não pode estar vazio")
 	private String nome;
@@ -39,4 +39,8 @@ public class Wakander {
 	private Boolean possuiFilhos;
 
 	private PreCadastroWakander preCadastro;
+
+	public void criaCodigo() {
+		
+	}
 }
