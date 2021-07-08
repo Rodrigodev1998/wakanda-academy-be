@@ -57,7 +57,7 @@ public class WakanderPreCadastroForm {
 	@Length(min = 5)
 	private String motivoParaParticiparWakanda;
 
-	public Wakander toEntidade() {
+	public Wakander paraEntidade() {
 		return Wakander.builder()
 				.nome(nome)
 				.email(email)

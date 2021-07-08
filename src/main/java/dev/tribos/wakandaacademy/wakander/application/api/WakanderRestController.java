@@ -21,7 +21,7 @@ public class WakanderRestController implements WakanderAPI {
 	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(WakanderPreCadastroForm wakanderPreCadastroForm,
 			UriComponentsBuilder uriBuilder) {
 		log.info("[Inicia] WakanderRestController - preCadastraWakander");
-		Wakander wakander = wakanderService.preCadastraWakander(wakanderPreCadastroForm.toEntidade());
+		Wakander wakander = wakanderService.preCadastraWakander(wakanderPreCadastroForm.paraEntidade());
 		URI uri = uriBuilder.path("/wakander/{id}").buildAndExpand(wakander.getId()).toUri();
 		log.info("[Finaliza] WakanderRestController - preCadastraWakander");
 		return ResponseEntity.created(uri).body(new WakanderPreCadastroDTO(wakander));
