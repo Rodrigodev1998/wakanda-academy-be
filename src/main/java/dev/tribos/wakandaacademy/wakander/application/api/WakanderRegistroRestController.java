@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.registro.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api;
 
 import java.net.URI;
 
@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import dev.tribos.wakandaacademy.registro.application.service.WakanderRegistroService;
-import dev.tribos.wakandaacademy.registro.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.application.service.WakanderRegistroService;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

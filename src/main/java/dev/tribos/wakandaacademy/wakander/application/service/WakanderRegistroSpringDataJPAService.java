@@ -1,10 +1,9 @@
-package dev.tribos.wakandaacademy.registro.application.service;
+package dev.tribos.wakandaacademy.wakander.application.service;
 
 import org.springframework.stereotype.Service;
 
-import dev.tribos.wakandaacademy.registro.application.repository.RegistroRepository;
-import dev.tribos.wakandaacademy.registro.domain.Wakander;
-
+import dev.tribos.wakandaacademy.wakander.application.repository.RegistroRepository;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

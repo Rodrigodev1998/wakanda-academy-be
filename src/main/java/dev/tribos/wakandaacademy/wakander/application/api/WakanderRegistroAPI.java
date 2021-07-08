@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.registro.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api;
 
 import javax.validation.Valid;
 

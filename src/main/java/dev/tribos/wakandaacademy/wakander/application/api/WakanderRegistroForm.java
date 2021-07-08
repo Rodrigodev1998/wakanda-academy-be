@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.registro.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
@@ -9,9 +9,9 @@ import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 
-import dev.tribos.wakandaacademy.registro.domain.PreCadastroWakander;
-import dev.tribos.wakandaacademy.registro.domain.TipoRelacionamento;
-import dev.tribos.wakandaacademy.registro.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.PreCadastroWakander;
+import dev.tribos.wakandaacademy.wakander.domain.TipoRelacionamento;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter

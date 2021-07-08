@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.registro.domain;
+package dev.tribos.wakandaacademy.wakander.domain;
 
 import lombok.Builder;
 import lombok.Getter;

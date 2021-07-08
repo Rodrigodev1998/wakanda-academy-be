@@ -1,7 +1,7 @@
-package dev.tribos.wakandaacademy.registro.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api;
 
-import dev.tribos.wakandaacademy.registro.domain.TipoRelacionamento;
-import dev.tribos.wakandaacademy.registro.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.TipoRelacionamento;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter
