@@ -2,7 +2,7 @@ package dev.tribos.wakandaacademy.wakander.application.service;
 
 import org.springframework.stereotype.Service;
 
-import dev.tribos.wakandaacademy.wakander.application.repository.RegistroRepository;
+import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -10,22 +10,14 @@ import lombok.extern.log4j.Log4j2;
 @Service
 @Log4j2
 @AllArgsConstructor
-public class WakanderRegistroSpringDataJPAService implements WakanderService {
-
-	private RegistroRepository registroRepository;
+public class WakanderSpringDataJPAService implements WakanderService {
+	private WakanderRepository wakanderRepository;
 
 	@Override
-	public Wakander criaWakander(Wakander registro) {
-
+	public Wakander criaWakander(Wakander wakander) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
-
-		Wakander retroSalva = salvaRegistro(registro);
+		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
-		return retroSalva;
+		return wakanderSalvo;
 	}
-
-	private Wakander salvaRegistro(Wakander registro) {
-		return registroRepository.save(registro);
-	}
-
 }
