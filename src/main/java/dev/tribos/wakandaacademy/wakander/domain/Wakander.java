@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Builder
 @Document(collection = "Wakander")
 public class Wakander {
-	
+
 	@MongoId()
 	private String Id;
 	private String nome;
@@ -23,5 +23,3 @@ public class Wakander {
 	private PreCadastroWakander preCadastro;
 
 }
-
-;

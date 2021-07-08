@@ -14,12 +14,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 
 @RestController
-@RequestMapping("/v1/registro")
-public interface WakanderRegistroAPI {
+@RequestMapping("/v1/wakander")
+public interface WakanderAPI {
 	
 	@PostMapping("/pre-cadastro")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public ResponseEntity<WakanderRegistroDTO> preCadastroWakander(@RequestBody @Valid WakanderRegistroForm wakanderRegistroForm,
+	public ResponseEntity<WakanderPreCadastroDTO> preCadastroWakander(@RequestBody @Valid WakanderPreCadastroForm wakanderRegistroForm,
 			UriComponentsBuilder uriBuilder);
 
 }

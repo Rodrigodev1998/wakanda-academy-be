@@ -15,7 +15,7 @@ import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter
-public class WakanderRegistroForm {
+public class WakanderPreCadastroForm {
 
 	@NotEmpty(message = "o nome não pode estar vazio")
 	private String nome;

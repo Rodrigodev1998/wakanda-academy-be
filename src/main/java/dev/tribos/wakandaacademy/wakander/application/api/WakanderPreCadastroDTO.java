@@ -5,7 +5,7 @@ import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter
-public class WakanderRegistroDTO {
+public class WakanderPreCadastroDTO {
 
 	private String nome;
 	private String email;
@@ -19,7 +19,7 @@ public class WakanderRegistroDTO {
 	private String sobreWakanda;
 	private String participar;
 
-	public WakanderRegistroDTO(Wakander wakander) {
+	public WakanderPreCadastroDTO(Wakander wakander) {
 		this.nome = wakander.getNome();
 		this.email = wakander.getEmail();
 		this.idade = wakander.getIdade();
