@@ -7,5 +7,5 @@ import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 
 
 @Repository
-	public interface WakanderRegistroSpringDataMongoDBRepository extends MongoRepository<Wakander,String>{
+	public interface WakanderSpringDataMongoDBRepository extends MongoRepository<Wakander,String>{
 }
