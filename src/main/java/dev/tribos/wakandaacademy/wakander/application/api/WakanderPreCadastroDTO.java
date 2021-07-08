@@ -12,12 +12,12 @@ public class WakanderPreCadastroDTO {
 	private Integer idade;
 	private String whatsapp;
 	private TipoRelacionamento relacionamento;
-	private Boolean filhos;
+	private Boolean possuiFilhos;
 	private String vidaAcademica;
-	private String experienciaEmprego;
-	private Boolean trabalhoProgramacao;
-	private String sobreWakanda;
-	private String participar;
+	private String experienciasEmprego;
+	private Boolean jaTrabalhouProgramacao;
+	private String entendimentoSobreWakanda;
+	private String motivoParaParticiparWakanda;
 
 	public WakanderPreCadastroDTO(Wakander wakander) {
 		this.nome = wakander.getNome();
@@ -25,12 +25,11 @@ public class WakanderPreCadastroDTO {
 		this.idade = wakander.getIdade();
 		this.whatsapp = wakander.getWhatsapp();
 		this.relacionamento = wakander.getRelacionamento();
-		this.filhos = wakander.getFilhos();
+		this.possuiFilhos = wakander.getPossuiFilhos();
 		this.vidaAcademica = wakander.getPreCadastro().getVidaAcademica();
-		this.experienciaEmprego = wakander.getPreCadastro().getExperienciaEmprego();
-		this.trabalhoProgramacao = wakander.getPreCadastro().getTrabalhoProgramacao();
-		this.sobreWakanda = wakander.getPreCadastro().getSobreWakanda();
-		this.participar = wakander.getPreCadastro().getParticipar();
+		this.experienciasEmprego = wakander.getPreCadastro().getExperienciasEmprego();
+		this.jaTrabalhouProgramacao = wakander.getPreCadastro().getJaTrabalhouProgramacao();
+		this.entendimentoSobreWakanda = wakander.getPreCadastro().getEntendimentoSobreWakanda();
+		this.motivoParaParticiparWakanda = wakander.getPreCadastro().getMotivoParaParticiparWakanda();
 	}
-
 }
