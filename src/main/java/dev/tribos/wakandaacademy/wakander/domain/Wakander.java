@@ -39,5 +39,4 @@ public class Wakander {
 	private Boolean possuiFilhos;
 
 	private PreCadastroWakander preCadastro;
-
 }
