@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.registro.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api;
 
 import javax.validation.Valid;
 
@@ -14,12 +14,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 
 @RestController
-@RequestMapping("/v1/registro")
-public interface WakanderRegistroAPI {
+@RequestMapping("/v1/wakander")
+public interface WakanderAPI {
 	
 	@PostMapping("/pre-cadastro")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public ResponseEntity<WakanderRegistroDTO> preCadastroWakander(@RequestBody @Valid WakanderRegistroForm wakanderRegistroForm,
+	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm,
 			UriComponentsBuilder uriBuilder);
 
 }

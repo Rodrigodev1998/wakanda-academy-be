@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.registro.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
@@ -9,13 +9,13 @@ import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 
-import dev.tribos.wakandaacademy.registro.domain.PreCadastroWakander;
-import dev.tribos.wakandaacademy.registro.domain.TipoRelacionamento;
-import dev.tribos.wakandaacademy.registro.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.PreCadastroWakander;
+import dev.tribos.wakandaacademy.wakander.domain.TipoRelacionamento;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter
-public class WakanderRegistroForm {
+public class WakanderPreCadastroForm {
 
 	@NotEmpty(message = "o nome não pode estar vazio")
 	private String nome;
@@ -36,7 +36,7 @@ public class WakanderRegistroForm {
 	private TipoRelacionamento relacionamento;
 
 	@NotNull
-	private Boolean filhos;
+	private Boolean possuiFilhos;
 
 	@NotEmpty
 	@Length(min = 5)
@@ -44,27 +44,32 @@ public class WakanderRegistroForm {
 
 	@NotEmpty
 	@Length(min = 5)
-	private String experienciaEmprego;
+	private String experienciasEmprego;
 
 	@NotNull
-	private Boolean trabalhoProgramacao;
+	private Boolean jaTrabalhouProgramacao;
 
 	@NotEmpty
 	@Length(min = 5)
-	private String sobreWakanda;
+	private String entendimentoSobreWakanda;
 
 	@NotEmpty
 	@Length(min = 5)
-	private String participar;
+	private String motivoParaParticiparWakanda;
 
-	public Wakander toRegistro() {
-		return Wakander.builder().nome(nome).email(email).idade(idade).filhos(filhos).relacionamento(relacionamento)
+	public Wakander paraEntidade() {
+		return Wakander.builder()
+				.nome(nome)
+				.email(email)
+				.idade(idade)
+				.possuiFilhos(possuiFilhos)
+				.relacionamento(relacionamento)
 				.preCadastro(PreCadastroWakander.builder()
 						.vidaAcademica(vidaAcademica)
-						.experienciaEmprego(experienciaEmprego)
-						.participar(participar)
-						.trabalhoProgramacao(trabalhoProgramacao)
-						.sobreWakanda(sobreWakanda)
+						.experienciasEmprego(experienciasEmprego)
+						.jaTrabalhouProgramacao(jaTrabalhouProgramacao)
+						.entendimentoSobreWakanda(entendimentoSobreWakanda)
+						.motivoParaParticiparWakanda(motivoParaParticiparWakanda)
 						.build())
 				.whatsapp(whatsapp).build();
 
