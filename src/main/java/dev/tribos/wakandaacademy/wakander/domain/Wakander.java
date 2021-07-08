@@ -18,7 +18,7 @@ public class Wakander {
 	private Integer idade;
 	private String whatsapp;
 	private TipoRelacionamento relacionamento;
-	private Boolean filhos;
+	private Boolean possuiFilhos;
 
 	private PreCadastroWakander preCadastro;
 

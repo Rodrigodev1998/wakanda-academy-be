@@ -8,9 +8,9 @@ import lombok.Getter;
 public class PreCadastroWakander {
 
 	private String vidaAcademica;
-	private String experienciaEmprego;
-	private Boolean trabalhoProgramacao;
-	private String sobreWakanda;
-	private String participar;
+	private String experienciasEmprego;
+	private Boolean jaTrabalhouProgramacao;
+	private String entendimentoSobreWakanda;
+	private String motivoParaParticiparWakanda;
 
 }

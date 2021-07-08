@@ -10,7 +10,7 @@ import lombok.extern.log4j.Log4j2;
 @Service
 @Log4j2
 @AllArgsConstructor
-public class WakanderRegistroSpringDataJPAService implements WakanderRegistroService {
+public class WakanderRegistroSpringDataJPAService implements WakanderService {
 
 	private RegistroRepository registroRepository;
 

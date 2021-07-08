@@ -36,7 +36,7 @@ public class WakanderPreCadastroForm {
 	private TipoRelacionamento relacionamento;
 
 	@NotNull
-	private Boolean filhos;
+	private Boolean possuiFilhos;
 
 	@NotEmpty
 	@Length(min = 5)
@@ -44,27 +44,32 @@ public class WakanderPreCadastroForm {
 
 	@NotEmpty
 	@Length(min = 5)
-	private String experienciaEmprego;
+	private String experienciasEmprego;
 
 	@NotNull
-	private Boolean trabalhoProgramacao;
+	private Boolean jaTrabalhouProgramacao;
 
 	@NotEmpty
 	@Length(min = 5)
-	private String sobreWakanda;
+	private String entendimentoSobreWakanda;
 
 	@NotEmpty
 	@Length(min = 5)
-	private String participar;
+	private String motivoParaParticiparWakanda;
 
-	public Wakander toRegistro() {
-		return Wakander.builder().nome(nome).email(email).idade(idade).filhos(filhos).relacionamento(relacionamento)
+	public Wakander toEntidade() {
+		return Wakander.builder()
+				.nome(nome)
+				.email(email)
+				.idade(idade)
+				.possuiFilhos(possuiFilhos)
+				.relacionamento(relacionamento)
 				.preCadastro(PreCadastroWakander.builder()
 						.vidaAcademica(vidaAcademica)
-						.experienciaEmprego(experienciaEmprego)
-						.participar(participar)
-						.trabalhoProgramacao(trabalhoProgramacao)
-						.sobreWakanda(sobreWakanda)
+						.experienciasEmprego(experienciasEmprego)
+						.jaTrabalhouProgramacao(jaTrabalhouProgramacao)
+						.entendimentoSobreWakanda(entendimentoSobreWakanda)
+						.motivoParaParticiparWakanda(motivoParaParticiparWakanda)
 						.build())
 				.whatsapp(whatsapp).build();
 
