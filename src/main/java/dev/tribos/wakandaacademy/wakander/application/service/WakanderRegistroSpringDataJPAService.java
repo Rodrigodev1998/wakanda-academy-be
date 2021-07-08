@@ -15,7 +15,7 @@ public class WakanderRegistroSpringDataJPAService implements WakanderService {
 	private RegistroRepository registroRepository;
 
 	@Override
-	public Wakander preCadastroWakander(Wakander registro) {
+	public Wakander preCadastraWakander(Wakander registro) {
 
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
 

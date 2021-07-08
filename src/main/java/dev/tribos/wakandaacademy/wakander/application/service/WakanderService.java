@@ -4,6 +4,6 @@ import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 
 public interface  WakanderService {
 	
-	Wakander preCadastroWakander(Wakander registro);
+	Wakander preCadastraWakander(Wakander registro);
 
 }

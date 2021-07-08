@@ -18,12 +18,12 @@ public class WakanderRestController implements WakanderAPI {
 	private WakanderService wakanderService;
 
 	@Override
-	public ResponseEntity<WakanderPreCadastroDTO> preCadastroWakander(WakanderPreCadastroForm wakanderPreCadastroForm,
+	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(WakanderPreCadastroForm wakanderPreCadastroForm,
 			UriComponentsBuilder uriBuilder) {
-		log.info("[Inicia] WakanderRestController - preCadastroWakander");
-		Wakander wakander = wakanderService.preCadastroWakander(wakanderPreCadastroForm.toEntidade());
+		log.info("[Inicia] WakanderRestController - preCadastraWakander");
+		Wakander wakander = wakanderService.preCadastraWakander(wakanderPreCadastroForm.toEntidade());
 		URI uri = uriBuilder.path("/wakander/{id}").buildAndExpand(wakander.getId()).toUri();
-		log.info("[Finaliza] WakanderRestController - preCadastroWakander");
+		log.info("[Finaliza] WakanderRestController - preCadastraWakander");
 		return ResponseEntity.created(uri).body(new WakanderPreCadastroDTO(wakander));
 	}
 }

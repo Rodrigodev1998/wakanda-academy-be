@@ -19,7 +19,7 @@ public interface WakanderAPI {
 	
 	@PostMapping("/pre-cadastro")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public ResponseEntity<WakanderPreCadastroDTO> preCadastroWakander(@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm,
+	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm,
 			UriComponentsBuilder uriBuilder);
 
 }
