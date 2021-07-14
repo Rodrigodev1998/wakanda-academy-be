@@ -1,7 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
+import java.util.List;
 import org.springframework.stereotype.Service;
-
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
@@ -19,5 +19,11 @@ public class WakanderSpringDataJPAService implements WakanderService {
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
 		return wakanderSalvo;
+	}
+
+	@Override
+	public List<Wakander> buscaWakanderPorEmail(String email) {
+			List<Wakander> wakanderPorEmail = wakanderRepository.findByEmail(email);
+		return wakanderPorEmail;
 	}
 }
