@@ -8,9 +8,6 @@ import org.springframework.stereotype.Repository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 
 @Repository
-
-	public interface WakanderSpringDataMongoDBRepository extends MongoRepository<Wakander,String>{
-	
-
-	Wakander findByEmail(String email);
+public interface WakanderSpringDataMongoDBRepository extends MongoRepository<Wakander,String>{
+	List<Wakander> findByEmailContainingIgnoreCase(String email);
 }

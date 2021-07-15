@@ -28,7 +28,7 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 	public List<Wakander> findByEmail(String email) {
 
 		log.info("[Inicia] WakanderMongoDBRepository - findByEmail");
-		List<Wakander> wakanderSalvo = List.of(wakanderSpringDataMongoDBRepository.findByEmail(email));
+		List<Wakander> wakanderSalvo = wakanderSpringDataMongoDBRepository.findByEmailContainingIgnoreCase(email);
 		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
 
 		return wakanderSalvo;
