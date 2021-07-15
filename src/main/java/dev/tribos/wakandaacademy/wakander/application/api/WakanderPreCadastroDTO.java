@@ -2,9 +2,12 @@ package dev.tribos.wakandaacademy.wakander.application.api;
 
 import java.util.stream.Collectors;
 
+import dev.tribos.wakandaacademy.wakander.domain.StatusCadastro;
 import dev.tribos.wakandaacademy.wakander.domain.TipoRelacionamento;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
+
+
 import java.util.List;
 
 @Getter
@@ -21,6 +24,8 @@ public class WakanderPreCadastroDTO {
 	private Boolean jaTrabalhouProgramacao;
 	private String entendimentoSobreWakanda;
 	private String motivoParaParticiparWakanda;
+	private StatusCadastro statusCadastro; 
+	
 
 	public WakanderPreCadastroDTO(Wakander wakander) {
 		this.nome = wakander.getNome();
@@ -34,6 +39,7 @@ public class WakanderPreCadastroDTO {
 		this.jaTrabalhouProgramacao = wakander.getPreCadastro().getJaTrabalhouProgramacao();
 		this.entendimentoSobreWakanda = wakander.getPreCadastro().getEntendimentoSobreWakanda();
 		this.motivoParaParticiparWakanda = wakander.getPreCadastro().getMotivoParaParticiparWakanda();
+		this.statusCadastro = wakander.getStatusCadastro();
 	}
 	
 	public static List<WakanderPreCadastroDTO> parseListDTO(List<Wakander> wakanderPorEmail){
