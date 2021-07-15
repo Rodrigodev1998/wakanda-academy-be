@@ -26,7 +26,9 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 
 	@Override
 	public List<Wakander> findByEmail(String email) {
-		List<Wakander> wakanderSalvo = wakanderSpringDataMongoDBRepository.findbyEmail(email);
+		log.info("[Inicia] WakanderMongoDBRepository - findByEmail");
+		List<Wakander> wakanderSalvo = List.of(wakanderSpringDataMongoDBRepository.findByEmail(email));
+		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
 		return wakanderSalvo;
 	}
 }
