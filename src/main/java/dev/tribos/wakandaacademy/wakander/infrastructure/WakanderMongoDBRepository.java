@@ -34,3 +34,5 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		return wakanderSalvo;
 	}
 }
+
+
