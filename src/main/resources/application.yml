@@ -7,4 +7,4 @@ spring:
   data:
     mongodb:
       authentication-database: admin
-      uri: ${MONGO_DB_URI}
+      uri:  mongodb+srv://wakanda:jnjmuc0GxHsPHuoH@wakandacluster.frepd.mongodb.net/wakanda?retryWrites=true&w=majority
