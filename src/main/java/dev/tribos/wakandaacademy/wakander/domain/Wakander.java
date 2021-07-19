@@ -42,7 +42,7 @@ public class Wakander {
 	private PreCadastroWakander preCadastro;
 
 	@Default  
-	private Status status = Status.NAO_AUTORIZADO ; 
+	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO ; 
 	
 	
 	

@@ -31,10 +31,9 @@ public class WakanderRestController implements WakanderAPI {
 	@Override
 	public List<WakanderDTO> buscaEmail(String email) {
 		log.info("[Inicia] WakanderRestController - buscaEmail");
-		List <Wakander> wakanders = wakanderService.buscaWakanderPorEmail(email);
+		List<Wakander> wakanders = wakanderService.buscaWakanderPorEmail(email);
 		log.info("[Finaliza] WakanderRestController - buscaEmail");
 		return WakanderDTO.parseListDTO(wakanders);
 	}
-
 
 }
