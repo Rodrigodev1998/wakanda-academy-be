@@ -1,6 +1,6 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
-public enum StatusCadastro {
+public enum Status {
 	
 	AUTORIZADO,NAO_AUTORIZADO 
 

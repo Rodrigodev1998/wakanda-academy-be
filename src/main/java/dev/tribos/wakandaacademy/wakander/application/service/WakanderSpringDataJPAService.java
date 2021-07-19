@@ -25,7 +25,6 @@ public class WakanderSpringDataJPAService implements WakanderService {
 	public List<Wakander> buscaWakanderPorEmail(String email) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - buscaWakanderPorEmail");
 		List<Wakander> testePorEmail = wakanderRepository.findByEmail(email);
-
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscaWakanderPorEmail");
 		return testePorEmail;
 	}

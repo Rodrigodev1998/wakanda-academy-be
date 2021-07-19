@@ -70,6 +70,7 @@ public class WakanderPreCadastroForm {
 						.jaTrabalhouProgramacao(jaTrabalhouProgramacao)
 						.entendimentoSobreWakanda(entendimentoSobreWakanda)
 						.motivoParaParticiparWakanda(motivoParaParticiparWakanda)
+						
 						.build())
 				.whatsapp(whatsapp).build();
 
