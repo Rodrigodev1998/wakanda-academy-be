@@ -7,6 +7,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.token.TokenService;
 import org.springframework.stereotype.Service;
+
+import dev.tribos.wakandaacademy.autenticacao.application.domain.Token;
+import dev.tribos.wakandaacademy.credencial.application.service.CredencialService;
+import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import lombok.extern.log4j.Log4j2;
 
 @Service
