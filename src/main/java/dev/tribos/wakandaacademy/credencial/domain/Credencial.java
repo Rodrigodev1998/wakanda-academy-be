@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.UUID;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -18,7 +17,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 
@@ -34,39 +32,25 @@ public class Credencial implements UserDetails {
 
 	@MongoId()
 	//@GeneratedValue(strategy = GenerationType.AUTO)
-	private UUID id;
+	private String id;
 
 	@NotNull
-	@Pattern(regexp = "^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$", message = "Whatsapp inválido!")
 	//@Column(unique = true)
 	private String usuario;
 	
 	@NotNull
 	//@Column(length = 60, nullable = false)
 	private String senha;
-	
-	@Setter
-	@Builder.Default
-	private boolean validado = false;
-	
-	//@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	//@JoinColumn(name = "codigoConfirmacao_id", referencedColumnName = "id")
-	private CodigoConfirmacao codigoConfirmacao;
 
 	public Credencial(String usuario, @NotNull String senha) {
 		this.usuario = usuario;
 		this.senha = senha;
 	}
 	
-	public void gerarCodigoConfirmacao() {
-		this.codigoConfirmacao = new CodigoConfirmacao().generateCode();
-	}
-
 	public void encriptaSenha() {
 		var encriptador = new BCryptPasswordEncoder();
 		this.senha = encriptador.encode(this.senha);
 	}
-
     
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

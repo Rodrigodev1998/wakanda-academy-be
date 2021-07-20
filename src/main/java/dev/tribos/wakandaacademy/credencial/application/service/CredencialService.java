@@ -11,9 +11,7 @@ import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 public interface CredencialService {
 	Credencial criaCredencial(Credencial buildCredencial);
 
-	Credencial buscaCredencialPorId(UUID id);
-	
-	void gerarCodigoConfirmacao(String whatsappCliente);
+	Credencial buscaCredencialPorId(String id);
 
 	Credencial buscaCredencialPorUsuario(String usuario);
 

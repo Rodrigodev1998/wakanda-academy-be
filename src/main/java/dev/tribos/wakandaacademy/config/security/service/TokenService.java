@@ -22,9 +22,10 @@ import java.util.UUID;
 @Log4j2
 public class TokenService {
 
-    @Value("${mec.jwt.expiracao}")
+    @Value("${wakanda.jwt.expiracao}")
     private String expiracao;
-    @Value("${mec.jwt.chave}")
+    
+    @Value("${wakanda.jwt.chave}")
     private String chave;
 
     public String gerarToken(Authentication authentication) {
@@ -47,18 +48,18 @@ public class TokenService {
                 .compact();
     }
 
-    public Optional<UUID> getId(String token) {
+    public Optional<String> getId(String token) {
         try {
             log.info("[inicio] TokenService - extração do ID do Token");
             var claims = Jwts.parser().setSigningKey(chave).parseClaimsJws(token).getBody();
             log.info("[finaliza] TokenService - extração do ID do Token");
-            return Optional.of(UUID.fromString(claims.getSubject()));
+            return Optional.of(claims.getSubject());
         } catch (SignatureException ex) {
             return Optional.empty();
         } catch (ExpiredJwtException ex) {
             var claims = ex.getClaims();
             log.info("[finaliza] TokenService - extração do ID do Token");
-            return Optional.of(UUID.fromString(claims.getSubject()));
+            return Optional.of(claims.getSubject());
         }
     }
 }

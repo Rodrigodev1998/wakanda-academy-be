@@ -8,7 +8,7 @@ import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 
 public interface CredencialRepository {	
 	Credencial saveCredencial (Credencial credencial);
-	Optional<Credencial> findCredencialById(UUID id);
+	Optional<Credencial> findCredencialById(String id);
 	Optional<Credencial> findCredencialByUsuario(String usuario);
 
 }

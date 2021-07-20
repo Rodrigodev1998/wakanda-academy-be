@@ -27,7 +27,7 @@ public class CredencialSpringDataJpaService implements CredencialService {
 	}
 
 	@Override
-	public Credencial buscaCredencialPorId(UUID id) {
+	public Credencial buscaCredencialPorId(String id) {
 		log.info("[inicia] CredencialSpringDataJpaService - buscaCredencial");
 		var credencial = findCredencialByCredencialId(id);
 		log.info("[finaliza] CredencialSpringDataJpaService - buscaCredencial");
@@ -42,24 +42,6 @@ public class CredencialSpringDataJpaService implements CredencialService {
 		return credencial;
 	}
 
-	@Override
-	public void gerarCodigoConfirmacao(String whatsappCliente) {
-		log.info("[inicia] CredencialSpringDataJpaService - gerarCodigoConfirmacao");
-		Credencial credencial = this.findCredencialByUsuario(whatsappCliente);
-		checkIfValidado(credencial);
-		credencial.gerarCodigoConfirmacao();
-		log.info("[codigo gerado]: {}", credencial.getCodigoConfirmacao().getCodigo());
-		saveToRepository(credencial);
-		log.info("[finaliza] CredencialSpringDataJpaService - gerarCodigoConfirmacao");
-	}
-
-	private void checkIfValidado(Credencial credencial) {
-		if (credencial.isValidado()) {
-			throw ApiException.throwApiException(HttpStatus.BAD_REQUEST,
-					"Número do WhatsApp já utilizado por outro cliente");
-		}
-	}
-
 	private Credencial saveToRepository(Credencial credencial) {
 		try {
 			return credencialRepository.saveCredencial(credencial);
@@ -68,7 +50,7 @@ public class CredencialSpringDataJpaService implements CredencialService {
 		}
 	}
 
-	private Credencial findCredencialByCredencialId(UUID id) {
+	private Credencial findCredencialByCredencialId(String id) {
 		return credencialRepository.findCredencialById(id).orElseThrow(() -> ApiException
 				.throwApiException(HttpStatus.NOT_FOUND, "Não existe nenhuma credencial com o Id passado."));
 	}

@@ -26,7 +26,7 @@ public class CredencialMongoDBRepository implements CredencialRepository {
 	}
 
 	@Override
-	public Optional<Credencial> findCredencialById(UUID id) {
+	public Optional<Credencial> findCredencialById(String id) {
 		log.info("[inicia] CredencialJPARepository - findCredencialById");
 		Optional<Credencial> credencialOpt = credencialSpringDataMongoDBRepository.findById(id);
 		log.info("[finaliza] CredencialJPARepository - findCredencialById");

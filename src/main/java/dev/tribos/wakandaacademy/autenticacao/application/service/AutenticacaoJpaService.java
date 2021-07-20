@@ -46,7 +46,7 @@ public class AutenticacaoJpaService implements AutenticacaoService {
 		return Token.builder().tipo("Bearer").token(tokenService.gerarToken(credencial)).build();
 	}
 
-	private UUID extraiId(String tokenExpirado) {
+	private String extraiId(String tokenExpirado) {
 		return tokenService.getId(tokenExpirado).orElseThrow(() -> ApiException.throwApiException(HttpStatus.FORBIDDEN,
 				"O Token enviado está inválido. Tente novamente."));
 	}

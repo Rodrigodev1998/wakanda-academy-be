@@ -8,3 +8,8 @@ spring:
     mongodb:
       authentication-database: admin
       uri:  mongodb+srv://wakanda:jnjmuc0GxHsPHuoH@wakandacluster.frepd.mongodb.net/wakanda?retryWrites=true&w=majority
+
+wakanda:
+  jwt:
+    chave: 123456
+    expiracao: 15
