@@ -1,7 +1,7 @@
 package dev.tribos.wakandaacademy.credencial.application.repository;
 
 import java.util.Optional;
-import java.util.UUID;
+
 
 
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;

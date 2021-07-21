@@ -1,6 +1,6 @@
 package dev.tribos.wakandaacademy.credencial.application.service;
 
-import java.util.UUID;
+
 import dev.tribos.wakandaacademy.handler.ApiException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @Service
 @AllArgsConstructor
-public class CredencialSpringDataJpaService implements CredencialService {
+public class CredencialSpringDataMongoDBService implements CredencialService {
 	private CredencialRepository credencialRepository;
 
 	@Override

@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.credencial.application.service;
 
-import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 

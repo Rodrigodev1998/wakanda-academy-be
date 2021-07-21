@@ -1,7 +1,5 @@
 package dev.tribos.wakandaacademy.autenticacao.application.service;
 
-import java.util.UUID;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,13 +14,13 @@ import lombok.extern.log4j.Log4j2;
 
 @Service
 @Log4j2
-public class AutenticacaoJpaService implements AutenticacaoService {
+public class AutenticacaoMongoDBService implements AutenticacaoService {
 
 	private AuthenticationManager authenticationManager;
 	private TokenService tokenService;
 	private CredencialService credencialService;
 
-	public AutenticacaoJpaService(AuthenticationManager authenticationManager, TokenService tokenService,
+	public AutenticacaoMongoDBService(AuthenticationManager authenticationManager, TokenService tokenService,
 			CredencialService credencialService) {
 		this.authenticationManager = authenticationManager;
 		this.tokenService = tokenService;
