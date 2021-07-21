@@ -24,9 +24,8 @@ public interface WakanderAPI {
 	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm,
 			UriComponentsBuilder uriBuilder);
 	
-	@GetMapping("/v1/wakander/{email}")
+	@GetMapping("/public/v1/wakander")
 	@ResponseStatus(value = HttpStatus.OK)
-	@ResponseBody
-	List<WakanderDTO> buscaPorEmail(@RequestParam (required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail")String email);
+	List<WakanderDTO> buscaPorEmail(@RequestParam (required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail")String gmail);
 
 }
