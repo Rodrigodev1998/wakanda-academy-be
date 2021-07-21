@@ -29,7 +29,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	@Override
 	public List<Wakander> buscaWakanderPorEmail(String email) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - buscaWakanderPorEmail");
-		List<Wakander> listaDeEmail = this.wakanderRepository.findByEmail(email);
+		List<Wakander> listaDeEmail = this.wakanderRepository.wakanderPorEmailEhStatusAutorizado(email);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscaWakanderPorEmail");
 		return listaDeEmail;
 	}
