@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.application.api;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,4 +27,13 @@ public class WakanderRestController implements WakanderAPI {
 		log.info("[Finaliza] WakanderRestController - preCadastraWakander");
 		return ResponseEntity.created(uri).body(new WakanderPreCadastroDTO(wakander));
 	}
+
+	@Override
+	public List<WakanderDTO> buscaPorEmail(String email) {
+		log.info("[Inicia] WakanderRestController - buscaEmail");
+		List<Wakander> wakanders = wakanderService.buscaWakanderPorEmail(email);
+		log.info("[Finaliza] WakanderRestController - buscaEmail");
+		return WakanderDTO.parseListDTO(wakanders);
+	}
+
 }

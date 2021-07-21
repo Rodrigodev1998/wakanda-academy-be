@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import lombok.Builder;
+import lombok.Builder.Default;
 import lombok.Getter;
 
 @Getter
@@ -40,6 +41,11 @@ public class Wakander {
 
 	private PreCadastroWakander preCadastro;
 
+	@Default  
+	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO ; 
+	
+	
+	
 	public void criaCodigo() {
 		
 	}

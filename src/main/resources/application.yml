@@ -8,3 +8,4 @@ spring:
     mongodb:
       authentication-database: admin
       uri: ${MONGO_DB_URI}
+    
