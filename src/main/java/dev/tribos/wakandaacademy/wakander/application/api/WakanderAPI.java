@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.application.api;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,8 @@ public interface WakanderAPI {
 			@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm, UriComponentsBuilder uriBuilder);
 
 	@GetMapping("/pre-cadastro/{email}")
+	@ResponseStatus(value = HttpStatus.OK)
 	@ResponseBody
-	List<WakanderDTO> buscaPorEmail(@RequestParam (required = false) String email);
+	List<WakanderDTO> buscaPorEmail(@RequestParam (required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail")String email);
 
 }
