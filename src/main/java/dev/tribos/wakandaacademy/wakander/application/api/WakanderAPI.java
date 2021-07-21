@@ -17,15 +17,14 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/wakander")
 public interface WakanderAPI {
-
-	@PostMapping("/pre-cadastro")
+	
+	@PostMapping("/public/v1/wakander/pre-cadastro")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(
-			@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm, UriComponentsBuilder uriBuilder);
-
-	@GetMapping("/pre-cadastro/{email}")
+	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm,
+			UriComponentsBuilder uriBuilder);
+	
+	@GetMapping("/v1/wakander/{email}")
 	@ResponseStatus(value = HttpStatus.OK)
 	@ResponseBody
 	List<WakanderDTO> buscaPorEmail(@RequestParam (required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail")String email);
