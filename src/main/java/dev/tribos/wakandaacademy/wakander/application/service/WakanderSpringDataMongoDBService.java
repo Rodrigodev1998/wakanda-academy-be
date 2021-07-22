@@ -1,10 +1,11 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
 import java.util.List;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-
-
+import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
@@ -31,5 +32,20 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		List<Wakander> listaDeEmail = this.wakanderRepository.buscaWakanderPorEmailEhPorStatusAutorizado(email);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscaWakanderPorEmail");
 		return listaDeEmail;
+	}
+
+	@Override
+	public Wakander findByEmail(String email) {
+		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - findByEmail");
+		Wakander wakanderByEmail = this.wakanderRepository.findByEmail(email)
+				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.NOT_FOUND, "Wakander não encontrado!"));
+		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - findByEmail");
+		return wakanderByEmail;
+	}
+
+	@Override
+	public Wakander save(Wakander wakander) {
+		Wakander wakanderSalvo = wakanderRepository.save(wakander);
+		return wakanderSalvo;
 	}
 }

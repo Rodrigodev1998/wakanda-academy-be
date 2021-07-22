@@ -7,6 +7,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import lombok.Builder;
@@ -17,7 +18,7 @@ import lombok.Getter;
 @Builder
 @Document(collection = "Wakander")
 public class Wakander {
-	@MongoId
+	@MongoId(targetType = FieldType.OBJECT_ID)
 	private String codigo;
 	
 	@NotEmpty(message = "o nome não pode estar vazio")
@@ -42,5 +43,9 @@ public class Wakander {
 	private PreCadastroWakander preCadastro;
 
 	@Default  
-	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO ; 
+	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO ;
+
+	public void mudaStatusParaCadastrado() {
+		this.statusWakander = StatusWakander.CADASTRADO;
+	} 
 }

@@ -18,9 +18,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 public interface CredencialAPI {
 	
 	@PostMapping
-	@ResponseStatus(value = HttpStatus.CREATED)
-	public ResponseEntity<CredencialDTO> criaCredencial(@RequestBody @Valid CredencialForm credencialForm,
-			UriComponentsBuilder uriBuilder);
+	@ResponseStatus(value = HttpStatus.NO_CONTENT)
+	public void criaCredencial(@RequestBody @Valid CredencialForm credencialForm);
 
 	
 }
