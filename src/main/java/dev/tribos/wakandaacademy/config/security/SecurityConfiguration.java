@@ -17,23 +17,18 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import dev.tribos.wakandaacademy.config.security.service.AutenticacaoSecurityService;
 import dev.tribos.wakandaacademy.config.security.service.TokenService;
 import dev.tribos.wakandaacademy.credencial.application.service.CredencialService;
+import lombok.AllArgsConstructor;
 
 
 
 @EnableWebSecurity
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@AllArgsConstructor
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-
     private TokenService tokenService;
     private CredencialService credencialService;
     private AutenticacaoSecurityService autenticacaoSecurityService;
-
-    public SecurityConfiguration(TokenService tokenService, CredencialService credencialService, AutenticacaoSecurityService autenticacaoSecurityService) {
-        this.tokenService = tokenService;
-        this.credencialService = credencialService;
-        this.autenticacaoSecurityService = autenticacaoSecurityService;
-    }
 
     @Override
     @Bean

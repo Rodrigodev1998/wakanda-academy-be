@@ -29,7 +29,7 @@ public class CredencialSpringDataMongoDBService implements CredencialService {
 	@Override
 	public Credencial buscaCredencialPorId(String id) {
 		log.info("[inicia] CredencialSpringDataJpaService - buscaCredencial");
-		var credencial = findCredencialByCredencialId(id);
+		var credencial = findCredencialById(id);
 		log.info("[finaliza] CredencialSpringDataJpaService - buscaCredencial");
 		return credencial;
 	}
@@ -50,7 +50,7 @@ public class CredencialSpringDataMongoDBService implements CredencialService {
 		}
 	}
 
-	private Credencial findCredencialByCredencialId(String id) {
+	private Credencial findCredencialById(String id) {
 		return credencialRepository.findCredencialById(id).orElseThrow(() -> ApiException
 				.throwApiException(HttpStatus.NOT_FOUND, "Não existe nenhuma credencial com o Id passado."));
 	}

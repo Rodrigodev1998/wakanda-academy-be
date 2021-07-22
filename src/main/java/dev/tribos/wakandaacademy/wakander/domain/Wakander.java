@@ -17,7 +17,7 @@ import lombok.Getter;
 @Builder
 @Document(collection = "Wakander")
 public class Wakander {
-	@MongoId()
+	@MongoId
 	private String codigo;
 	
 	@NotEmpty(message = "o nome não pode estar vazio")
@@ -43,10 +43,4 @@ public class Wakander {
 
 	@Default  
 	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO ; 
-	
-	
-	
-	public void criaCodigo() {
-		
-	}
 }

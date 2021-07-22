@@ -29,7 +29,7 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 	}
 
 	@Override
-	public List<Wakander> wakanderPorEmailEhStatusAutorizado(String email) {
+	public List<Wakander> buscaWakanderPorEmailEhPorStatusAutorizado(String email) {
 		log.info("[Inicia] WakanderMongoDBRepository - findByEmail");
 		Query query = new Query();
 		query.addCriteria(Criteria.where("email").is(email));

@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface WakanderRepository {
 	Wakander save(Wakander wakander);
-	List<Wakander> wakanderPorEmailEhStatusAutorizado(String email);
+	List<Wakander> buscaWakanderPorEmailEhPorStatusAutorizado(String email);
 }

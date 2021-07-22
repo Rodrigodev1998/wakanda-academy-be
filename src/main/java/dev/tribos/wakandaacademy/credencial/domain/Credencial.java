@@ -24,16 +24,13 @@ public class Credencial implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
-	@MongoId()
-	// @GeneratedValue(strategy = GenerationType.AUTO)
+	@MongoId
 	private String id;
 
 	@NotNull
-	// @Column(unique = true)
 	private String usuario;
 
 	@NotNull
-	// @Column(length = 60, nullable = false)
 	private String senha;
 
 	public Credencial(String usuario, @NotNull String senha) {
