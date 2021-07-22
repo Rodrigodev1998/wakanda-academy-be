@@ -2,6 +2,8 @@ package dev.tribos.wakandaacademy.credencial.domain;
 
 import java.util.Collection;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,6 +30,7 @@ public class Credencial implements UserDetails {
 	private String id;
 
 	@NotNull
+	@Indexed(unique = true)
 	private String usuario;
 
 	@NotNull
