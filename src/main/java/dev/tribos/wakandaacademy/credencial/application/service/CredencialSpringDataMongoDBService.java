@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.credencial.application.service;
 
-
 import dev.tribos.wakandaacademy.handler.ApiException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -9,7 +8,6 @@ import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import lombok.AllArgsConstructor;
 import dev.tribos.wakandaacademy.credencial.application.repository.CredencialRepository;
 import lombok.extern.log4j.Log4j2;
-
 
 @Log4j2
 @Service
@@ -33,7 +31,7 @@ public class CredencialSpringDataMongoDBService implements CredencialService {
 		log.info("[finaliza] CredencialSpringDataJpaService - buscaCredencial");
 		return credencial;
 	}
-	
+
 	@Override
 	public Credencial buscaCredencialPorUsuario(String usuario) {
 		log.info("[inicia] CredencialSpringDataJpaService - buscaCredencial");

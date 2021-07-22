@@ -18,7 +18,6 @@ import lombok.extern.log4j.Log4j2;
 @Component
 public class WakanderMongoDBRepository implements WakanderRepository {
 	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
-	private MongoTemplate mongoTemplate;
 
 	@Override
 	public Wakander save(Wakander wakander) {
@@ -31,10 +30,7 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 	@Override
 	public List<Wakander> buscaWakanderPorEmailEhPorStatusAutorizado(String email) {
 		log.info("[Inicia] WakanderMongoDBRepository - findByEmail");
-		Query query = new Query();
-		query.addCriteria(Criteria.where("email").is(email));
-		query.addCriteria(Criteria.where("statusWakander").is(StatusWakander.AUTORIZADO));
-		List<Wakander> wakanderSalvo = mongoTemplate.find(query, Wakander.class);
+		List<Wakander> wakanderSalvo = wakanderSpringDataMongoDBRepository.findByEmailContainingIgnoreCase(email);
 		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
 		return wakanderSalvo;
 	}

@@ -2,6 +2,6 @@ package dev.tribos.wakandaacademy.wakander.domain;
 
 public enum StatusWakander {
 
-	AUTORIZADO, NAO_AUTORIZADO
+	AUTORIZADO, NAO_AUTORIZADO, CADASTRADO
 
 }
