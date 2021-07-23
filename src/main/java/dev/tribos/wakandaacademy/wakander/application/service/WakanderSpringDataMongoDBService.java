@@ -2,6 +2,8 @@ package dev.tribos.wakandaacademy.wakander.application.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +22,9 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	
 
 	@Override
-	public Wakander criaWakander(Wakander wakander) {
+	public Wakander criaWakander(@Valid Wakander wakander) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
+		wakander.buildCodigoByEmail();
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
 		return wakanderSalvo;
