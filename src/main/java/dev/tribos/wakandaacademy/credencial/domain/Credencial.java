@@ -2,6 +2,8 @@ package dev.tribos.wakandaacademy.credencial.domain;
 
 import java.util.Collection;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,16 +26,14 @@ public class Credencial implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
-	@MongoId()
-	// @GeneratedValue(strategy = GenerationType.AUTO)
+	@MongoId
 	private String id;
 
 	@NotNull
-	// @Column(unique = true)
+	@Indexed(unique = true)
 	private String usuario;
 
 	@NotNull
-	// @Column(length = 60, nullable = false)
 	private String senha;
 
 	public Credencial(String usuario, @NotNull String senha) {

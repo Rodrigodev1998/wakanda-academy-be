@@ -7,7 +7,7 @@ spring:
   data:
     mongodb:
       authentication-database: admin
-      uri:  ${MONGO_DB_URI}
+      uri:  ${MONGO_DB_URI}      auto-index-creation: true
 
 wakanda:
   jwt:

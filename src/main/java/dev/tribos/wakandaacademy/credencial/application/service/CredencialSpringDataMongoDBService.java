@@ -1,7 +1,9 @@
 package dev.tribos.wakandaacademy.credencial.application.service;
 
-
 import dev.tribos.wakandaacademy.handler.ApiException;
+import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -10,18 +12,21 @@ import lombok.AllArgsConstructor;
 import dev.tribos.wakandaacademy.credencial.application.repository.CredencialRepository;
 import lombok.extern.log4j.Log4j2;
 
-
 @Log4j2
 @Service
 @AllArgsConstructor
 public class CredencialSpringDataMongoDBService implements CredencialService {
 	private CredencialRepository credencialRepository;
+	private WakanderService wakanderService;
 
 	@Override
 	public Credencial criaCredencial(Credencial credencialByForm) {
 		log.info("[inicia] CredencialSpringDataJpaService - criaCredencial");
+		Wakander wakander = wakanderService.findByEmail(credencialByForm.getUsuario());
 		credencialByForm.encriptaSenha();
 		saveToRepository(credencialByForm);
+		wakander.mudaStatusParaCadastrado();
+		wakanderService.save(wakander);
 		log.info("[finaliza] CredencialSpringDataJpaService - criaCredencial");
 		return credencialByForm;
 	}
@@ -29,11 +34,11 @@ public class CredencialSpringDataMongoDBService implements CredencialService {
 	@Override
 	public Credencial buscaCredencialPorId(String id) {
 		log.info("[inicia] CredencialSpringDataJpaService - buscaCredencial");
-		var credencial = findCredencialByCredencialId(id);
+		var credencial = findCredencialById(id);
 		log.info("[finaliza] CredencialSpringDataJpaService - buscaCredencial");
 		return credencial;
 	}
-	
+
 	@Override
 	public Credencial buscaCredencialPorUsuario(String usuario) {
 		log.info("[inicia] CredencialSpringDataJpaService - buscaCredencial");
@@ -50,7 +55,7 @@ public class CredencialSpringDataMongoDBService implements CredencialService {
 		}
 	}
 
-	private Credencial findCredencialByCredencialId(String id) {
+	private Credencial findCredencialById(String id) {
 		return credencialRepository.findCredencialById(id).orElseThrow(() -> ApiException
 				.throwApiException(HttpStatus.NOT_FOUND, "Não existe nenhuma credencial com o Id passado."));
 	}

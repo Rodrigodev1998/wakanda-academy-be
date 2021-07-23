@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.config.security.service;
 
-
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -31,7 +30,7 @@ public class TokenService {
 
     public String gerarToken(Credencial credencial) {
         log.info("[inicio] TokenService - criação de token");
-
+       
         log.info("[finaliza] TokenService - criação de token");
         return Jwts.builder()
                 .setIssuer("API do Imec")

@@ -1,7 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.infrastructure;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.stereotype.Component;
 
@@ -25,13 +25,18 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 	}
 
 	@Override
-	public List<Wakander> findByEmail(String email) {
+	public List<Wakander> buscaWakanderPorEmailEhPorStatusAutorizado(String email) {
 		log.info("[Inicia] WakanderMongoDBRepository - findByEmail");
 		List<Wakander> wakanderSalvo = wakanderSpringDataMongoDBRepository.findByEmailContainingIgnoreCase(email);
 		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
-
 		return wakanderSalvo;
 	}
+
+	@Override
+	public Optional<Wakander> findByEmail(String email) {
+		log.info("[Inicia] WakanderMongoDBRepository - findByEmail");
+		Optional<Wakander> wakanderByEmail = wakanderSpringDataMongoDBRepository.findByEmail(email);
+		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
+		return wakanderByEmail;
+	}
 }
-
-

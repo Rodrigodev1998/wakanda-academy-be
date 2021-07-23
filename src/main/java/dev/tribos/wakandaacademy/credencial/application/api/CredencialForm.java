@@ -15,7 +15,7 @@ public class CredencialForm {
 	@Email(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail")
 	private String usuario;
 
-	@Size(min = 4, message = "A senha deve ter no mínimo 4 caracteres")
+	@Size(min = 6, message = "A senha deve ter no mínimo 6 caracteres")
 	@NotNull
 	private String senha;
 

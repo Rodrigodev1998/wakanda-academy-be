@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.autenticacao.application.api;
 
 
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +18,9 @@ import java.util.Optional;
 
 @RestController
 @Log4j2
+@AllArgsConstructor
 public class AutenticacaoController implements AutenticacaoAPI {
-
     private AutenticacaoService autenticacaoService;
-
-    public AutenticacaoController(AutenticacaoService autenticacaoService) {
-        this.autenticacaoService = autenticacaoService;
-    }
 
     @Override
     public ResponseEntity<TokenDTO> autenticacao(AutenticacaoForm autenticacaoForm) {
