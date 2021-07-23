@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
@@ -47,5 +48,12 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	public Wakander save(Wakander wakander) {
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		return wakanderSalvo;
+	}
+
+	@Override
+	public void eventoCredencialCriada(Credencial credencial) {
+		Wakander wakander = findByEmail(credencial.getUsuario());
+		wakander.mudaStatusParaCadastrado();
+		credencial.setCodigoWakander(wakander.getCodigo());
 	}
 }
