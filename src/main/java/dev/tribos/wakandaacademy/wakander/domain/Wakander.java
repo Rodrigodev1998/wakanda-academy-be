@@ -1,5 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
+import java.util.Optional;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
@@ -47,5 +49,16 @@ public class Wakander {
 
 	public void mudaStatusParaCadastrado() {
 		this.statusWakander = StatusWakander.CADASTRADO;
-	} 
+	}
+
+	public void buildCodigoByEmail() {
+		String primeiraParteDoEmail = getFirstPartOfEmail();
+		this.codigo = primeiraParteDoEmail.replaceAll("\\W", "");
+	}
+
+	private String getFirstPartOfEmail() {
+		return Optional.ofNullable(this.email)
+				.map(s -> s.split("@")[0])
+				.orElseThrow();
+	}
 }

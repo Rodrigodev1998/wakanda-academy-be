@@ -1,15 +1,14 @@
 package dev.tribos.wakandaacademy.credencial.application.service;
 
-import dev.tribos.wakandaacademy.handler.ApiException;
-import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
-import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import dev.tribos.wakandaacademy.credencial.domain.Credencial;
-import lombok.AllArgsConstructor;
+
 import dev.tribos.wakandaacademy.credencial.application.repository.CredencialRepository;
+import dev.tribos.wakandaacademy.credencial.domain.Credencial;
+import dev.tribos.wakandaacademy.handler.ApiException;
+import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -22,11 +21,9 @@ public class CredencialSpringDataMongoDBService implements CredencialService {
 	@Override
 	public Credencial criaCredencial(Credencial credencialByForm) {
 		log.info("[inicia] CredencialSpringDataJpaService - criaCredencial");
-		Wakander wakander = wakanderService.findByEmail(credencialByForm.getUsuario());
 		credencialByForm.encriptaSenha();
+		wakanderService.eventoCredencialCriada(credencialByForm);
 		saveToRepository(credencialByForm);
-		wakander.mudaStatusParaCadastrado();
-		wakanderService.save(wakander);
 		log.info("[finaliza] CredencialSpringDataJpaService - criaCredencial");
 		return credencialByForm;
 	}

@@ -2,9 +2,12 @@ package dev.tribos.wakandaacademy.wakander.application.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
@@ -19,8 +22,9 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	
 
 	@Override
-	public Wakander criaWakander(Wakander wakander) {
+	public Wakander criaWakander(@Valid Wakander wakander) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
+		wakander.buildCodigoByEmail();
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
 		return wakanderSalvo;
@@ -47,5 +51,12 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	public Wakander save(Wakander wakander) {
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		return wakanderSalvo;
+	}
+
+	@Override
+	public void eventoCredencialCriada(Credencial credencial) {
+		Wakander wakander = findByEmail(credencial.getUsuario());
+		wakander.mudaStatusParaCadastrado();
+		credencial.setCodigoWakander(wakander.getCodigo());
 	}
 }
