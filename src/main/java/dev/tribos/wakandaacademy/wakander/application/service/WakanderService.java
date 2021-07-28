@@ -14,4 +14,6 @@ public interface  WakanderService {
 	Wakander save(Wakander wakander);
 
 	void eventoCredencialCriada(Credencial credencial);
+
+	Wakander buscaWakanderPorCodigo(String codigoWakander);
 }

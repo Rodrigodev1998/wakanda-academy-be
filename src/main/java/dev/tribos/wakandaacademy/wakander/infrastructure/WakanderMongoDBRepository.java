@@ -39,4 +39,12 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
 		return wakanderByEmail;
 	}
+
+	@Override
+	public Optional<Wakander> buscaWakanderPorCodigo(String codigoWakander) {
+		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorCodigo");
+		Optional<Wakander> wakanderByCodigo = wakanderSpringDataMongoDBRepository.findById(codigoWakander);
+		log.info("[Finaliza] WakanderMongoDBRepository - buscaWakanderPorCodigo");
+		return wakanderByCodigo;
+	}
 }
