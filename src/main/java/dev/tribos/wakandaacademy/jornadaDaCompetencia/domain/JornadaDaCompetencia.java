@@ -10,7 +10,7 @@ import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-@Builder
+@Builder 
 @Document(collection = "JornadaDaCompetencia")
 public class JornadaDaCompetencia {
 	
@@ -18,10 +18,38 @@ public class JornadaDaCompetencia {
 	private String codigo;
 	
 	@NotEmpty
-	private String nome;
-	
-	
+	private Integer conhecimentoBackendJava;
+	@NotEmpty
+	private Integer conhecimentoBancodeDados;
+	@NotEmpty
+	private Integer conhecimentoGITHUB;
+	@NotEmpty
+	private Integer compreensãoDevops;
+	@NotEmpty
+	private Integer conhecimentoEmTestes;
+	@NotEmpty
+	private Integer conhecimentoEmAgile;
+	@NotEmpty
+	private Integer conhecimentoEmScrum;
+	@NotEmpty
+	private String definicaoDePrimeiraCompetência;
+	@NotEmpty
+	private Integer mediaPrimeiraCompetência;
+	@NotEmpty
+	private String definicaoDeSegundaCompetencia;
+	@NotEmpty
+	private Integer mediaSegundaCompetencia;
+	@NotEmpty
+	private String escolhaDeCompetencias;
+	@NotEmpty
+	private String acaoParaDesenvolvimentoDeCompetencia; 
+	@NotEmpty
+	private String porqueValeuAPena;
+	@NotEmpty
 	private StatusJornadaDaCompetencia statusJornadaDaCompetencia;
+	
+
+	
 	
 	
 	public void mudaStatusParaIniciado() {
