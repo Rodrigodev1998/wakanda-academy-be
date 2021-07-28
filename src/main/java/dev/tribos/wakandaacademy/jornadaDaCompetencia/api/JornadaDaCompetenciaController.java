@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia.controller;
+package dev.tribos.wakandaacademy.jornadaDaCompetencia.api;
 
 import java.net.URI;
 import java.util.List;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.api.JornadaDaCompetenciaDto;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.controller.form.JornadaDaCompetenciaForm;
 import dev.tribos.wakandaacademy.jornadaDaCompetencia.domain.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.jornadaDaCompetencia.repository.JornadaDaCompetenciaRepository;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;

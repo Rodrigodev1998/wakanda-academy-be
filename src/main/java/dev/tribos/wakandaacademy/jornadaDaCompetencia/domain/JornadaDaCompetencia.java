@@ -17,19 +17,38 @@ public class JornadaDaCompetencia {
 	@MongoId(targetType = FieldType.OBJECT_ID)
 	private String codigo;
 	
-	@NotEmpty(message = "o nome não pode estar vazio")
-	private String nome;
-	
+	@NotEmpty
+	private Integer conhecimentoBackendJava;
+	@NotEmpty
+	private Integer conhecimentoBancodeDados;
+	@NotEmpty
+	private Integer conhecimentoGITHUB;
+	@NotEmpty
+	private Integer compreensãoDevops;
+	@NotEmpty
+	private Integer conhecimentoEmTestes;
+	@NotEmpty
+	private Integer conhecimentoEmAgile;
+	@NotEmpty
+	private Integer conhecimentoEmScrum;
+	@NotEmpty
+	private String definicaoDePrimeiraCompetência;
+	@NotEmpty
+	private Integer mediaPrimeiraCompetência;
+	@NotEmpty
+	private String definicaoDeSegundaCompetencia;
+	@NotEmpty
+	private Integer mediaSegundaCompetencia;
+	@NotEmpty
+	private String escolhaDeCompetencias;
+	@NotEmpty
+	private String acaoParaDesenvolvimentoDeCompetencia; 
+	@NotEmpty
+	private String porqueValeuAPena;
+	@NotEmpty
 	private StatusJornadaDaCompetencia statusJornadaDaCompetencia;
 	
-//	public JornadaDaCompetencia() {}
-//	
-	
-//	// isto causou um erro na linha 13 @Builder
-//	public JornadaDaCompetencia (String nome, StatusJornadaDaCompetencia status) {
-//		this.nome = nome;
-//		this.statusJornadaDaCompetencia = status;
-//	}
+
 	
 	
 	
