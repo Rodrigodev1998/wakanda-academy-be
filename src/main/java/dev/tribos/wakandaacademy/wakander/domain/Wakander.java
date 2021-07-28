@@ -20,7 +20,7 @@ import lombok.Getter;
 @Builder
 @Document(collection = "Wakander")
 public class Wakander {
-	@MongoId(targetType = FieldType.OBJECT_ID)
+	@MongoId(targetType = FieldType.STRING)
 	private String codigo;
 	
 	@NotEmpty(message = "o nome não pode estar vazio")
