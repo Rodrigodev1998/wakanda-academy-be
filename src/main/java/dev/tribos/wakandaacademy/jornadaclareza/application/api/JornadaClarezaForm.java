@@ -5,6 +5,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import dev.tribos.wakandaacademy.jornadaclareza.domain.Area;
 import dev.tribos.wakandaacademy.jornadaclareza.domain.JornadaClareza;
 
 public class JornadaClarezaForm {
@@ -25,7 +26,7 @@ public class JornadaClarezaForm {
 	private String OndeVoceQuerChegar;
 	
 	@NotNull
-	private Integer ComoVocePrefereAtuar;
+	private Area ComoVocePrefereAtuar;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")

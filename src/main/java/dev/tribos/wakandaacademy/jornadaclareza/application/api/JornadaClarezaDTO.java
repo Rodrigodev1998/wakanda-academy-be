@@ -1,5 +1,6 @@
 package dev.tribos.wakandaacademy.jornadaclareza.application.api;
 
+import dev.tribos.wakandaacademy.jornadaclareza.domain.Area;
 import dev.tribos.wakandaacademy.jornadaclareza.domain.JornadaClareza;
 import lombok.Getter;
 
@@ -9,7 +10,7 @@ public class JornadaClarezaDTO {
 	private String OqueVoceFariaSeOMundoAcabasse;
 	private String FacaUmaListaDeTudo;
 	private String OndeVoceQuerChegar;
-	private Integer ComoVocePrefereAtuar;
+	private Area ComoVocePrefereAtuar;
 	private String QuantoVoceQuerGanharAte2022;
 	private String QuantoVoceQuerGanharAte2025;
 	private String PorqueInvestirEmVoce;
