@@ -6,6 +6,7 @@ import javax.validation.constraints.Pattern;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,5 +27,9 @@ public interface WakanderAPI {
 	@ResponseStatus(value = HttpStatus.OK)
 	List<WakanderDetalheDTO> buscaPorEmail(
 			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
+
+	@GetMapping("/v1/wakander/{codigoWakander}/dashboard")
+	@ResponseStatus(value = HttpStatus.OK)
+	WakanderDashboardResponse buscaDashboardPorCodigo(@PathVariable String codigoWakander);
 
 }

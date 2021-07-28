@@ -35,5 +35,13 @@ public class WakanderRestController implements WakanderAPI {
 		log.info("[Finaliza] WakanderRestController - buscaEmail");
 		return WakanderDetalheDTO.parseListDTO(wakanders);
 	}
+	
+	@Override
+	public WakanderDashboardResponse buscaDashboardPorCodigo(String codigoWakander) {
+		log.info("[Inicia] WakanderRestController - buscaDashboardPorCodigo");
+		Wakander wakander = wakanderService.buscaWakanderPorCodigo(codigoWakander);
+		log.info("[Finaliza] WakanderRestController - buscaDashboardPorCodigo");
+		return new WakanderDashboardResponse(wakander);
+	}
 
 }
