@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.wakander.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api.wakanderdashboard;
 
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Value;
