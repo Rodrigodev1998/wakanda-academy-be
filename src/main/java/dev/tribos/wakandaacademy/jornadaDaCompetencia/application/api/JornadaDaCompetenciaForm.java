@@ -1,12 +1,12 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia.api;
+package dev.tribos.wakandaacademy.jornadaDaCompetencia.application.api;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.domain.JornadaDaCompetencia;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.domain.StatusJornadaDaCompetencia;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.StatusJornadaDaCompetencia;
 
 
 public class JornadaDaCompetenciaForm {

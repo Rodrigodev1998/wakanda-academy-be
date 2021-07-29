@@ -1,14 +1,14 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia.api;
+package dev.tribos.wakandaacademy.jornadaDaCompetencia.application.api;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.domain.JornadaDaCompetencia;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.domain.StatusJornadaDaCompetencia;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.StatusJornadaDaCompetencia;
 import lombok.Getter;
 
 @Getter
-public class JornadaDaCompetenciaDto {
+public class JornadaDaCompetenciaDTO {
 				
 	
 		private Integer conhecimentoBackendJava;
@@ -42,7 +42,7 @@ public class JornadaDaCompetenciaDto {
 		private StatusJornadaDaCompetencia statusJornadaDaCompetencia;
 
 	
-	public JornadaDaCompetenciaDto (JornadaDaCompetencia jornadaDaCompetencia) {
+	public JornadaDaCompetenciaDTO (JornadaDaCompetencia jornadaDaCompetencia) {
 		this.conhecimentoBackendJava = jornadaDaCompetencia.getConhecimentoBackendJava();
 		this.conhecimentoBancodeDados = jornadaDaCompetencia.getConhecimentoBancodeDados();
 		this.conhecimentoEmAgile = jornadaDaCompetencia.getConhecimentoEmAgile();
@@ -60,11 +60,15 @@ public class JornadaDaCompetenciaDto {
 		this.statusJornadaDaCompetencia= jornadaDaCompetencia.getStatusJornadaDaCompetencia();
 	}
 
-	
-	public static List<JornadaDaCompetenciaDto> converter(List<JornadaDaCompetencia> jornadas) {
+
+	public static List<JornadaDaCompetenciaDTO> converter(List<JornadaDaCompetencia> jornada) {
 		
-		return jornadas.stream().map(JornadaDaCompetenciaDto::new).collect(Collectors.toList());
+		return jornada.stream().map(JornadaDaCompetenciaDTO::new).collect(Collectors.toList());
+	
 	}
+
+	
+	
 
 	
 	
