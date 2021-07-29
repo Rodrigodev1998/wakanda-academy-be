@@ -78,19 +78,19 @@ public class JornadaClarezaForm {
 	
 	public JornadaClareza paraEntidade() {
 		return JornadaClareza.builder()
-				.OqueVoceFariaSeOMundoAcabasse(oQueVoceFariaSeOMundoAcabasse)
-				.FacaUmaListaDeTudo(facaUmaListaDeTudo)
-				.OndeVoceQuerChegar(ondeVoceQuerChegar)
-				.ComoVocePrefereAtuar(comoVocePrefereAtuar)
-				.QuantoVoceQuerGanharAte2022(quantoVoceQuerGanharAte2022)
-				.QuantoVoceQuerGanharAte2025(quantoVoceQuerGanharAte2025)
-				.PorqueInvestirEmVoce(porqueInvestirEmVoce)
-				.DescrevaAFotografia(descrevaAFotografia)
-				.OQueVaiTeFazerContinuar(oQueVaiTeFazerContinuar)
-				.NivelDaSuaResponsabilidade(nivelDaSuaResponsabilidade)
-				.NivelComprometimento(nivelComprometimento).OndeIraEstudar(ondeIraEstudar)
-				.QualTEmpoDeEstudo(qualTEmpoDeEstudo)
-				.Feedback(feedback)
+				.oQueVoceFariaSeOMundoAcabasse(oQueVoceFariaSeOMundoAcabasse)
+				.facaUmaListaDeTudo(facaUmaListaDeTudo)
+				.ondeVoceQuerChegar(ondeVoceQuerChegar)
+				.comoVocePrefereAtuar(comoVocePrefereAtuar)
+				.quantoVoceQuerGanharAte2022(quantoVoceQuerGanharAte2022)
+				.quantoVoceQuerGanharAte2025(quantoVoceQuerGanharAte2025)
+				.porqueInvestirEmVoce(porqueInvestirEmVoce)
+				.descrevaAFotografia(descrevaAFotografia)
+				.oQueVaiTeFazerContinuar(oQueVaiTeFazerContinuar)
+				.nivelDaSuaResponsabilidade(nivelDaSuaResponsabilidade)
+				.nivelComprometimento(nivelComprometimento).ondeIraEstudar(ondeIraEstudar)
+				.qualTEmpoDeEstudo(qualTEmpoDeEstudo)
+				.feedback(feedback)
 				.build();
 	}
 

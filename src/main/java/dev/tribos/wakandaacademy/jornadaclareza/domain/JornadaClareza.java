@@ -15,19 +15,19 @@ public class JornadaClareza {
 	
 	@MongoId(targetType = FieldType.OBJECT_ID)
 	private String codigo;
-	private String OqueVoceFariaSeOMundoAcabasse;
-	private String FacaUmaListaDeTudo;
-	private String OndeVoceQuerChegar;
-	private Area ComoVocePrefereAtuar;
-	private String QuantoVoceQuerGanharAte2022;
-	private String QuantoVoceQuerGanharAte2025;
-	private String PorqueInvestirEmVoce;
-	private String DescrevaAFotografia;
-	private String OQueVaiTeFazerContinuar;
-	private String NivelDaSuaResponsabilidade;
-	private Integer NivelComprometimento;
-	private String OndeIraEstudar;
-	private String QualTEmpoDeEstudo;
-	private String Feedback;
+	private String oQueVoceFariaSeOMundoAcabasse;
+	private String facaUmaListaDeTudo;
+	private String ondeVoceQuerChegar;
+	private Area comoVocePrefereAtuar;
+	private String quantoVoceQuerGanharAte2022;
+	private String quantoVoceQuerGanharAte2025;
+	private String porqueInvestirEmVoce;
+	private String descrevaAFotografia;
+	private String oQueVaiTeFazerContinuar;
+	private String nivelDaSuaResponsabilidade;
+	private Integer nivelComprometimento;
+	private String ondeIraEstudar;
+	private String qualTEmpoDeEstudo;
+	private String feedback;
 
 }
