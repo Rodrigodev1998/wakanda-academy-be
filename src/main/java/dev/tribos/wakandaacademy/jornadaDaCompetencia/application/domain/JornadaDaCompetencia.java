@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia.domain;
+package dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -48,10 +48,7 @@ public class JornadaDaCompetencia {
 	@NotEmpty
 	private StatusJornadaDaCompetencia statusJornadaDaCompetencia;
 	
-
-	
-	
-	
+	//metodo muda status da jornada 
 	public void mudaStatusParaIniciado() {
 		this.statusJornadaDaCompetencia = StatusJornadaDaCompetencia.INICIADO;
 	} 
