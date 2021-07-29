@@ -12,8 +12,14 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.repository.JornadaDaCompetenciaRepository;
+import dev.tribos.wakandaacademy.wakander.application.api.WakanderRestController;
+import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 @RestController
+@AllArgsConstructor
 public class JornadaDaCompetenciaController implements JornadaDaCompetenciaAPI {
 	@Autowired
 	private JornadaDaCompetenciaRepository jornadaDaCompetenciaRepository;
