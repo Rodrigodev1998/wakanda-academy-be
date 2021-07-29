@@ -13,84 +13,84 @@ public class JornadaClarezaForm {
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String OqueVoceFariaSeOMundoAcabasse;
+	private String oQueVoceFariaSeOMundoAcabasse;
 	 
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String FacaUmaListaDeTudo;
+	private String facaUmaListaDeTudo;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String OndeVoceQuerChegar;
+	private String ondeVoceQuerChegar;
 	
 	@NotNull
-	private Area ComoVocePrefereAtuar;
+	private Area comoVocePrefereAtuar;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String QuantoVoceQuerGanharAte2022;
+	private String quantoVoceQuerGanharAte2022;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String QuantoVoceQuerGanharAte2025;
+	private String quantoVoceQuerGanharAte2025;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String PorqueInvestirEmVoce;
+	private String porqueInvestirEmVoce;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String DescrevaAFotografia;
+	private String descrevaAFotografia;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String OQueVaiTeFazerContinuar;
+	private String oQueVaiTeFazerContinuar;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String NivelDaSuaResponsabilidade;
+	private String nivelDaSuaResponsabilidade;
 	
 	@NotNull
-	private Integer NivelComprometimento;
+	private Integer nivelComprometimento;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String OndeIraEstudar;
+	private String ondeIraEstudar;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String QualTEmpoDeEstudo;
+	private String qualTEmpoDeEstudo;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String Feedback;
+	private String feedback;
 	
 	public JornadaClareza paraEntidade() {
 		return JornadaClareza.builder()
-				.OqueVoceFariaSeOMundoAcabasse(OqueVoceFariaSeOMundoAcabasse)
-				.FacaUmaListaDeTudo(FacaUmaListaDeTudo)
-				.OndeVoceQuerChegar(OndeVoceQuerChegar)
-				.ComoVocePrefereAtuar(ComoVocePrefereAtuar)
-				.QuantoVoceQuerGanharAte2022(QuantoVoceQuerGanharAte2022)
-				.QuantoVoceQuerGanharAte2025(QuantoVoceQuerGanharAte2025)
-				.PorqueInvestirEmVoce(PorqueInvestirEmVoce)
-				.DescrevaAFotografia(DescrevaAFotografia)
-				.OQueVaiTeFazerContinuar(OQueVaiTeFazerContinuar)
-				.NivelDaSuaResponsabilidade(NivelDaSuaResponsabilidade)
-				.NivelComprometimento(NivelComprometimento).OndeIraEstudar(OndeIraEstudar)
-				.QualTEmpoDeEstudo(QualTEmpoDeEstudo)
-				.Feedback(Feedback)
+				.OqueVoceFariaSeOMundoAcabasse(oQueVoceFariaSeOMundoAcabasse)
+				.FacaUmaListaDeTudo(facaUmaListaDeTudo)
+				.OndeVoceQuerChegar(ondeVoceQuerChegar)
+				.ComoVocePrefereAtuar(comoVocePrefereAtuar)
+				.QuantoVoceQuerGanharAte2022(quantoVoceQuerGanharAte2022)
+				.QuantoVoceQuerGanharAte2025(quantoVoceQuerGanharAte2025)
+				.PorqueInvestirEmVoce(porqueInvestirEmVoce)
+				.DescrevaAFotografia(descrevaAFotografia)
+				.OQueVaiTeFazerContinuar(oQueVaiTeFazerContinuar)
+				.NivelDaSuaResponsabilidade(nivelDaSuaResponsabilidade)
+				.NivelComprometimento(nivelComprometimento).OndeIraEstudar(ondeIraEstudar)
+				.QualTEmpoDeEstudo(qualTEmpoDeEstudo)
+				.Feedback(feedback)
 				.build();
 	}
 
