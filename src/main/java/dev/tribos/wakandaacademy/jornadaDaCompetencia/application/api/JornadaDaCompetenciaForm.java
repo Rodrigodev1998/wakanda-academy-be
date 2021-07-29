@@ -11,48 +11,48 @@ import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.StatusJ
 
 public class JornadaDaCompetenciaForm {
 
-	@NotEmpty
+	@NotEmpty(message = "o campo não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer conhecimentoBackendJava;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer conhecimentoBancodeDados;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer conhecimentoGITHUB;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer compreensãoDevops;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer conhecimentoEmTestes;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer conhecimentoEmAgile;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer conhecimentoEmScrum;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Length(min = 3, max = 255)
 	private String definicaoDePrimeiraCompetência;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer mediaPrimeiraCompetência;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	private String definicaoDeSegundaCompetencia;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Size(min = 0, max = 10)
 	private Integer mediaSegundaCompetencia;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Length(min = 3, max = 255)
 	private String escolhaDeCompetencias;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Length(min = 3, max = 255)
 	private String acaoParaDesenvolvimentoDeCompetencia;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	@Length(min = 3, max = 255)
 	private String porqueValeuAPena;
-	@NotEmpty
+	@NotEmpty(message = "o nome não pode estar vazio")
 	private StatusJornadaDaCompetencia statusJornadaDaCompetencia;
 
 
