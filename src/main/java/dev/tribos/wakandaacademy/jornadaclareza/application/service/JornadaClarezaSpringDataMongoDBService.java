@@ -16,9 +16,13 @@ public class JornadaClarezaSpringDataMongoDBService implements JornadaClarezaSer
 
 	@Override
 	public JornadaClareza criaJornadaClareza(JornadaClareza jornadaClareza) {
-		log.info("Starting Method insert in JornadaClarezaSpringDataMongoDBServiceImp!");
-		JornadaClareza jornadaClarezaSalvo = jornadaClarezaRepository.save(jornadaClareza);
+		log.info("[Inicia] JornadaClarezaSpringDataMongoDBService - jornadaClareza");
+		JornadaClareza jornadaClarezaSalvo = salvaJornadaClareza(jornadaClareza);
 		log.info("[Finaliza] JornadaClarezaSpringDataMongoDBService - jornadaClareza");
 		return jornadaClarezaSalvo;
+	}
+	
+	private JornadaClareza salvaJornadaClareza(JornadaClareza jornadaClareza) {
+		return jornadaClarezaRepository.save(jornadaClareza);
 	}
 }
