@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public class JornadaClarezaDTO {
 	
-	private String oQueVoceFariaSeOMundoAcabasse;
+	private String oqueVoceFariaSeOMundoAcabasse;
 	private String facaUmaListaDeTudo;
 	private String ondeVoceQuerChegar;
 	private Area comoVocePrefereAtuar;
@@ -15,7 +15,7 @@ public class JornadaClarezaDTO {
 	private String quantoVoceQuerGanharAte2025;
 	private String porqueInvestirEmVoce;
 	private String descrevaAFotografia;
-	private String oQueVaiTeFazerContinuar;
+	private String oqueVaiTeFazerContinuar;
 	private String nivelDaSuaResponsabilidade;
 	private Integer nivelComprometimento;
 	private String ondeIraEstudar;
@@ -23,7 +23,7 @@ public class JornadaClarezaDTO {
 	private String feedback;
 	
 	public JornadaClarezaDTO(JornadaClareza jornadaClareza) {
-		this.oQueVoceFariaSeOMundoAcabasse = jornadaClareza.getOQueVoceFariaSeOMundoAcabasse();
+		this.oqueVoceFariaSeOMundoAcabasse = jornadaClareza.getOqueVoceFariaSeOMundoAcabasse();
 		this.facaUmaListaDeTudo = jornadaClareza.getFacaUmaListaDeTudo();
 		this.ondeVoceQuerChegar = jornadaClareza.getOndeVoceQuerChegar();
 		this.comoVocePrefereAtuar = jornadaClareza.getComoVocePrefereAtuar();
@@ -31,7 +31,7 @@ public class JornadaClarezaDTO {
 		this.quantoVoceQuerGanharAte2025 = jornadaClareza.getQuantoVoceQuerGanharAte2025();
 		this.porqueInvestirEmVoce = jornadaClareza.getPorqueInvestirEmVoce();
 		this.descrevaAFotografia = jornadaClareza.getDescrevaAFotografia();
-		this.oQueVaiTeFazerContinuar = jornadaClareza.getOQueVaiTeFazerContinuar();
+		this.oqueVaiTeFazerContinuar = jornadaClareza.getOqueVaiTeFazerContinuar();
 		this.nivelDaSuaResponsabilidade = jornadaClareza.getNivelDaSuaResponsabilidade();
 		this.nivelComprometimento = jornadaClareza.getNivelComprometimento();
 		this.ondeIraEstudar = jornadaClareza.getOndeIraEstudar();

@@ -7,13 +7,15 @@ import org.hibernate.validator.constraints.Length;
 
 import dev.tribos.wakandaacademy.jornadaclareza.domain.Area;
 import dev.tribos.wakandaacademy.jornadaclareza.domain.JornadaClareza;
+import lombok.Getter;
 
+@Getter
 public class JornadaClarezaForm {
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String oQueVoceFariaSeOMundoAcabasse;
+	private String oqueVoceFariaSeOMundoAcabasse;
 	 
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
@@ -51,7 +53,7 @@ public class JornadaClarezaForm {
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String oQueVaiTeFazerContinuar;
+	private String oqueVaiTeFazerContinuar;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
@@ -78,7 +80,7 @@ public class JornadaClarezaForm {
 	
 	public JornadaClareza paraEntidade() {
 		return JornadaClareza.builder()
-				.oQueVoceFariaSeOMundoAcabasse(oQueVoceFariaSeOMundoAcabasse)
+				.oqueVoceFariaSeOMundoAcabasse(oqueVoceFariaSeOMundoAcabasse)
 				.facaUmaListaDeTudo(facaUmaListaDeTudo)
 				.ondeVoceQuerChegar(ondeVoceQuerChegar)
 				.comoVocePrefereAtuar(comoVocePrefereAtuar)
@@ -86,7 +88,7 @@ public class JornadaClarezaForm {
 				.quantoVoceQuerGanharAte2025(quantoVoceQuerGanharAte2025)
 				.porqueInvestirEmVoce(porqueInvestirEmVoce)
 				.descrevaAFotografia(descrevaAFotografia)
-				.oQueVaiTeFazerContinuar(oQueVaiTeFazerContinuar)
+				.oqueVaiTeFazerContinuar(oqueVaiTeFazerContinuar)
 				.nivelDaSuaResponsabilidade(nivelDaSuaResponsabilidade)
 				.nivelComprometimento(nivelComprometimento)
 				.ondeIraEstudar(ondeIraEstudar)

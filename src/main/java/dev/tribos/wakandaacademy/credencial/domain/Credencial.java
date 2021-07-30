@@ -1,14 +1,17 @@
 package dev.tribos.wakandaacademy.credencial.domain;
 
 import java.util.Collection;
+
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,7 +29,7 @@ public class Credencial implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
-	@MongoId
+	@MongoId(targetType = FieldType.OBJECT_ID)
 	private String id;
 
 	@NotNull

@@ -15,7 +15,7 @@ public class JornadaClareza {
 	
 	@MongoId(targetType = FieldType.OBJECT_ID)
 	private String codigo;
-	private String oQueVoceFariaSeOMundoAcabasse;
+	private String oqueVoceFariaSeOMundoAcabasse;
 	private String facaUmaListaDeTudo;
 	private String ondeVoceQuerChegar;
 	private Area comoVocePrefereAtuar;
@@ -23,7 +23,7 @@ public class JornadaClareza {
 	private String quantoVoceQuerGanharAte2025;
 	private String porqueInvestirEmVoce;
 	private String descrevaAFotografia;
-	private String oQueVaiTeFazerContinuar;
+	private String oqueVaiTeFazerContinuar;
 	private String nivelDaSuaResponsabilidade;
 	private Integer nivelComprometimento;
 	private String ondeIraEstudar;
