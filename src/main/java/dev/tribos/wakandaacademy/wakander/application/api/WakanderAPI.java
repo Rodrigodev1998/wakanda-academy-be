@@ -27,4 +27,11 @@ public interface WakanderAPI {
 	@ResponseStatus(value = HttpStatus.OK)
 	List<WakanderDetalheDTO> buscaPorEmail(
 			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
+	
+	
+	@GetMapping("/public/v1/wakander")
+	@ResponseStatus(value = HttpStatus.OK)
+	List<WakanderDetalheDTO> buscaPorStatus(
+			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
+	
 }
