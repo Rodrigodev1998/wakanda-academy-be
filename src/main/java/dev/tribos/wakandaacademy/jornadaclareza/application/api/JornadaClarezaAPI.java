@@ -15,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RestController
 public interface JornadaClarezaAPI {
 	
-	@PostMapping("/v1/jornada-clareza")
+	@PostMapping("/jornada-clareza")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public ResponseEntity<JornadaClarezaDTO> jornadaClareza(@RequestBody @Valid JornadaClarezaForm jornadaClarezaForm,  
 			UriComponentsBuilder uriBuilder );
