@@ -35,7 +35,7 @@ public class JornadaClarezaDTO {
 		this.nivelDaSuaResponsabilidade = jornadaClareza.getNivelDaSuaResponsabilidade();
 		this.nivelComprometimento = jornadaClareza.getNivelComprometimento();
 		this.ondeIraEstudar = jornadaClareza.getOndeIraEstudar();
-		this.qualTEmpoDeEstudo = jornadaClareza.getQualTEmpoDeEstudo();
+		this.qualTEmpoDeEstudo = jornadaClareza.getQualTempoDeEstudo();
 		this.feedback = jornadaClareza.getFeedback();
 		
 	}

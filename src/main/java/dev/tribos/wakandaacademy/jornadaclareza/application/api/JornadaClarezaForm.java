@@ -45,7 +45,7 @@ public class JornadaClarezaForm {
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@Length(max = 1000, message = "Quantidade de caracteres excede o limite de 1000 caracteres")
 	private String descrevaAFotografia;
 	
 	@NotEmpty(message = "Campo obrigatório!")
@@ -69,7 +69,7 @@ public class JornadaClarezaForm {
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
 	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
-	private String qualTEmpoDeEstudo;
+	private String qualTempoDeEstudo;
 	
 	@NotEmpty(message = "Campo obrigatório!")
 	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
@@ -88,8 +88,9 @@ public class JornadaClarezaForm {
 				.descrevaAFotografia(descrevaAFotografia)
 				.oQueVaiTeFazerContinuar(oQueVaiTeFazerContinuar)
 				.nivelDaSuaResponsabilidade(nivelDaSuaResponsabilidade)
-				.nivelComprometimento(nivelComprometimento).ondeIraEstudar(ondeIraEstudar)
-				.qualTEmpoDeEstudo(qualTEmpoDeEstudo)
+				.nivelComprometimento(nivelComprometimento)
+				.ondeIraEstudar(ondeIraEstudar)
+				.qualTempoDeEstudo(qualTempoDeEstudo)
 				.feedback(feedback)
 				.build();
 	}

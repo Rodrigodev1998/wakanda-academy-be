@@ -27,7 +27,7 @@ public class JornadaClareza {
 	private String nivelDaSuaResponsabilidade;
 	private Integer nivelComprometimento;
 	private String ondeIraEstudar;
-	private String qualTEmpoDeEstudo;
+	private String qualTempoDeEstudo;
 	private String feedback;
 
 }
