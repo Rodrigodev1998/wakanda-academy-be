@@ -27,14 +27,14 @@ public class JornadaDaCompetenciaRestController implements JornadaDaCompetenciaA
 	public ResponseEntity<JornadaDaCompetenciaDTO> jornandaDaCompetencia(
 			@Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm, UriComponentsBuilder uriBuilder) {
 
-		log.info("[Inicia] WakanderRestController - preCadastraWakander");
+		log.info("[Inicia] WakanderRestController - jornadaDaCompetencia");
 		JornadaDaCompetencia jornadaDaCompetencia = jornadaDaCompetenciaForm.converter();
 
 		jornadaDaCompetenciaService.save(jornadaDaCompetencia);
 
 		URI uri = uriBuilder.path("/vi/{wakanderCodigo}/jornada-clareza/jornada-competencia")
 				.buildAndExpand(jornadaDaCompetencia.getCodigo()).toUri();
-		log.info("[Finaliza] WakanderRestController - preCadastraWakander");
+		log.info("[Finaliza] WakanderRestController - jornadaDaCompetencia");
 		return ResponseEntity.created(uri).body(new JornadaDaCompetenciaDTO(jornadaDaCompetencia));
 
 	}
