@@ -11,42 +11,43 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.repository.JornadaDaCompetenciaRepository;
-import dev.tribos.wakandaacademy.wakander.application.api.WakanderRestController;
-import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.service.JornadaDaCompetenciaService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 @RestController
 @AllArgsConstructor
-public class JornadaDaCompetenciaController implements JornadaDaCompetenciaAPI {
+public class JornadaDaCompetenciaRestController implements JornadaDaCompetenciaAPI {
 	@Autowired
-	private JornadaDaCompetenciaRepository jornadaDaCompetenciaRepository;
+	private JornadaDaCompetenciaService jornadaDaCompetenciaService;
+	//private Wakander wankander;
 
 	@Override
 	public ResponseEntity<JornadaDaCompetenciaDTO> jornandaDaCompetencia(
 			@Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm, UriComponentsBuilder uriBuilder) {
+
+		log.info("[Inicia] WakanderRestController - jornadaDaCompetencia");
 		JornadaDaCompetencia jornadaDaCompetencia = jornadaDaCompetenciaForm.converter();
 
-		jornadaDaCompetenciaRepository.save(jornadaDaCompetencia);
+		jornadaDaCompetenciaService.save(jornadaDaCompetencia);
 
 		URI uri = uriBuilder.path("/vi/{wakanderCodigo}/jornada-clareza/jornada-competencia")
 				.buildAndExpand(jornadaDaCompetencia.getCodigo()).toUri();
-
+		log.info("[Finaliza] WakanderRestController - jornadaDaCompetencia");
 		return ResponseEntity.created(uri).body(new JornadaDaCompetenciaDTO(jornadaDaCompetencia));
-		
-	}
 
+	}
+     // aqui ira receber o email do Wakander da pagina
+//	String email = null;
+//	String wakanderCodigo = jornadaDaCompetenciaService.buscaWakanderPorEmail(email);
+	
 	@Override
-	public List<JornadaDaCompetenciaDTO> lista(String codigoWakander) {
-		List<JornadaDaCompetencia> jornada = jornadaDaCompetenciaRepository.findByCodigo(codigoWakander);
-				
-		return  JornadaDaCompetenciaDTO.converter(jornada);
-	
-	}
+	public List<JornadaDaCompetenciaDTO> lista(String wakanderCodigo) {
+		log.info("[Inicia] JornadaDaCompetenciaRestController - buscaCodigoWakander");
+		List<JornadaDaCompetencia> jornada = jornadaDaCompetenciaService
+				.buscaJornadaDaCompetencia(wakanderCodigo);
+		log.info("[Finaliza] WakanderRestController - buscaCodigoWakander");
 
-	
-	
-
-}
+		return JornadaDaCompetenciaDTO.converter(jornada);
+	}}

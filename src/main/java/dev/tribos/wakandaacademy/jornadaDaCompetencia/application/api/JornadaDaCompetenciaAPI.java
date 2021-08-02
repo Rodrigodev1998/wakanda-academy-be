@@ -24,9 +24,9 @@ public interface JornadaDaCompetenciaAPI {
 
 	
 	
-	@GetMapping("/wakander/{codigoWakander/jornada-atitudo/competencia")
+	@GetMapping("/public/v1/wakander/{wakanderCodigo}/jornada-clareza/jornada-competencia")
 	@ResponseStatus(value = HttpStatus.OK)
-	public List<JornadaDaCompetenciaDTO> lista(@RequestParam(required = true) String codigoWakander); 
+	public List<JornadaDaCompetenciaDTO> lista(@RequestParam(required = true) String wakanderCodigo); 
 	
 	
 }

@@ -7,8 +7,9 @@ import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
-
+@Data
 @Getter
 @Builder 
 @Document(collection = "JornadaDaCompetencia")
