@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -24,8 +25,7 @@ public class JornadaDaCompetenciaRestController implements JornadaDaCompetenciaA
 	//private Wakander wankander;
 
 	@Override
-	public ResponseEntity<JornadaDaCompetenciaDTO> jornandaDaCompetencia(
-			@Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<JornadaDaCompetenciaDTO> jornandaDaCompetencia(JornadaDaCompetenciaForm jornadaDaCompetenciaForm, UriComponentsBuilder uriBuilder) {
 
 		log.info("[Inicia] WakanderRestController - jornadaDaCompetencia");
 		JornadaDaCompetencia jornadaDaCompetencia = jornadaDaCompetenciaForm.converter();

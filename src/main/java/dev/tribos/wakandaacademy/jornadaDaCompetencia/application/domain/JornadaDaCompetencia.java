@@ -9,9 +9,10 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
-@Data
+
 @Getter
 @Builder 
+@Data
 @Document(collection = "JornadaDaCompetencia")
 public class JornadaDaCompetencia {
 	
