@@ -47,4 +47,13 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		log.info("[Finaliza] WakanderMongoDBRepository - buscaWakanderPorCodigo");
 		return wakanderByCodigo;
 	}
+
+	@Override
+	public List<Wakander> buscaWakanderPorStatusNaoAutorizado() {
+		String statusNaoAutorizado = "NAO_AUTORIZADO";
+		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorStatusNaoAutorizado");
+		List<Wakander> wakanderPorStatusNaoAutorizado = wakanderSpringDataMongoDBRepository.findByStatusWakander(statusNaoAutorizado);
+		log.info("[Finaliza] WakanderMongoDBRepository - buscaWakanderPorStatusNaoAutorizado");
+		return wakanderPorStatusNaoAutorizado;
+	}
 }

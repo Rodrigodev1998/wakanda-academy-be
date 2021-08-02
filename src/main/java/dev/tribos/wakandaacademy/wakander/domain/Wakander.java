@@ -45,7 +45,7 @@ public class Wakander {
 	private PreCadastroWakander preCadastro;
 
 	@Default  
-	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO ;
+	private  statusWakander = StatusWakander.NAO_AUTORIZADO ;
 
 	public void mudaStatusParaCadastrado() {
 		this.statusWakander = StatusWakander.CADASTRADO;

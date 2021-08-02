@@ -10,7 +10,7 @@ import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter
-public class WakanderBuscaStatusDTO {
+public class WakanderBuscaStatusDTO{
 		
 		private String codigo;
 		private String nome;
