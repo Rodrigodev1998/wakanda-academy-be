@@ -15,7 +15,7 @@ import lombok.extern.log4j.Log4j2;
 @Service
 @Log4j2
 @AllArgsConstructor
-public class JornadaDaCompetenciaSpringDataMongoDBService implements JornadaDaCompetenciaService {
+public class JornadaDaCompetenciaSpringDataMongoDBService implements JornadaDaCompetenciaService{
 
 	private JornadaDaCompetenciaRepository jornadaDaCompetenciaRepository;
 	
