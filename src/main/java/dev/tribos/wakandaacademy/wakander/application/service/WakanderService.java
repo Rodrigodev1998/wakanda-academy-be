@@ -16,4 +16,6 @@ public interface  WakanderService {
 	void eventoCredencialCriada(Credencial credencial);
 
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
+
+	List<Wakander> buscarWakanderPorStatusNaoAutorizado();
 }
