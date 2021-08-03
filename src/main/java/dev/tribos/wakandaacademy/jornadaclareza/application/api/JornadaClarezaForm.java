@@ -1,7 +1,9 @@
 package dev.tribos.wakandaacademy.jornadaclareza.application.api;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -12,70 +14,60 @@ import lombok.Getter;
 @Getter
 public class JornadaClarezaForm {
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String seOMundoAcabasse;
 	 
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String umaLista;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String seusSonhos;
 	
 	@NotNull
 	private Area areaAtuacao;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String ganharAte2022;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String ganharAte2025;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String investirEmVoce;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 1000, message = "Quantidade de caracteres excede o limite de 1000 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String fotografia;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String propositoInabalavel;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 0, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 100, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String nivelResponsabilidade;
 	
+	@Positive
+	@Max(value = 100, message = "nível não pode ser maior que 100")
 	@NotNull
 	private Integer nivelComprometimento;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String ondeEstudar;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String tempoEstudo;
 	
-	@NotEmpty(message = "Campo obrigatório!")
-	@Length(min = 5, message = "Quantidade de caracteres não bate com o limite mínimo de 5 caracteres! ")
-	@Length(max = 550, message = "Quantidade de caracteres excede o limite de 550 caracteres")
+	@NotEmpty
+	@Length(min = 5)
 	private String feedback;
 	
 	public JornadaClareza paraEntidade() {
