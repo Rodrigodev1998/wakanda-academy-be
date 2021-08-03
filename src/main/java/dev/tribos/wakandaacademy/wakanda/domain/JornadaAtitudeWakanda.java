@@ -1,7 +1,9 @@
-package dev.tribos.wakandaacademy.wakanda;
+package dev.tribos.wakandaacademy.wakanda.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
@@ -10,9 +12,11 @@ import javax.validation.constraints.NotEmpty;
 
 @Getter
 @Builder
-public class JornadaDaAtitudeWakanda {
+@AllArgsConstructor
+@NoArgsConstructor
+public class JornadaAtitudeWakanda {
 
-    @MongoId(targetType = FieldType.OBJECT_ID)
+    @MongoId(targetType = FieldType.STRING)
     @Max(value = 60)
     private String codigo;
 
@@ -20,9 +24,7 @@ public class JornadaDaAtitudeWakanda {
     @Max(value = 100)
     private String nome;
 
-
     private String descricao;
-    
-//  private logo
 
+    private String logo = null;
 }

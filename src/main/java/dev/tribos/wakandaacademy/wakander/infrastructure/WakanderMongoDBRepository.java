@@ -39,4 +39,5 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
 		return wakanderByEmail;
 	}
+
 }

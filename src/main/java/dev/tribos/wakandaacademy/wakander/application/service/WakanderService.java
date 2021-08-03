@@ -9,6 +9,6 @@ public interface  WakanderService {
 	List<Wakander> buscaWakanderPorEmail(String email);
 	
 	Wakander findByEmail(String email);
-	
+
 	Wakander save(Wakander wakander);
 }

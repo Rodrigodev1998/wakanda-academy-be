@@ -47,5 +47,6 @@ public class Wakander {
 
 	public void mudaStatusParaCadastrado() {
 		this.statusWakander = StatusWakander.CADASTRADO;
-	} 
+	}
+
 }
