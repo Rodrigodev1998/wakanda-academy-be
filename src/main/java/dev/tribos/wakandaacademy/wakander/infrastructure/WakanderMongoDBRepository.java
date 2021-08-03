@@ -14,14 +14,21 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @Component
 public class WakanderMongoDBRepository implements WakanderRepository {
-	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
 
 	@Override
-	public Wakander save(Wakander wakander) {
-		log.info("[Inicia] WakanderMongoDBRepository - save");
-		Wakander wakanderSalvo = wakanderSpringDataMongoDBRepository.save(wakander);
-		log.info("[Finaliza] WakanderMongoDBRepository - save");
-		return wakanderSalvo;
+	public Optional<Wakander> buscaWakanderPorCodigo(String codigoWakander) {
+		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorCodigo");
+		Optional<Wakander> wakanderByCodigo = wakanderSpringDataMongoDBRepository.findById(codigoWakander);
+		log.info("[Finaliza] WakanderMongoDBRepository - buscaWakanderPorCodigo");
+		return wakanderByCodigo;
+	}
+
+	@Override
+	public Optional<Wakander> findByEmail(String email) {
+		log.info("[Inicia] WakanderMongoDBRepository - findByEmail");
+		Optional<Wakander> wakanderByEmail = wakanderSpringDataMongoDBRepository.findByEmail(email);
+		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
+		return wakanderByEmail;
 	}
 
 	@Override
@@ -33,11 +40,12 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 	}
 
 	@Override
-	public Optional<Wakander> findByEmail(String email) {
-		log.info("[Inicia] WakanderMongoDBRepository - findByEmail");
-		Optional<Wakander> wakanderByEmail = wakanderSpringDataMongoDBRepository.findByEmail(email);
-		log.info("[Finaliza] WakanderMongoDBRepository - findByEmail");
-		return wakanderByEmail;
+	public Wakander save(Wakander wakander) {
+		log.info("[Inicia] WakanderMongoDBRepository - save");
+		Wakander wakanderSalvo = wakanderSpringDataMongoDBRepository.save(wakander);
+		log.info("[Finaliza] WakanderMongoDBRepository - save");
+		return wakanderSalvo;
 	}
 
+	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
 }

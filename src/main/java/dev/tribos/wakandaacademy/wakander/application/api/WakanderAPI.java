@@ -1,5 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.application.api;
 
+import java.util.List;
+
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
-import java.util.List;
 
 @RestController
 public interface WakanderAPI {
@@ -26,5 +27,4 @@ public interface WakanderAPI {
 	@ResponseStatus(value = HttpStatus.OK)
 	List<WakanderDetalheDTO> buscaPorEmail(
 			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
-
 }

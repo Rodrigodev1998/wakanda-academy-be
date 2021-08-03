@@ -58,15 +58,14 @@ public class WakanderPreCadastroForm {
 	private String motivoParaParticiparWakanda;
 
 	public Wakander paraEntidade() {
-		return Wakander.builder().nome(nome).email(email).idade(idade).possuiFilhos(possuiFilhos)
-				.relacionamento(relacionamento)
-				.preCadastro(PreCadastroWakander.builder().vidaAcademica(vidaAcademica)
-						.experienciasEmprego(experienciasEmprego).jaTrabalhouProgramacao(jaTrabalhouProgramacao)
-						.entendimentoSobreWakanda(entendimentoSobreWakanda)
-						.motivoParaParticiparWakanda(motivoParaParticiparWakanda)
-
-						.build())
-				.whatsapp(whatsapp).build();
-
+		return Wakander.builder()
+			.nome(nome).email(email).idade(idade).possuiFilhos(possuiFilhos)
+			.relacionamento(relacionamento)
+			.preCadastro(PreCadastroWakander.builder().vidaAcademica(vidaAcademica)
+					.experienciasEmprego(experienciasEmprego).jaTrabalhouProgramacao(jaTrabalhouProgramacao)
+					.entendimentoSobreWakanda(entendimentoSobreWakanda)
+					.motivoParaParticiparWakanda(motivoParaParticiparWakanda)
+					.build())
+			.whatsapp(whatsapp).build();
 	}
 }
