@@ -14,5 +14,5 @@ public interface WakanderSpringDataMongoDBRepository extends MongoRepository<Wak
 	List<Wakander> findByEmailContainingIgnoreCase(String email);
 	
 	Optional<Wakander> findByEmail(String email);
-	List<Wakander> findByStatusWakander(StatusWakander naoAutorizado); //como passar valor não autorizado?
+	List<Wakander> findByStatusWakander(StatusWakander naoAutorizado);
 }
