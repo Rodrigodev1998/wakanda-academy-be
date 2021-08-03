@@ -35,5 +35,4 @@ public class WakanderRestController implements WakanderAPI {
 		log.info("[Finaliza] WakanderRestController - buscaEmail");
 		return WakanderDetalheDTO.parseListDTO(wakanders);
 	}
-
 }
