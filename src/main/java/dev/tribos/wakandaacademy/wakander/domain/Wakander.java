@@ -1,5 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
+import java.util.Optional;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
@@ -10,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitude;
 import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Getter;
@@ -18,7 +21,7 @@ import lombok.Getter;
 @Builder
 @Document(collection = "Wakander")
 public class Wakander {
-	@MongoId(targetType = FieldType.OBJECT_ID)
+	@MongoId(targetType = FieldType.STRING)
 	private String codigo;
 	
 	@NotEmpty(message = "o nome não pode estar vazio")
@@ -41,11 +44,24 @@ public class Wakander {
 	private Boolean possuiFilhos;
 
 	private PreCadastroWakander preCadastro;
+	
+	private JornadaAtitude jornadaAtitude;
 
 	@Default  
 	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO ;
 
 	public void mudaStatusParaCadastrado() {
 		this.statusWakander = StatusWakander.CADASTRADO;
-	} 
+	}
+
+	public void buildCodigoByEmail() {
+		String primeiraParteDoEmail = getFirstPartOfEmail();
+		this.codigo = primeiraParteDoEmail.replaceAll("\\W", "");
+	}
+
+	private String getFirstPartOfEmail() {
+		return Optional.ofNullable(this.email)
+				.map(s -> s.split("@")[0])
+				.orElseThrow();
+	}
 }

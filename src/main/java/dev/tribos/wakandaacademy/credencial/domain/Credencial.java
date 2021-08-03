@@ -36,6 +36,9 @@ public class Credencial implements UserDetails {
 	@Indexed(unique = true)
 	private String usuario;
 
+	@Indexed(unique = true)
+	private String codigoWakander;
+
 	@NotNull
 	private String senha;
 
@@ -84,4 +87,7 @@ public class Credencial implements UserDetails {
 		return true;
 	}
 
+	public void setCodigoWakander(String codigo) {
+		this.codigoWakander = codigo;
+	}
 }
