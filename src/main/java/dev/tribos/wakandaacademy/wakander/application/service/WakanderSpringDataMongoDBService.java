@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
+import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -71,7 +72,8 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	@Override
 	public List<Wakander> buscarWakanderPorStatusNaoAutorizado() {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
-		List<Wakander> wakanderStatusNaoAutorizado = this.wakanderRepository.buscaWakanderPorStatusNaoAutorizado();
+		StatusWakander naoAutorizado = StatusWakander.NAO_AUTORIZADO;
+		List<Wakander> wakanderStatusNaoAutorizado = this.wakanderRepository.buscaWakanderPorStatusNaoAutorizado(naoAutorizado);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
 		
 		return wakanderStatusNaoAutorizado;
