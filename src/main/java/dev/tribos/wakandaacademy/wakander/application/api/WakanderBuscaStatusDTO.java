@@ -39,11 +39,11 @@ public class WakanderBuscaStatusDTO{
 			this.relacionamento = wakander.getRelacionamento();
 			this.statusWakander = wakander.getStatusWakander();
 			this.possuiFilhos = wakander.getPossuiFilhos();
-			this.vidaAcademica = wakander.getPreCadastro().getVidaAcademica();
+			/*this.vidaAcademica = wakander.getPreCadastro().getVidaAcademica();
 			this.experienciasEmprego =wakander.getPreCadastro().getExperienciasEmprego();
 			this.jaTrabalhouProgramacao = wakander.getPreCadastro().getJaTrabalhouProgramacao();
 			this.entendimentoSobreWakanda = wakander.getPreCadastro().getEntendimentoSobreWakanda();
-			this.motivoParaParticiparWakanda = wakander.getPreCadastro().getMotivoParaParticiparWakanda();
+			this.motivoParaParticiparWakanda = wakander.getPreCadastro().getMotivoParaParticiparWakanda();*/
 			
 		}
 		
