@@ -9,6 +9,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import dev.tribos.wakandaacademy.jornadaclareza.application.repository.JornadaClarezaRepository;
+import dev.tribos.wakandaacademy.jornadaclareza.domain.Area;
 import dev.tribos.wakandaacademy.jornadaclareza.domain.JornadaClareza;
 
 
@@ -29,11 +30,11 @@ class JornadaClarezaSpringDataMongoDBServiceTest {
 				.seOMundoAcabasse("passaria o dia com a minha filha")
 				.umaLista("mudar de vida")
 				.seusSonhos("ajudar minha família")
-				.areaAtuacao("backend")
+				.areaAtuacao(Area.BACKEND)
 				.ganharAte2022("8000,00")
 				.ganharAte2025("20.000,00")
 				.investirEmVoce("porque quero ser dev")
-				.fotografia("me vejo trabalhando numa grande empresa")
+				.fotografia("me vejo trabalhando em uma grande empresa")
 				.propositoInabalavel("minha filha")
 				.nivelResponsabilidade("100")
 				.nivelComprometimento(10)
