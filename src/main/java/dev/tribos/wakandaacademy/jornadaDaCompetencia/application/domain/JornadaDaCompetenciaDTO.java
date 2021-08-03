@@ -1,9 +1,8 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia.application.api;
+package dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.Competencia;
 import lombok.Getter;
 
 @Getter
