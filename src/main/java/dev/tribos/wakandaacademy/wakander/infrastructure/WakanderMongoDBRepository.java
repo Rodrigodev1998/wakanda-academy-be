@@ -51,9 +51,9 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 
 	@Override
 	public List<Wakander> buscaWakanderPorStatusNaoAutorizado(StatusWakander naoAutorizado) {
-		//String statusNaoAutorizado = "NAO_AUTORIZADO";
 		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorStatusNaoAutorizado");
-		List<Wakander> wakanderPorStatusNaoAutorizado = wakanderSpringDataMongoDBRepository.findByStatusWakander(naoAutorizado);
+		List<Wakander> wakanderPorStatusNaoAutorizado = wakanderSpringDataMongoDBRepository
+				.findByStatusWakander(naoAutorizado);
 		log.info("[Finaliza] WakanderMongoDBRepository - buscaWakanderPorStatusNaoAutorizado");
 		return wakanderPorStatusNaoAutorizado;
 	}
