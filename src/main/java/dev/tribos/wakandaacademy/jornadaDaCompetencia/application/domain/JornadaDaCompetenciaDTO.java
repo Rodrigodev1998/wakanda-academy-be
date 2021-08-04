@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import lombok.Getter;
 
 @Getter
-
 public class JornadaDaCompetenciaDTO {
 
 	private LocalDateTime inicio;
