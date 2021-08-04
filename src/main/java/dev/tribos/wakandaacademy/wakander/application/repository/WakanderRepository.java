@@ -1,8 +1,10 @@
 package dev.tribos.wakandaacademy.wakander.application.repository;
 
-import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import java.util.List;
 import java.util.Optional;
+
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 
 
 public interface WakanderRepository {
@@ -10,4 +12,9 @@ public interface WakanderRepository {
 	List<Wakander> buscaWakanderPorEmailEhPorStatusAutorizado(String email);
 	Optional<Wakander> findByEmail(String email);
 	Optional<Wakander> buscaWakanderPorCodigo(String codigoWakander);
+	
+	JornadaDaCompetencia saveJornadaDaCompetencia(JornadaDaCompetencia jornadaDaCompetencia);
+	List<JornadaDaCompetencia> buscaJornadaDaCompetencia(String codigoWakander);
+	
+	
 }

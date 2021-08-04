@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.StatusEtapaJornadaAtitude;
@@ -14,18 +13,18 @@ import lombok.Getter;
 @Getter
 @Builder 
 public class JornadaDaCompetencia  implements EtapaJornadaAtitude {
-	@NotEmpty @NotNull
+	@NotEmpty 
 	private LocalDateTime inicio;
 	
 	private LocalDateTime conclusao;
 	
-	@NotEmpty @NotNull
+	@NotEmpty 
 	private Competencia primeiraCompetenciaSelecionada;
 	
-	@NotEmpty @NotNull
+	@NotEmpty 
 	private Competencia segundaCompetenciaSelecionada;
 	
-	@NotEmpty @NotNull
+	@NotEmpty 
 	private List<Competencia> listaCompetencias;
 
 	@Override
