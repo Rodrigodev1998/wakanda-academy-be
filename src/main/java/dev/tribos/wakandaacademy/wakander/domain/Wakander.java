@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitude;
 import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Getter;
@@ -43,6 +44,8 @@ public class Wakander {
 	private Boolean possuiFilhos;
 
 	private PreCadastroWakander preCadastro;
+	
+	private JornadaAtitude jornadaAtitude;
 
 	@Default  
 	private  StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO;
