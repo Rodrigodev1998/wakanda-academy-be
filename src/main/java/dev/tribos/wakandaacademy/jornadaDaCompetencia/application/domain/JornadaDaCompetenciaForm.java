@@ -2,12 +2,12 @@ package dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
 import javax.validation.constraints.NotEmpty;
-
 import lombok.Getter;
+
 @Getter
 public class JornadaDaCompetenciaForm {
+	
 	@NotEmpty 
 	private LocalDateTime inicio;
 	

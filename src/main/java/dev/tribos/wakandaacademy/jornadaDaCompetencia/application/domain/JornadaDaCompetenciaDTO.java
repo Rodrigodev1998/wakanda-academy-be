@@ -2,10 +2,7 @@ package dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import dev.tribos.wakandaacademy.wakander.application.api.WakanderDTO;
-import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter
@@ -27,12 +24,4 @@ public class JornadaDaCompetenciaDTO {
 
 	}
 
-	public static List<JornadaDaCompetenciaDTO> converte(List<JornadaDaCompetencia> jornada) {
-		 
-			return null;
-		
-		
-	}
-
-	
 }
