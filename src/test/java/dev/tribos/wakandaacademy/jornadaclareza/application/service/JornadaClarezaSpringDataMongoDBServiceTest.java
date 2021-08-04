@@ -22,6 +22,7 @@ class JornadaClarezaSpringDataMongoDBServiceTest {
 	
 	private JornadaClareza jornadaClareza;
 
+	@SuppressWarnings("deprecation")
 	@BeforeEach
 	void setUp() {
 		MockitoAnnotations.initMocks(this);
