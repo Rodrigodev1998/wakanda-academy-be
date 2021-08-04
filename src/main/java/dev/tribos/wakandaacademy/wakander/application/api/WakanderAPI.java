@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetenciaDTO;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetenciaForm;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetenciaDTO;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetenciaForm;
 
 @RestController
 public interface WakanderAPI {

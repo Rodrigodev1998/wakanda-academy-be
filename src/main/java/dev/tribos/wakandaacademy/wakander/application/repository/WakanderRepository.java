@@ -3,7 +3,7 @@ package dev.tribos.wakandaacademy.wakander.application.repository;
 import java.util.List;
 import java.util.Optional;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 
 

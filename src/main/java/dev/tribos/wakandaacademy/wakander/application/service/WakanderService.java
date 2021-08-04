@@ -1,7 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import java.util.List;
 
