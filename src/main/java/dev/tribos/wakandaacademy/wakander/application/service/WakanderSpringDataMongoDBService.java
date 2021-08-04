@@ -11,6 +11,7 @@ import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -66,5 +67,14 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.NOT_FOUND, "Wakander não encontrado!"));
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscaWakanderPorCodigo");
 		return wakanderPorCodigo;
+	}
+
+	@Override
+	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa) {
+		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
+		Wakander wakanderPorCodigo = buscaWakanderPorCodigo(codigo);
+		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
+		this.save(wakanderPorCodigo);
+		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 	}
 }

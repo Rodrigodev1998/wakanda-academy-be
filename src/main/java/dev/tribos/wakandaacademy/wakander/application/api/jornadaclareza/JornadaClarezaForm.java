@@ -13,7 +13,10 @@ import lombok.Getter;
 
 @Getter
 public class JornadaClarezaForm {
-	
+	@NotEmpty
+	@Length(min = 5)
+	private String nome;
+
 	@NotEmpty
 	@Length(min = 5)
 	private String seOMundoAcabasse;
@@ -72,6 +75,7 @@ public class JornadaClarezaForm {
 	
 	public JornadaClareza paraEntidade() {
 		return JornadaClareza.builder()
+				.nome(nome)
 				.seOMundoAcabasse(seOMundoAcabasse)
 				.umaLista(umaLista)
 				.seusSonhos(seusSonhos)
@@ -88,5 +92,4 @@ public class JornadaClarezaForm {
 				.feedback(feedback)
 				.build();
 	}
-
 }

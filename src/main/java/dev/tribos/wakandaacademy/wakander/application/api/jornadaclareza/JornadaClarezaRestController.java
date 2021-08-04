@@ -2,7 +2,7 @@ package dev.tribos.wakandaacademy.wakander.application.api.jornadaclareza;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.tribos.wakandaacademy.jornadaclareza.application.service.JornadaClarezaService;
+import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -10,13 +10,13 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @AllArgsConstructor
 public class JornadaClarezaRestController implements JornadaClarezaAPI {
-	private JornadaClarezaService jornadaClarezaService;
+	private WakanderService wakanderService;
 	
 	@Override
-	public void salvaJornadaClareza(JornadaClarezaForm jornadaClarezaForm) {
+	public void preencheJornadaClarezaNoWakander(String codigo, JornadaClarezaForm jornadaClarezaForm) {
 		log.info("[Inicia] JornadaClarezaRestController - jornadaClareza");
 		log.info("Form: {}", jornadaClarezaForm);
-		jornadaClarezaService.criaJornadaClareza(jornadaClarezaForm.paraEntidade());
+		wakanderService.preencheEtapaParaWakanderAtravesCodigo(codigo,jornadaClarezaForm.paraEntidade());
 		log.info("[Finaliza] JornadaClarezaRestController - jornadaClareza");
 	}
 }
