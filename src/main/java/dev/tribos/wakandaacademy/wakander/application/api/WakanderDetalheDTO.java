@@ -1,11 +1,11 @@
 package dev.tribos.wakandaacademy.wakander.application.api;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 public class WakanderDetalheDTO {

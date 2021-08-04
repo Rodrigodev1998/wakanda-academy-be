@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.wakanda.domain;
+package dev.tribos.wakandaacademy.wakanda.domain.jornadaatitude;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

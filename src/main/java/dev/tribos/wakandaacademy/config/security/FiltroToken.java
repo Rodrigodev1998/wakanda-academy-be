@@ -1,16 +1,16 @@
 package dev.tribos.wakandaacademy.config.security;
 
 
+import dev.tribos.wakandaacademy.autenticacao.util.ValidaConteudoAuthorizationHeader;
+import dev.tribos.wakandaacademy.config.security.service.TokenService;
+import dev.tribos.wakandaacademy.credencial.application.service.CredencialService;
+import dev.tribos.wakandaacademy.credencial.domain.Credencial;
+import dev.tribos.wakandaacademy.handler.ApiException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
-import dev.tribos.wakandaacademy.handler.ApiException;
-import dev.tribos.wakandaacademy.autenticacao.util.ValidaConteudoAuthorizationHeader;
-import dev.tribos.wakandaacademy.config.security.service.TokenService;
-import dev.tribos.wakandaacademy.credencial.application.service.CredencialService;
-import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

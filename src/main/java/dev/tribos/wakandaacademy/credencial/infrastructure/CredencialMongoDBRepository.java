@@ -1,11 +1,12 @@
 package dev.tribos.wakandaacademy.credencial.infrastructure;
 
-import java.util.Optional;
-import org.springframework.stereotype.Component;
 import dev.tribos.wakandaacademy.credencial.application.repository.CredencialRepository;
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 @AllArgsConstructor
 @Log4j2

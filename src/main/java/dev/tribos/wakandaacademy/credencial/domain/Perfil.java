@@ -1,12 +1,10 @@
 package dev.tribos.wakandaacademy.credencial.domain;
 
-import java.util.UUID;
-
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 import org.springframework.security.core.GrantedAuthority;
 
-
-import lombok.Data;
+import java.util.UUID;
 
 
 @Data

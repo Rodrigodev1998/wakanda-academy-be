@@ -1,5 +1,6 @@
 package dev.tribos.wakandaacademy.config.security.service;
 
+import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -8,7 +9,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-import dev.tribos.wakandaacademy.credencial.domain.Credencial;
+
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;

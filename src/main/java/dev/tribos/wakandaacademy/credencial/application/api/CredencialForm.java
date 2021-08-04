@@ -1,11 +1,12 @@
 package dev.tribos.wakandaacademy.credencial.application.api;
 
+import dev.tribos.wakandaacademy.credencial.domain.Credencial;
+import lombok.Value;
+
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import dev.tribos.wakandaacademy.credencial.domain.Credencial;
-import javax.validation.constraints.Email;
-import lombok.Value;
 
 @Value
 public class CredencialForm {

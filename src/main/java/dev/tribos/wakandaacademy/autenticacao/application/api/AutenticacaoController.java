@@ -1,18 +1,17 @@
 package dev.tribos.wakandaacademy.autenticacao.application.api;
 
 
+import dev.tribos.wakandaacademy.autenticacao.application.AutenticacaoForm;
+import dev.tribos.wakandaacademy.autenticacao.application.TokenDTO;
+import dev.tribos.wakandaacademy.autenticacao.application.service.AutenticacaoService;
+import dev.tribos.wakandaacademy.autenticacao.util.ValidaConteudoAuthorizationHeader;
+import dev.tribos.wakandaacademy.handler.ApiException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.RestController;
-
-import dev.tribos.wakandaacademy.autenticacao.application.AutenticacaoForm;
-import dev.tribos.wakandaacademy.autenticacao.application.TokenDTO;
-import dev.tribos.wakandaacademy.autenticacao.application.service.AutenticacaoService;
-import dev.tribos.wakandaacademy.autenticacao.util.ValidaConteudoAuthorizationHeader;
-import dev.tribos.wakandaacademy.handler.ApiException;
 
 import java.util.Optional;
 
