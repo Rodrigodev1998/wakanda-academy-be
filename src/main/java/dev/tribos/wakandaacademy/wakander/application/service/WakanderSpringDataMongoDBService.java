@@ -76,7 +76,6 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		List<Wakander> wakanderStatusNaoAutorizado = this.wakanderRepository
 				.buscaWakanderPorStatusNaoAutorizado(naoAutorizado);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
-
 		return wakanderStatusNaoAutorizado;
 	}
 }

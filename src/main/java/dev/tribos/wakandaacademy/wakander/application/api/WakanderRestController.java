@@ -36,12 +36,13 @@ public class WakanderRestController implements WakanderAPI {
 		List<Wakander> wakanders = wakanderService.buscaWakanderPorEmail(gmail);
 		log.info("[Finaliza] WakanderRestController - buscaEmail");
 		return WakanderDetalheDTO.parseListDTO(wakanders);
-		}
+	}
 
 	@Override
 	public List<WakanderBuscaStatusDTO> buscaPorStatus() {
+		log.info("[inicia] WakanderRestController - buscaPorStatus");
 		List<Wakander> wakendersNaoAutoruizado = wakanderService.buscarWakanderPorStatusNaoAutorizado();
 		log.info("[Finaliza] WakanderRestController - buscaPorStatus");
 		return WakanderBuscaStatusDTO.parseListBuscaStatusDTO(wakendersNaoAutoruizado);
-		}
+	}
 }
