@@ -3,7 +3,7 @@ package dev.tribos.wakandaacademy.jornadaclareza.infrastructure;
 import org.springframework.stereotype.Component;
 
 import dev.tribos.wakandaacademy.jornadaclareza.application.repository.JornadaClarezaRepository;
-import dev.tribos.wakandaacademy.jornadaclareza.domain.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

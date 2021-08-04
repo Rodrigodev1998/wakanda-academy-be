@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.jornadaclareza.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api.jornadaclareza;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
@@ -7,8 +7,8 @@ import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 
-import dev.tribos.wakandaacademy.jornadaclareza.domain.Area;
-import dev.tribos.wakandaacademy.jornadaclareza.domain.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.Area;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import lombok.Getter;
 
 @Getter

@@ -1,6 +1,6 @@
 package dev.tribos.wakandaacademy.jornadaclareza.application.service;
 
-import dev.tribos.wakandaacademy.jornadaclareza.domain.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 
 
 public interface JornadaClarezaService {

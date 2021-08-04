@@ -1,8 +1,4 @@
-package dev.tribos.wakandaacademy.jornadaclareza.domain;
-
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.FieldType;
-import org.springframework.data.mongodb.core.mapping.MongoId;
+package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -10,11 +6,12 @@ import lombok.Getter;
 
 @Builder
 @Getter
-@Document(collection = "Jornada_Clareza")
-public class JornadaClareza {
+public class JornadaClareza implements EtapaJornadaAtitude {
+	private String logo;
+	private String nome;
+	private StatusEtapaJornadaAtitude status;
+	private String descricao;
 	
-	@MongoId(targetType = FieldType.OBJECT_ID)
-	private String codigo;
 	private String seOMundoAcabasse;
 	private String umaLista;
 	private String seusSonhos;
@@ -29,5 +26,4 @@ public class JornadaClareza {
 	private String ondeEstudar;
 	private String tempoEstudo;
 	private String feedback;
-
 }

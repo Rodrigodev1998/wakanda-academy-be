@@ -9,8 +9,8 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import dev.tribos.wakandaacademy.jornadaclareza.application.repository.JornadaClarezaRepository;
-import dev.tribos.wakandaacademy.jornadaclareza.domain.Area;
-import dev.tribos.wakandaacademy.jornadaclareza.domain.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.Area;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 
 
 class JornadaClarezaSpringDataMongoDBServiceTest {
