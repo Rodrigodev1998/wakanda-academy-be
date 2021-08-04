@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import java.util.List;
 
@@ -16,4 +17,8 @@ public interface  WakanderService {
 	void eventoCredencialCriada(Credencial credencial);
 
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
+
+	JornadaDaCompetencia saveJornadaDaCompetencia(JornadaDaCompetencia jornadaDaCompetencia);
+
+	List<JornadaDaCompetencia> buscaJornadaDaCompetencia(String wakanderCodigo);
 }

@@ -2,7 +2,10 @@ package dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import dev.tribos.wakandaacademy.wakander.application.api.WakanderDTO;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter
@@ -22,6 +25,11 @@ public class JornadaDaCompetenciaDTO {
 		this.primeiraCompetenciaSelecionada = primeiraCompetenciaSelecionada;
 		this.segundaCompetenciaSelecionada = segundaCompetenciaSelecionada;
 
+	}
+
+	public static JornadaDaCompetenciaDTO converte(JornadaDaCompetencia jornadas) {
+
+		return new JornadaDaCompetencia(this.inicio, this.conclusao, this.primeiraCompetenciaSelecionada);
 	}
 
 }

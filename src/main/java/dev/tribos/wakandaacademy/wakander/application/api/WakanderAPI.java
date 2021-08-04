@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetenciaDTO;
+import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetenciaForm;
+
 @RestController
 public interface WakanderAPI {
 
@@ -27,4 +30,19 @@ public interface WakanderAPI {
 	@ResponseStatus(value = HttpStatus.OK)
 	List<WakanderDetalheDTO> buscaPorEmail(
 			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
+	
+	
+	
+	
+	@PostMapping("/public/v1/wakander/{wakanderCodigo}/jornada-clareza/jornada-competencia")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<JornadaDaCompetenciaDTO> jornandaDaCompetencia(
+			@RequestBody @Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm, UriComponentsBuilder uriBuilder);
+
+
+
+	@GetMapping("/public/v1/wakander/{wakanderCodigo}/jornada-atitude/competencia")
+	@ResponseStatus(value = HttpStatus.OK)
+	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(@RequestParam(required = true) String codigoWakander);
+	
 }
