@@ -54,7 +54,7 @@ public class WakanderRestController implements WakanderAPI {
 		return ResponseEntity.ok().build();
 
 	}
-   /////dfkajdkfajdlkfjalkdf
+ 
 	@Override
 	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(String wakanderCodigo) {
 		log.info("[Inicia] WakanderRestController - buscaCodigoWakander");

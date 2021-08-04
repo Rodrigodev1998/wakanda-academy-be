@@ -13,6 +13,7 @@ import lombok.Getter;
 @Getter
 @Builder 
 public class JornadaDaCompetencia  implements EtapaJornadaAtitude {
+	
 	@NotEmpty 
 	private LocalDateTime inicio;
 	
