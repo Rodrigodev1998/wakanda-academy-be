@@ -30,19 +30,14 @@ public interface WakanderAPI {
 	@ResponseStatus(value = HttpStatus.OK)
 	List<WakanderDetalheDTO> buscaPorEmail(
 			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
-	
-	
-	
-	
+
 	@PostMapping("/public/v1/wakander/{wakanderCodigo}/jornada-clareza/jornada-competencia")
 	@ResponseStatus(code = HttpStatus.OK)
-	public ResponseEntity<JornadaDaCompetenciaDTO> jornandaDaCompetencia(
-			@RequestBody @Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm, UriComponentsBuilder uriBuilder);
+	public ResponseEntity<JornadaDaCompetenciaDTO> cadastraJornandaDaCompetencia(
+			@RequestBody @Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm);
 
-
-
-	@GetMapping("/public/v1/wakander/{wakanderCodigo}/jornada-atitude/competencia")
+	@GetMapping("/public/v1/wakander/{wakanderCodigo}/jornada-atitude/jornada-competencia")
 	@ResponseStatus(value = HttpStatus.OK)
 	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(@RequestParam(required = true) String codigoWakander);
-	
+
 }

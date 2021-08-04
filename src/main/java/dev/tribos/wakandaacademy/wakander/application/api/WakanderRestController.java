@@ -20,7 +20,7 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @AllArgsConstructor
 public class WakanderRestController implements WakanderAPI {
-	
+	@Autowired
 	private WakanderService wakanderService;
 
 	@Override
@@ -47,7 +47,7 @@ public class WakanderRestController implements WakanderAPI {
 		log.info("[Inicia] WakanderRestController - jornadaDaCompetencia");
 		JornadaDaCompetencia jornadaDaCompetencia = jornadaDaCompetenciaForm.paraEntidade();
 
-		wakanderService.saveJornada(jornadaDaCompetencia);
+		wakanderService.saveJornadaDaCompetencia(jornadaDaCompetencia);
 
 		
 		log.info("[Finaliza] WakanderRestController - jornadaDaCompetencia");
@@ -57,13 +57,14 @@ public class WakanderRestController implements WakanderAPI {
   
 	@Override
 	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(String wakanderCodigo) {
-		log.info("[Inicia] JornadaDaCompetenciaRestController - buscaCodigoWakander");
-		List<JornadaDaCompetencia> jornada = wakanderService
-				.buscaJornadaDaCompetencia(wakanderCodigo);
+		log.info("[Inicia] WakanderRestController - buscaCodigoWakander");
+		List<JornadaDaCompetencia> jornada = wakanderService.buscaJornadaDaCompetencia(wakanderCodigo);
 		log.info("[Finaliza] WakanderRestController - buscaCodigoWakander");
 
-		return JornadaDaCompetenciaDTO.converter(jornada);
-	}}
+		return JornadaDaCompetenciaDTO.converte(jornada);
+	}
+
+	
 
 
 }

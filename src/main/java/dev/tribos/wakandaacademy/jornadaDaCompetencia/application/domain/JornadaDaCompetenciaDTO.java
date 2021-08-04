@@ -27,9 +27,12 @@ public class JornadaDaCompetenciaDTO {
 
 	}
 
-	public static JornadaDaCompetenciaDTO converte(JornadaDaCompetencia jornadas) {
-
-		return new JornadaDaCompetencia(this.inicio, this.conclusao, this.primeiraCompetenciaSelecionada);
+	public static List<JornadaDaCompetenciaDTO> converte(List<JornadaDaCompetencia> jornada) {
+		 
+			return null;
+		
+		
 	}
 
+	
 }

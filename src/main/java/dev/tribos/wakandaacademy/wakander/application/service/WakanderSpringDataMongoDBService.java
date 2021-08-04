@@ -1,18 +1,17 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.jornadaDaCompetencia.application.domain.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -71,7 +70,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		return wakanderPorCodigo;
 	}
 
-	@Override
+	@Override 
 	public JornadaDaCompetencia saveJornadaDaCompetencia(JornadaDaCompetencia jornadaDaCompetencia) {
 	   JornadaDaCompetencia jornadaDaCompetenciaSalva = wakanderRepository
 			   .saveJornadaDaCompetencia(jornadaDaCompetencia);
@@ -82,7 +81,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	public List<JornadaDaCompetencia> buscaJornadaDaCompetencia(String wakanderCodigo) {
 	    Wakander  wakanderPorCodigo = this.wakanderRepository.buscaWakanderPorCodigo(wakanderCodigo)
 				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.NOT_FOUND, "Wakander não encontrado!"));
-	     List<JornadaDaCompetencia> jornadaDaCompetencia = wakanderRepository.buscaJornadaDaCompetencia(wakanderCodigo);
+	     List<JornadaDaCompetencia> jornadaDaCompetencia = wakanderRepository.buscaJornadaDaCompetencia(wakanderPorCodigo.getCodigo());
 		return jornadaDaCompetencia ;
 	}
 }
