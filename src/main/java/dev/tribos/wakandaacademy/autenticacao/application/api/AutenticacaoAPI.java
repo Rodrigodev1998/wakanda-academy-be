@@ -1,13 +1,14 @@
 package dev.tribos.wakandaacademy.autenticacao.application.api;
 
-import dev.tribos.wakandaacademy.autenticacao.application.AutenticacaoForm;
-import dev.tribos.wakandaacademy.autenticacao.application.TokenDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import dev.tribos.wakandaacademy.autenticacao.application.AutenticacaoForm;
+import dev.tribos.wakandaacademy.autenticacao.application.TokenDTO;
 
 import javax.validation.Valid;
 

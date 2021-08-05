@@ -1,9 +1,7 @@
 package dev.tribos.wakandaacademy.wakanda.domain.jornadaatitude;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -13,8 +11,6 @@ import javax.validation.constraints.NotEmpty;
 
 @Getter
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Document(collection = "JornadaAtitudeWakanda")
 public class JornadaAtitudeWakanda {
 
@@ -29,4 +25,7 @@ public class JornadaAtitudeWakanda {
     private String descricao;
 
     private String logo = null;
+
+    private Boolean padrao;
+
 }

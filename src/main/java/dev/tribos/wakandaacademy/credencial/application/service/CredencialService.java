@@ -1,8 +1,9 @@
 package dev.tribos.wakandaacademy.credencial.application.service;
 
 
-import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import org.springframework.stereotype.Service;
+
+import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 
 
 @Service
