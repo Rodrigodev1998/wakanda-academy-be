@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
@@ -71,21 +70,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		return wakanderPorCodigo;
 	}
 
-<<<<<<< HEAD
-	@Override 
-	public JornadaDaCompetencia saveJornadaDaCompetencia(JornadaDaCompetencia jornadaDaCompetencia) {
-	   JornadaDaCompetencia jornadaDaCompetenciaSalva = wakanderRepository
-			   .saveJornadaDaCompetencia(jornadaDaCompetencia);
-		return jornadaDaCompetenciaSalva;
-	}
 
-	@Override
-	public List<JornadaDaCompetencia> buscaJornadaDaCompetencia(String wakanderCodigo) {
-	    Wakander  wakanderPorCodigo = this.wakanderRepository.buscaWakanderPorCodigo(wakanderCodigo)
-				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.NOT_FOUND, "Wakander não encontrado!"));
-	     List<JornadaDaCompetencia> jornadaDaCompetencia = wakanderRepository.buscaJornadaDaCompetencia(wakanderPorCodigo.getCodigo());
-		return jornadaDaCompetencia ;
-=======
 	@Override
 	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
@@ -93,6 +78,6 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
 		this.save(wakanderPorCodigo);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
->>>>>>> 08769b2e22ce7690add032c6946ba9ab7ff7e02c
+
 	}
 }

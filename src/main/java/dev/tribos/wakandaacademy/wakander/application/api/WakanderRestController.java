@@ -41,28 +41,7 @@ public class WakanderRestController implements WakanderAPI {
 		return WakanderDetalheDTO.parseListDTO(wakanders);
 	}
 	
-	@Override
-	public ResponseEntity<JornadaDaCompetenciaDTO> cadastraJornandaDaCompetencia(JornadaDaCompetenciaForm jornadaDaCompetenciaForm) {
-
-		log.info("[Inicia] WakanderRestController - jornadaDaCompetencia");
-		JornadaDaCompetencia jornadaDaCompetencia = jornadaDaCompetenciaForm.paraEntidade();
-
-		wakanderService.saveJornadaDaCompetencia(jornadaDaCompetencia);
-
-		
-		log.info("[Finaliza] WakanderRestController - jornadaDaCompetencia");
-		return ResponseEntity.ok().build();
-
-	}
- 
-	@Override
-	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(String wakanderCodigo) {
-		log.info("[Inicia] WakanderRestController - buscaCodigoWakander");
-		List<JornadaDaCompetencia> jornada = wakanderService.buscaJornadaDaCompetencia(wakanderCodigo);
-		log.info("[Finaliza] WakanderRestController - buscaCodigoWakander");
-
-		return JornadaDaCompetenciaDTO.converte(jornada);
-	}
+	
 
 	
 

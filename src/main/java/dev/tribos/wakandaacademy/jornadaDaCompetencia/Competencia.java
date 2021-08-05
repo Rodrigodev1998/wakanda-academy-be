@@ -13,7 +13,7 @@ public class Competencia {
 	
     @NotEmpty @Size(min=0, max=10)
     private Integer nota;
-    
+    @NotEmpty
     private TipoCompetencia tipoCompetencia;
         
 }
