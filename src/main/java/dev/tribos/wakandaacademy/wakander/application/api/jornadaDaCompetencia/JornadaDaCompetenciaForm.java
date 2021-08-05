@@ -5,36 +5,35 @@ import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
 
-import dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia.Competencia;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.Competencia;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.Getter;
 
 @Getter
 public class JornadaDaCompetenciaForm {
-	
-	@NotEmpty 
+
+	@NotEmpty
 	private LocalDateTime inicio;
-	
+
 	@NotEmpty
 	private LocalDateTime conclusao;
-	
-	@NotEmpty 
+
+	@NotEmpty
 	private Competencia primeiraCompetenciaSelecionada;
-	
-	@NotEmpty 
+
+	@NotEmpty
 	private Competencia segundaCompetenciaSelecionada;
-	
-	@NotEmpty 
+
+	@NotEmpty
 	private List<Competencia> listaCompetencias;
 
-    public JornadaDaCompetencia paraEntidade() {
-    	
-    	return JornadaDaCompetencia.builder()
-    			.inicio(inicio)
-    			.conclusao(conclusao)
-    			.primeiraCompetenciaSelecionada(primeiraCompetenciaSelecionada)
-    			.segundaCompetenciaSelecionada(segundaCompetenciaSelecionada)
-    			.listaCompetencias(listaCompetencias).build();
-    }
-    
+	public JornadaDaCompetencia paraEntidade() {
+
+		return JornadaDaCompetencia.builder().inicio(inicio).conclusao(conclusao)
+				.primeiraCompetenciaSelecionada(primeiraCompetenciaSelecionada)
+				.segundaCompetenciaSelecionada(segundaCompetenciaSelecionada)
+				.listaCompetencias(listaCompetencias)
+				.build();
+	}
+
 }

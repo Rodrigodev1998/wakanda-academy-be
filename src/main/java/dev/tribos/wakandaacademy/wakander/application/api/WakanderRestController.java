@@ -12,7 +12,7 @@ import dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia.J
 import dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia.JornadaDaCompetenciaForm;
 import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

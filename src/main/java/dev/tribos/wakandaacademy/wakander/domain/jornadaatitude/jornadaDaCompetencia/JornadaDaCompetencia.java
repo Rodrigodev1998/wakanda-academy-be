@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia;
+package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -25,8 +25,12 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitude {
 	
 	@Override
 	public void preenche(EtapaJornadaAtitude etapaJornadaAtitude) {
-		// TODO Auto-generated method stub
-		
+		JornadaDaCompetencia jornadaDaCompetencia = (JornadaDaCompetencia) etapaJornadaAtitude;
+		this.inicio = jornadaDaCompetencia.getInicio();
+		this.conclusao = jornadaDaCompetencia.getConclusao();
+		this.primeiraCompetenciaSelecionada = jornadaDaCompetencia.getPrimeiraCompetenciaSelecionada();
+		this.segundaCompetenciaSelecionada = jornadaDaCompetencia.getSegundaCompetenciaSelecionada();
+		this.listaCompetencias = jornadaDaCompetencia.getListaCompetencias();
 	}
-
+ 
 }
