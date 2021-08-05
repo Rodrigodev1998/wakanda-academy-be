@@ -8,11 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetencia;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetenciaDTO;
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetenciaForm;
+import dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia.JornadaDaCompetenciaDTO;
+import dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia.JornadaDaCompetenciaForm;
 import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

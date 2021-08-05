@@ -5,9 +5,9 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Component;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

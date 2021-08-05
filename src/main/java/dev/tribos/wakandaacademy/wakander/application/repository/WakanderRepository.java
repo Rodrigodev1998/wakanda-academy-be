@@ -3,8 +3,8 @@ package dev.tribos.wakandaacademy.wakander.application.repository;
 import java.util.List;
 import java.util.Optional;
 
-import dev.tribos.wakandaacademy.jornadaDaCompetencia.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia.JornadaDaCompetencia;
 
 
 public interface WakanderRepository {

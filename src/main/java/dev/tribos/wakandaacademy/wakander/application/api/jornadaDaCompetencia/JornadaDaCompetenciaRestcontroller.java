@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia;
+package dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia;
+package dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia;
 
 import java.time.LocalDateTime;
 import java.util.List;

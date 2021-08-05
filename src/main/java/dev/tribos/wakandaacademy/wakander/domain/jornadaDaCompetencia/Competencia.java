@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia;
+package dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;

@@ -1,8 +1,12 @@
-package dev.tribos.wakandaacademy.jornadaDaCompetencia;
+package dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
 import javax.validation.constraints.NotEmpty;
+
+import dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia.Competencia;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.Getter;
 
 @Getter
