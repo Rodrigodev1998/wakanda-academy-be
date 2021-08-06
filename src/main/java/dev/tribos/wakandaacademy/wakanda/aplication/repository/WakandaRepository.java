@@ -1,10 +1,10 @@
 package dev.tribos.wakandaacademy.wakanda.aplication.repository;
 
-import dev.tribos.wakandaacademy.wakanda.domain.jornadaatitude.JornadaAtitudeWakanda;
+import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 
-import java.util.List;
+import java.util.Optional;
 
 public interface WakandaRepository {
 
-   List<JornadaAtitudeWakanda> findByPadrao();
+   Optional<Wakanda> findWakandaPadrao(String codigo);
 }

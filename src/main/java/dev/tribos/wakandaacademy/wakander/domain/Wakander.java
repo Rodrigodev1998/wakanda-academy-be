@@ -1,19 +1,28 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitude;
+import dev.tribos.wakandaacademy.wakanda.aplication.service.WakandaService;
+import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
+import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
+import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
 import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Getter;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.validation.constraints.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Getter
 @Builder
 @Document(collection = "Wakander")
+@Log4j2
 public class Wakander {
 	@MongoId(targetType = FieldType.STRING)
 	private String codigo;
@@ -39,9 +48,10 @@ public class Wakander {
 
 	private PreCadastroWakander preCadastro;
 	
-	private JornadaAtitude jornadaAtitude;
+	private List<JornadaAtitudeWakander> jornadaAtitudeWakander;
 
-	@Default  
+
+	@Default
 	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO ;
 
 	public void mudaStatusParaCadastrado() {
@@ -57,5 +67,39 @@ public class Wakander {
 		return Optional.ofNullable(this.email)
 				.map(s -> s.split("@")[0])
 				.orElseThrow();
+	}
+
+	public void iniciaJornadaDaAtitude(WakanderRepository wakanderRepository, WakandaService wakandaService) {
+		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaJornadaDaAtitude");
+		instanciaJornadaDaAtitudeWakanda();
+		List<JornadaAtitudeWakander> jornadaDaAtitudeWakanderPadrao = buscaJornadaDaAtitudePadrão(wakandaService);
+		this.jornadaAtitudeWakander.addAll(jornadaDaAtitudeWakanderPadrao);
+		wakanderRepository.save(this);
+		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaJornadaDaAtitude");
+	}
+
+	private List<JornadaAtitudeWakander>  buscaJornadaDaAtitudePadrão(WakandaService wakandaService) {
+		List<EtapaJornadaAtitudeWakanda> jornadaDaAtitudePadrao = wakandaService.buscaPorPadrao();
+		return jornadaDaAtitudePadrao.stream().map(ja -> buildJornadaWakander(ja)).collect(Collectors.toList());
+	}
+
+	private JornadaAtitudeWakander buildJornadaWakander (EtapaJornadaAtitudeWakanda etapaJornadaAtitudeWakanda) {
+		JornadaAtitudeWakander jornadaAtitudeWakander = new JornadaAtitudeWakander(etapaJornadaAtitudeWakanda);
+		return jornadaAtitudeWakander;
+	}
+
+	private void instanciaJornadaDaAtitudeWakanda() {
+		if(this.jornadaDaAtitudeWakanda == null) {
+			this.jornadaDaAtitudeWakanda = new ArrayList<EtapaJornadaAtitudeWakanda>();
+		}
+	}
+
+	public void iniciaWakanda(Wakanda wakanda) {
+		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaJornadaDaAtitude");
+		instanciaJornadaDaAtitudeWakanda();
+		List<JornadaAtitudeWakander> jornadaDaAtitudeWakanderPadrao = buscaJornadaDaAtitudePadrão(wakandaService);
+		this.jornadaAtitudeWakander.addAll(jornadaDaAtitudeWakanderPadrao);
+		wakanderRepository.save(this);
+		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaJornadaDaAtitude");
 	}
 }

@@ -1,10 +1,9 @@
 package dev.tribos.wakandaacademy.wakanda.aplication.service;
 
-import dev.tribos.wakandaacademy.wakanda.domain.jornadaatitude.JornadaAtitudeWakanda;
-
-import java.util.List;
+import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 
 public interface WakandaService {
 
-    List<JornadaAtitudeWakanda> buscaPorPadrao();
+    Wakanda getWakanda();
+
 }
