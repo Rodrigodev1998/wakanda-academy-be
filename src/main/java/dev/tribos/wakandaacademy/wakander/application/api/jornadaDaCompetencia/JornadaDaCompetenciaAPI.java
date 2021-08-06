@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface JornadaDaCompetenicaAPI {
+public interface JornadaDaCompetenciaAPI {
 	
 	
 	@PatchMapping("/public/v1/wakander/{wakanderCodigo}/jornada-competencia")

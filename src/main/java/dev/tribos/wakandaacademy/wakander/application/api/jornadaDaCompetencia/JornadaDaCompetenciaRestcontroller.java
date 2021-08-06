@@ -17,7 +17,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RestController
 @AllArgsConstructor
-public class JornadaDaCompetenciaRestcontroller implements JornadaDaCompetenicaAPI {
+public class JornadaDaCompetenciaRestcontroller implements JornadaDaCompetenciaAPI {
   @Autowired
    WakanderService wakanderService;
   /**

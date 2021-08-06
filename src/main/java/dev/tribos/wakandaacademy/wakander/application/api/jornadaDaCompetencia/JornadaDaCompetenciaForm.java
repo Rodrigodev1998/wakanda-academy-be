@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
@@ -19,15 +18,19 @@ public class JornadaDaCompetenciaForm {
 	private String nome;
 	
 	@NotEmpty
-	private LocalDateTime inicio;
+	@Length(min = 5)
+	private String nome;
+	
+	@NotEmpty
+	private String inicio;
 
 	@NotEmpty
-	private LocalDateTime conclusao;
+	private String conclusao;
 
-	@NotEmpty
+	
 	private Competencia primeiraCompetenciaSelecionada;
 
-	@NotEmpty
+	
 	private Competencia segundaCompetenciaSelecionada;
 
 	@NotEmpty

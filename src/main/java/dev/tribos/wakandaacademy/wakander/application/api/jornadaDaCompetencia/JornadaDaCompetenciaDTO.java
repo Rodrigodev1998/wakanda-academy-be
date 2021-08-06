@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,8 +10,8 @@ import lombok.Getter;
 @Getter
 public class JornadaDaCompetenciaDTO {
 
-	private LocalDateTime inicio;
-	private LocalDateTime conclusao;
+	private String inicio;
+	private String conclusao;
 	private Competencia primeiraCompetenciaSelecionada;
 	private Competencia segundaCompetenciaSelecionada;
 	private List<Competencia> listaCompetencias;
