@@ -18,10 +18,6 @@ public class JornadaDaCompetenciaForm {
 	private String nome;
 	
 	@NotEmpty
-	@Length(min = 5)
-	private String nome;
-	
-	@NotEmpty
 	private String inicio;
 
 	@NotEmpty
