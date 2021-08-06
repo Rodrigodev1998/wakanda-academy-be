@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
@@ -17,8 +16,8 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitude {
 	private StatusEtapaJornadaAtitude status;
 	private String descricao;
 
-	private LocalDateTime inicio;
-	private LocalDateTime conclusao;
+	private String inicio;
+	private String conclusao;
 	private Competencia primeiraCompetenciaSelecionada;
 	private Competencia segundaCompetenciaSelecionada;
 	private List<Competencia> listaCompetencias;
