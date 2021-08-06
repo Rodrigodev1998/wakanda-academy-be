@@ -5,13 +5,19 @@ import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Length;
+
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.Competencia;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.Getter;
 
 @Getter
 public class JornadaDaCompetenciaForm {
-
+    
+	@NotEmpty
+	@Length(min = 5)
+	private String nome;
+	
 	@NotEmpty
 	private LocalDateTime inicio;
 
@@ -29,7 +35,10 @@ public class JornadaDaCompetenciaForm {
 
 	public JornadaDaCompetencia paraEntidade() {
 
-		return JornadaDaCompetencia.builder().inicio(inicio).conclusao(conclusao)
+		return JornadaDaCompetencia.builder()
+				.nome(nome)
+				.inicio(inicio)
+				.conclusao(conclusao)
 				.primeiraCompetenciaSelecionada(primeiraCompetenciaSelecionada)
 				.segundaCompetenciaSelecionada(segundaCompetenciaSelecionada)
 				.listaCompetencias(listaCompetencias)
