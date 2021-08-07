@@ -22,4 +22,8 @@ public interface  WakanderService {
 	
 	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa);
 
+	void buscaEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa);
+    
+	
+	
 }
