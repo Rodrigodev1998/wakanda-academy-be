@@ -17,5 +17,5 @@ public interface WakanderService {
 
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
 
-	List<Wakander> buscarWakanderPorStatusNaoAutorizado();
+	List<Wakander> buscarWakandersPorStatus();
 }

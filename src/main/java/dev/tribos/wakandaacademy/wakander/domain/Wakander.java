@@ -1,5 +1,6 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import javax.validation.constraints.Email;
@@ -12,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import dev.tribos.wakandaacademy.wakander.application.api.FormataDataHora;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitude;
 import lombok.Builder;
 import lombok.Builder.Default;
@@ -46,6 +48,9 @@ public class Wakander {
 	private PreCadastroWakander preCadastro;
 	
 	private JornadaAtitude jornadaAtitude;
+	
+	private String dataHora = FormataDataHora.formataDiaHora(LocalDateTime.now());
+	
 
 	@Default  
 	private  StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO;

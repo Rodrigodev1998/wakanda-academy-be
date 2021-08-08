@@ -37,9 +37,9 @@ public class WakanderRestController implements WakanderAPI {
 	}
 
 	@Override
-	public List<WakanderBuscaStatusDTO> buscaPorStatus() {
+	public List<WakanderBuscaStatusDTO> buscaWakandersPreCadastros() {
 		log.info("[inicia] WakanderRestController - buscaPorStatus");
-		List<Wakander> wakendersNaoAutoruizado = wakanderService.buscarWakanderPorStatusNaoAutorizado();
+		List<Wakander> wakendersNaoAutoruizado = wakanderService.buscarWakandersPorStatus();
 		log.info("[Finaliza] WakanderRestController - buscaPorStatus");
 		return WakanderBuscaStatusDTO.parseListBuscaStatusDTO(wakendersNaoAutoruizado);
 	}

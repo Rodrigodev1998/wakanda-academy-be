@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @RestController
 @Log4j2
-//@AllArgsConstructor
+@AllArgsConstructor
 public class AutenticacaoController implements AutenticacaoAPI {
     private AutenticacaoService autenticacaoService;
 
