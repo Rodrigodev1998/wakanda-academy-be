@@ -2,6 +2,7 @@ package dev.tribos.wakandaacademy.wakander.application.service;
 
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public interface  WakanderService {
 
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
 
-
 //	void iniciaJornadaDaAtitude(WakandaRepository wakandaRepository, WakandaService wakandaService);
+	
+	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa);
 }
