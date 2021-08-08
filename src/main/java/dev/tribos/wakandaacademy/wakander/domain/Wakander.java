@@ -13,7 +13,8 @@ import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
 import lombok.Builder;
 import lombok.Builder.Default;
@@ -69,17 +70,17 @@ public class Wakander {
 				.orElseThrow();
 	}
 
-	public void iniciaWakanda(Wakanda wakanda) {
+	public void iniciaWakanda(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
 		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaWakanda");
-		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda);
+		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda,strategy);
 		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaWakanda");
 	}
 
-	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitude etapaJornadaAtitude) {
+	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
 		jornadaAtitudeWakander.preencheEtapaJornadaAtitude(etapaJornadaAtitude);
 	}
 
-	public EtapaJornadaAtitude procuraEtapaPeloNome(String nome) {
+	public EtapaJornadaAtitudeWakander procuraEtapaPeloNome(String nome) {
 		return jornadaAtitudeWakander.procuraEtapaPeloNome(nome);
 	}
 }

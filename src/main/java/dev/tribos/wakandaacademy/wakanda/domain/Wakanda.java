@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
 import lombok.Builder;
 import lombok.Value;
 
@@ -23,8 +22,7 @@ public class Wakanda {
 
     JornadaAtitudeWakanda jornadaAtitude;
 
-    public List<EtapaJornadaAtitude> getEtapasJornadaAtitudePadrao() {
-    	List<EtapaJornadaAtitudeWakanda> etapasPadrao = this.jornadaAtitude.getEtapasPadrao();
-    	return null;
+    public List<EtapaJornadaAtitudeWakanda> getEtapasJornadaAtitudePadrao() {
+    	return this.jornadaAtitude.getEtapasPadrao();
     }
 }

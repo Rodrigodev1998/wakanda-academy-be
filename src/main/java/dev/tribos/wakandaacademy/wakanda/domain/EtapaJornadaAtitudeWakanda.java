@@ -9,7 +9,10 @@ import lombok.Getter;
 @Getter
 @Builder
 public class EtapaJornadaAtitudeWakanda {
-
+	@NotEmpty(message = "o codigo não pode estar vazio")
+	@Max(value = 100)
+	private String codigo;
+	
     @NotEmpty(message = "o nome não pode estar vazio")
     @Max(value = 100)
     private String nome;

@@ -12,8 +12,9 @@ import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.aplication.service.WakandaService;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -23,9 +24,9 @@ import lombok.extern.log4j.Log4j2;
 @AllArgsConstructor
 public class WakanderSpringDataMongoDBService implements WakanderService {
 	private WakanderRepository wakanderRepository;
-
 	private WakandaService wakandaService;
-
+	private JornadaAtitudeStrategy strategyEtapaJornadaAtitude;
+	
 	@Override
 	public Wakander criaWakander(@Valid Wakander wakander) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
@@ -38,7 +39,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 
 	private void vinculaJornadaWakandaAoWakander(Wakander wakander) {
 		Wakanda wakanda = wakandaService.getWakanda();
-		wakander.iniciaWakanda(wakanda);
+		wakander.iniciaWakanda(wakanda,strategyEtapaJornadaAtitude);
 	}
 
 	@Override
@@ -81,7 +82,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	}
 
 	@Override
-	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa) {
+	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitudeWakander etapa) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 		Wakander wakanderPorCodigo = buscaWakanderPorCodigo(codigo);
 		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
