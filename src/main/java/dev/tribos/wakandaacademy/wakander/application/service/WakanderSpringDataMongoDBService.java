@@ -12,6 +12,7 @@ import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -70,11 +71,20 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<Wakander> buscarWakandersPorStatus() {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
 		List<Wakander> wakanderStatusNaoAutorizado = this.wakanderRepository
 				.buscaWakanderPorStatusNaoAutorizado(StatusWakander.NAO_AUTORIZADO);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
 		return wakanderStatusNaoAutorizado;
+=======
+	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa) {
+		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
+		Wakander wakanderPorCodigo = buscaWakanderPorCodigo(codigo);
+		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
+		this.save(wakanderPorCodigo);
+		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
+>>>>>>> develop
 	}
 }

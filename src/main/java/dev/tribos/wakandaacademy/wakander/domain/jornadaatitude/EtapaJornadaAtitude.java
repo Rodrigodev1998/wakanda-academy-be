@@ -5,4 +5,5 @@ public interface EtapaJornadaAtitude {
 	String getNome();
 	StatusEtapaJornadaAtitude getStatus();
 	String getDescricao();
+	void preenche(EtapaJornadaAtitude etapaJornadaAtitude);
 }

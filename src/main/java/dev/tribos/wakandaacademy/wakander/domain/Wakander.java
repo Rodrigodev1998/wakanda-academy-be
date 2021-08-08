@@ -13,7 +13,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+<<<<<<< HEAD
 import dev.tribos.wakandaacademy.wakander.application.api.FormataDataHora;
+=======
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
+>>>>>>> develop
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitude;
 import lombok.Builder;
 import lombok.Builder.Default;
@@ -68,5 +72,13 @@ public class Wakander {
 		return Optional.ofNullable(this.email)
 				.map(s -> s.split("@")[0])
 				.orElseThrow();
+	}
+
+	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitude etapaJornadaAtitude) {
+		jornadaAtitude.preencheEtapaJornadaAtitude(etapaJornadaAtitude);
+	}
+	
+	public EtapaJornadaAtitude procuraEtapaPeloNome(String nome) {
+		return jornadaAtitude.procuraEtapaPeloNome(nome);
 	}
 }
