@@ -31,7 +31,6 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	public Wakander criaWakander(@Valid Wakander wakander) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
 		wakander.buildCodigoByEmail();
-		vinculaJornadaWakandaAoWakander(wakander);
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
 		return wakanderSalvo;
@@ -68,8 +67,10 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	@Override
 	public void eventoCredencialCriada(Credencial credencial) {
 		Wakander wakander = findByEmail(credencial.getUsuario());
+//		vinculaJornadaWakandaAoWakander(wakander);
 		wakander.mudaStatusParaCadastrado();
 		credencial.setCodigoWakander(wakander.getCodigo());
+		save(wakander);
 	}
 
 	@Override
