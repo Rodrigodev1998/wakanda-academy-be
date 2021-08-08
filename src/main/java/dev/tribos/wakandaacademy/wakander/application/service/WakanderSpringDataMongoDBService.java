@@ -71,20 +71,19 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public List<Wakander> buscarWakandersPorStatus() {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
 		List<Wakander> wakanderStatusNaoAutorizado = this.wakanderRepository
 				.buscaWakanderPorStatusNaoAutorizado(StatusWakander.NAO_AUTORIZADO);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
 		return wakanderStatusNaoAutorizado;
-=======
+	}
+		
 	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 		Wakander wakanderPorCodigo = buscaWakanderPorCodigo(codigo);
 		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
 		this.save(wakanderPorCodigo);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
->>>>>>> develop
 	}
 }

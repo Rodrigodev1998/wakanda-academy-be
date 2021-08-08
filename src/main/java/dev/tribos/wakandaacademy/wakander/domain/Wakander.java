@@ -12,12 +12,8 @@ import javax.validation.constraints.Positive;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-
-<<<<<<< HEAD
 import dev.tribos.wakandaacademy.wakander.application.api.FormataDataHora;
-=======
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
->>>>>>> develop
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitude;
 import lombok.Builder;
 import lombok.Builder.Default;

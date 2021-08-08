@@ -18,12 +18,8 @@ public interface WakanderService {
 	void eventoCredencialCriada(Credencial credencial);
 
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
-<<<<<<< HEAD
 
 	List<Wakander> buscarWakandersPorStatus();
-}
-=======
-	
+
 	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa);
 }
->>>>>>> develop
