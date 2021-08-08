@@ -20,6 +20,17 @@ public class JornadaAtitudeWakander {
 		this.etapas = constroiEtapasWakanderAtravesEtapasWakanda(strategy,etapasWakandaPadrao);
 	}
 
+    private List<EtapaJornadaAtitudeWakander> constroiEtapasWakanderAtravesEtapasWakanda(JornadaAtitudeStrategy strategy, List<EtapaJornadaAtitudeWakanda> etapasWakandaPadrao) {
+    	return etapasWakandaPadrao.stream()
+    			.map(e -> criaEtapaWakander(strategy, e))
+    			.collect(Collectors.toList());
+    }
+
+	private EtapaJornadaAtitudeWakander criaEtapaWakander(JornadaAtitudeStrategy strategy, EtapaJornadaAtitudeWakanda etapaWakanda) {
+		return strategy.getFabrica(etapaWakanda.getCodigo())
+				.cria(etapaWakanda);
+	}
+
 	private void instaciaEtapasSeNulo() {
 		etapas = Optional.ofNullable(etapas).orElse(new ArrayList<>());
 	}
@@ -35,16 +46,5 @@ public class JornadaAtitudeWakander {
 		.filter(e -> e.getNome().equals(nome))
 		.findFirst()
 		.orElseThrow(() -> ApiException.throwApiException(HttpStatus.BAD_REQUEST, "Etapa não encontrada"));
-	}
-
-    private List<EtapaJornadaAtitudeWakander> constroiEtapasWakanderAtravesEtapasWakanda(JornadaAtitudeStrategy strategy, List<EtapaJornadaAtitudeWakanda> etapasWakandaPadrao) {
-    	return etapasWakandaPadrao.stream()
-    			.map(e -> criaEtapaWakander(strategy, e))
-    			.collect(Collectors.toList());
-    }
-
-	private EtapaJornadaAtitudeWakander criaEtapaWakander(JornadaAtitudeStrategy strategy, EtapaJornadaAtitudeWakanda etapaWakanda) {
-		return strategy.getFabrica(etapaWakanda.getCodigo())
-				.cria(etapaWakanda);
 	}
 }
