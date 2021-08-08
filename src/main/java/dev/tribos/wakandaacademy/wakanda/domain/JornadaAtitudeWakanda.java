@@ -12,6 +12,6 @@ public class JornadaAtitudeWakanda {
     List<EtapaJornadaAtitudeWakanda> etapas;
 
     public List<EtapaJornadaAtitudeWakanda> getEtapasPadrao() {
-        return null;
+        return etapas;
     }
 }

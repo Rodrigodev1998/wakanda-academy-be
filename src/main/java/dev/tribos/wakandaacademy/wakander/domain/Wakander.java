@@ -69,13 +69,13 @@ public class Wakander {
 				.orElseThrow();
 	}
 
-	public void iniciaJornadaDaAtitude(WakanderRepository wakanderRepository, WakandaService wakandaService) {
-		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaJornadaDaAtitude");
-		instanciaJornadaDaAtitudeWakanda();
+	public void iniciaJornadaAtitude(WakanderRepository wakanderRepository, WakandaService wakandaService) {
+		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaJornadaAtitude");
+		instanciaJornadaAtitudeWakanda();
 		List<JornadaAtitudeWakander> jornadaDaAtitudeWakanderPadrao = buscaJornadaDaAtitudePadrão(wakandaService);
 		this.jornadaAtitudeWakander.addAll(jornadaDaAtitudeWakanderPadrao);
 		wakanderRepository.save(this);
-		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaJornadaDaAtitude");
+		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaJornadaAtitude");
 	}
 
 	private List<JornadaAtitudeWakander>  buscaJornadaDaAtitudePadrão(WakandaService wakandaService) {
@@ -88,18 +88,18 @@ public class Wakander {
 		return jornadaAtitudeWakander;
 	}
 
-	private void instanciaJornadaDaAtitudeWakanda() {
-		if(this.jornadaDaAtitudeWakanda == null) {
-			this.jornadaDaAtitudeWakanda = new ArrayList<EtapaJornadaAtitudeWakanda>();
+	private void instanciaJornadaAtitudeWakanda() {
+		if(this.jornadaAtitudeWakander == null) {
+			this.jornadaAtitudeWakander = new ArrayList<>();
 		}
 	}
 
 	public void iniciaWakanda(Wakanda wakanda) {
-		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaJornadaDaAtitude");
-		instanciaJornadaDaAtitudeWakanda();
+		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaWakanda");
+		instanciaJornadaAtitudeWakanda();
 		List<JornadaAtitudeWakander> jornadaDaAtitudeWakanderPadrao = buscaJornadaDaAtitudePadrão(wakandaService);
 		this.jornadaAtitudeWakander.addAll(jornadaDaAtitudeWakanderPadrao);
 		wakanderRepository.save(this);
-		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaJornadaDaAtitude");
+		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaWakanda");
 	}
 }

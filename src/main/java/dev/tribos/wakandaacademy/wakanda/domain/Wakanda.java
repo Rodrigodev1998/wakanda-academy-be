@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.wakanda.domain;
 
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.StatusEtapaJornadaAtitude;
 import lombok.Builder;
 import lombok.Value;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -9,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.validation.constraints.Max;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Value
 @Builder
@@ -23,8 +25,11 @@ public class Wakanda {
 
     public List<EtapaJornadaAtitude> getEtapasJornadaAtitudePadrao() {
         List<EtapaJornadaAtitudeWakanda> etapasPadrao = this.jornadaAtitude.getEtapasPadrao();
-        return null;
-//        implentar retorno de metodo que faz conversão
+        return etapasPadrao.stream().map(jp -> buildEtapasWakanda (jp.())).collect(Collectors.toList());
+    }
+
+    private JornadaAtitudeWakanda buildEtapasWakanda( ) {
+
     }
 
 
