@@ -40,6 +40,7 @@ public class TokenService {
                         .plusMinutes(Long.valueOf(expiracao))
                         .atZone(ZoneId.systemDefault())
                         .toInstant()))
+                .claim("wakanderCode", credencial.getCodigoWakander())
                 .signWith(SignatureAlgorithm.HS256, chave)
                 .compact();
     }
