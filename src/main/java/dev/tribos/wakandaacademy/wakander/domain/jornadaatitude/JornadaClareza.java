@@ -1,15 +1,19 @@
 package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude;
 
+import java.time.LocalDateTime;
+
 import lombok.Builder;
 import lombok.Getter;
 
 @Builder
 @Getter
 public class JornadaClareza implements EtapaJornadaAtitude {
+	private String codigo;
 	private String logo;
 	private String nome;
 	private StatusEtapaJornadaAtitude status;
 	private String descricao;
+	private LocalDateTime dataConclusao;
 
 	private String seOMundoAcabasse;
 	private String umaLista;

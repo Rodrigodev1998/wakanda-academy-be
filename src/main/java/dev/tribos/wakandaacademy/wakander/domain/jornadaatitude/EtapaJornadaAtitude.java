@@ -8,6 +8,6 @@ public interface EtapaJornadaAtitude {
 	String getNome();
 	StatusEtapaJornadaAtitude getStatus();
 	String getDescricao();
-	LocalDateTime dataConclusao();
+	LocalDateTime getDataConclusao();
 	void preenche(EtapaJornadaAtitude etapaJornadaAtitude);
 }

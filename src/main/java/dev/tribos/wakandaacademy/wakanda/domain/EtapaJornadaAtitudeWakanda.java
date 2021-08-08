@@ -1,10 +1,10 @@
 package dev.tribos.wakandaacademy.wakanda.domain;
 
-import lombok.Builder;
-import lombok.Getter;
-
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
+
+import lombok.Builder;
+import lombok.Getter;
 
 @Getter
 @Builder
@@ -16,7 +16,7 @@ public class EtapaJornadaAtitudeWakanda {
 
     private String descricao;
 
-    private String logo = null;
+    private String logo;
 
     private Boolean padrao;
 }

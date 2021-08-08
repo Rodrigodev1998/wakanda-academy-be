@@ -1,22 +1,21 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.aplication.service.WakandaService;
-import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
-
-import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Service
@@ -26,10 +25,6 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	private WakanderRepository wakanderRepository;
 
 	private WakandaService wakandaService;
-
-	private ArrayList<EtapaJornadaAtitudeWakanda> etapaJornadaAtitudeWakanda;
-
-	private JornadaAtitudeWakander jornadaAtitudeWakander;
 
 	@Override
 	public Wakander criaWakander(@Valid Wakander wakander) {
