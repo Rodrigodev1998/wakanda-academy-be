@@ -29,10 +29,10 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	
 	@Override
 	public Wakander criaWakander(@Valid Wakander wakander) {
-		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
+		log.info("[Inicia] WakanderSpringDataMongoDBService - preCadastraCidadao");
 		wakander.buildCodigoByEmail();
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
-		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
+		log.info("[Finaliza] WakanderSpringDataMongoDBService - preCadastraCidadao");
 		return wakanderSalvo;
 	}
 
@@ -43,9 +43,9 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 
 	@Override
 	public List<Wakander> buscaWakanderPorEmail(String email) {
-		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - buscaWakanderPorEmail");
+		log.info("[Inicia] WakanderSpringDataMongoDBService - buscaWakanderPorEmail");
 		List<Wakander> listaDeEmail = this.wakanderRepository.buscaWakanderPorEmailEhPorStatusAutorizado(email);
-		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscaWakanderPorEmail");
+		log.info("[Finaliza] WakanderSpringDataMongoDBService - buscaWakanderPorEmail");
 		return listaDeEmail;
 	}
 
