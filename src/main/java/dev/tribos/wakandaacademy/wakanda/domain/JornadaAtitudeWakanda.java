@@ -1,10 +1,10 @@
 package dev.tribos.wakandaacademy.wakanda.domain;
 
-import lombok.Builder;
-import lombok.Value;
-
 import java.util.List;
 import java.util.stream.Collectors;
+
+import lombok.Builder;
+import lombok.Value;
 
 @Value
 @Builder

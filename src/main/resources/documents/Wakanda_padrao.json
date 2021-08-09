@@ -1,0 +1,21 @@
+{
+    "codigo": "PADRAO",
+    "jornadaAtitude": {
+        "etapas": [
+            {
+                "codigo": "JORNADA_CLAREZA",
+                "nome": "Jornada da Clareza",
+                "descricao": "Definira qual será seu objetivo no Wakanda",
+                "logo": "jornada_clareza.jpg",
+                "padrao": true
+            },
+            {
+                "codigo": "JORNADA_COMPETENCIA",
+                "nome": "Jornada das Competências",
+                "descricao": "Descubra quais compêntecias você deve desenvolver!",
+                "logo": "jornada_competencia.jpg",
+                "padrao": true
+            }
+        ]
+    }
+}
