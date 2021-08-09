@@ -50,23 +50,26 @@ public class FiltroToken extends OncePerRequestFilter {
 	}
 
 	private Credencial recuperaUsuario(String token) {
-		var id = tokenService.getId(token).orElseThrow(() -> ApiException.throwApiException(HttpStatus.FORBIDDEN,
-				"O Token enviado está inválido. Tente novamente."));
+		var id = tokenService.getId(token)
+				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.FORBIDDEN,
+						"O Token enviado está inválido. Tente novamente."));
 		return credencialService.buscaCredencialPorId(id);
 	}
 
 	private String recuperaToken(HttpServletRequest requestOpt) {
 		log.info("[inicio] recuperaToken - extraindo o token dos cabecalhos da requisicao");
 		var AuthorizationHeaderValueOpt = Optional.ofNullable(recuperaValorAuthorizationHeader(requestOpt));
-		String AuthorizationHeaderValue = AuthorizationHeaderValueOpt.filter(new ValidaConteudoAuthorizationHeader())
+		String AuthorizationHeaderValue = AuthorizationHeaderValueOpt
+				.filter(new ValidaConteudoAuthorizationHeader())
 				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.UNAUTHORIZED, "Token inválido!"));
 		log.info("[finaliza] recuperaToken - extraindo o token dos cabecalhos da requisicao");
 		return AuthorizationHeaderValue.substring(7, AuthorizationHeaderValue.length());
 	}
 
 	private String recuperaValorAuthorizationHeader(HttpServletRequest request) {
-		return Optional.ofNullable(request.getHeader("Authorization")).orElseThrow(
-				() -> ApiException.throwApiException(HttpStatus.FORBIDDEN, "Token não está presente na requisição!"));
+		return Optional.ofNullable(request.getHeader("Authorization"))
+				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.FORBIDDEN,
+						"Token não está presente na requisição!"));
 	}
 
 	@Override
