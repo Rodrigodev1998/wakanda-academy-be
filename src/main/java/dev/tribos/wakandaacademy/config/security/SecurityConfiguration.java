@@ -1,9 +1,5 @@
 package dev.tribos.wakandaacademy.config.security;
 
-import dev.tribos.wakandaacademy.config.security.service.AutenticacaoSecurityService;
-import dev.tribos.wakandaacademy.config.security.service.TokenService;
-import dev.tribos.wakandaacademy.credencial.application.service.CredencialService;
-import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,6 +13,11 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import dev.tribos.wakandaacademy.config.security.service.AutenticacaoSecurityService;
+import dev.tribos.wakandaacademy.config.security.service.TokenService;
+import dev.tribos.wakandaacademy.credencial.application.service.CredencialService;
+import lombok.AllArgsConstructor;
 
 
 
