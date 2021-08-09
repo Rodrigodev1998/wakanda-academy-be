@@ -1,5 +1,10 @@
 package dev.tribos.wakandaacademy.wakander.application.repository;
 
+<<<<<<< HEAD
+=======
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+
+>>>>>>> develop
 import java.util.List;
 import java.util.Optional;
 
