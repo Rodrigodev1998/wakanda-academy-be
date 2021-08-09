@@ -1,7 +1,8 @@
 package dev.tribos.wakandaacademy.handler;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
@@ -11,8 +12,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
 @RestControllerAdvice
 @AllArgsConstructor
