@@ -9,19 +9,28 @@ import org.springframework.stereotype.Service;
 
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
+import dev.tribos.wakandaacademy.wakanda.aplication.service.WakandaService;
+import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
+<<<<<<< HEAD
 import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
+=======
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
+>>>>>>> 49deb07016d0e3ab72f8970c7e4d4d92777549d9
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
 
 @Service
 @Log4j2
 @AllArgsConstructor
 public class WakanderSpringDataMongoDBService implements WakanderService {
 	private WakanderRepository wakanderRepository;
-
+	private WakandaService wakandaService;
+	private JornadaAtitudeStrategy strategyEtapaJornadaAtitude;
+	
 	@Override
 	public Wakander criaWakander(@Valid Wakander wakander) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
@@ -29,6 +38,11 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - preCadastraCidadao");
 		return wakanderSalvo;
+	}
+
+	private void vinculaJornadaWakandaAoWakander(Wakander wakander) {
+		Wakanda wakanda = wakandaService.getWakanda();
+		wakander.iniciaWakanda(wakanda,strategyEtapaJornadaAtitude);
 	}
 
 	@Override
@@ -57,8 +71,10 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	@Override
 	public void eventoCredencialCriada(Credencial credencial) {
 		Wakander wakander = findByEmail(credencial.getUsuario());
+//		vinculaJornadaWakandaAoWakander(wakander);
 		wakander.mudaStatusParaCadastrado();
 		credencial.setCodigoWakander(wakander.getCodigo());
+		save(wakander);
 	}
 
 	@Override
@@ -71,6 +87,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<Wakander> buscarWakandersPorStatus() {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
 		List<Wakander> wakanderStatusNaoAutorizado = this.wakanderRepository
@@ -80,6 +97,9 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	}
 		
 	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa) {
+=======
+	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitudeWakander etapa) {
+>>>>>>> 49deb07016d0e3ab72f8970c7e4d4d92777549d9
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 		Wakander wakanderPorCodigo = buscaWakanderPorCodigo(codigo);
 		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
