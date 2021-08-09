@@ -16,4 +16,9 @@ public interface JornadaClarezaAPI {
 	@PatchMapping("/v1/wakander/{codigo}/jornada-clareza")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void preencheJornadaClarezaNoWakander(@PathVariable String codigo,@RequestBody @Valid JornadaClarezaForm jornadaClarezaForm);
+	
+	
+	
+	
+	
 }
