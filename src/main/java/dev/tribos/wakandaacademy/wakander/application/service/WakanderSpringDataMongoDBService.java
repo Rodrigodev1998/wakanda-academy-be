@@ -67,7 +67,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	@Override
 	public void eventoCredencialCriada(Credencial credencial) {
 		Wakander wakander = findByEmail(credencial.getUsuario());
-//		vinculaJornadaWakandaAoWakander(wakander);
+		vinculaJornadaWakandaAoWakander(wakander);
 		wakander.mudaStatusParaCadastrado();
 		credencial.setCodigoWakander(wakander.getCodigo());
 		save(wakander);
