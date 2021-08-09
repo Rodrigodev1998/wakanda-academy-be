@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController;
 public interface WakandaAPI {
 	@PostMapping("/public/v1/wakanda/inicio")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public void iniciaWakanda();
+	public void iniciaWakanda() throws Exception;
 }

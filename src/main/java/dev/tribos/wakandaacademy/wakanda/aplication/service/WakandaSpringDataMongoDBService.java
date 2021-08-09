@@ -1,16 +1,12 @@
 package dev.tribos.wakandaacademy.wakanda.aplication.service;
 
-import java.util.Arrays;
-import java.util.List;
+import java.io.File;
 
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import dev.tribos.wakandaacademy.wakanda.aplication.repository.WakandaRepository;
-import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
-import dev.tribos.wakandaacademy.wakanda.domain.JornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -32,37 +28,19 @@ public class WakandaSpringDataMongoDBService implements WakandaService{
     }
 
 	@Override
-	public void iniciaWakanda() {
+	public void iniciaWakanda() throws Exception {
 		if(wakandaRepository.findWakandaPadrao(CODIGO).isEmpty()) {
 			var wakanda = buildWakanda();
 			wakandaRepository.salva(wakanda);
 		};
 	}
 
-	private Wakanda buildWakanda() {
-		Wakanda wakanda = Wakanda.builder()
-				.codigo(CODIGO)
-				.jornadaAtitude(JornadaAtitudeWakanda.builder()
-						.etapas(buildEtapas())
-						.build())
-				.build();
-		logWakanda(wakanda);
+	private Wakanda buildWakanda() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        Wakanda wakanda = mapper.readValue(
+                new File("src/main/resources/documents/Wakanda_padrao.json"),
+                Wakanda.class);
+        log.info("Wakanda {}",wakanda);
 		return wakanda ;
 	}
-
-	private void logWakanda(Wakanda wakanda) {
-		try {
-			String wakandaString = new ObjectMapper().writeValueAsString(wakanda);
-			log.info("Wakanda: {}",wakandaString);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private List<EtapaJornadaAtitudeWakanda> buildEtapas() {
-		return Arrays.asList(EtapaJornadaAtitudeWakanda.builder()
-				.codigo("JORNADA_CLAREZA")
-				.build());
-	}
-
 }

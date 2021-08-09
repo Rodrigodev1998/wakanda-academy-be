@@ -13,7 +13,7 @@ public class WakandaRestController implements WakandaAPI {
 	private WakandaService wakandaService;
 
 	@Override
-	public void iniciaWakanda() {
+	public void iniciaWakanda() throws Exception {
 		log.info("[Inicia] WakandaRestController - iniciaWakanda");
 		wakandaService.iniciaWakanda();
 		log.info("[Finaliza] WakandaRestController - iniciaWakanda");

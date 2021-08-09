@@ -3,11 +3,16 @@ package dev.tribos.wakandaacademy.wakanda.domain;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Value;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Value
+@Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JornadaAtitudeWakanda {
     List<EtapaJornadaAtitudeWakanda> etapas;
 

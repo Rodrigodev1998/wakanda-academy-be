@@ -4,5 +4,5 @@ import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 
 public interface WakandaService {
     Wakanda getWakanda();
-	void iniciaWakanda();
+	void iniciaWakanda() throws Exception;
 }
