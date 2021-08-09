@@ -19,17 +19,7 @@ public interface  WakanderService {
 
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
 
-<<<<<<< HEAD
-	
-	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa);
-
-	void buscaEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa);
-    
-	
-	
-=======
-//	void iniciaJornadaDaAtitude(WakandaRepository wakandaRepository, WakandaService wakandaService);
-	
 	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitudeWakander etapa);
->>>>>>> develop
+
+	void buscaEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitudeWakander etapa);
 }
