@@ -1,10 +1,11 @@
 package dev.tribos.wakandaacademy.wakander.application.api.wakanderdashboard;
 
+import org.springframework.web.bind.annotation.RestController;
+
 import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.web.bind.annotation.RestController;
 
 @Log4j2
 @RestController
