@@ -2,6 +2,8 @@ package dev.tribos.wakandaacademy.wakanda.aplication.service;
 
 import java.io.File;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,11 +30,14 @@ public class WakandaSpringDataMongoDBService implements WakandaService{
     }
 
 	@Override
+	@PostConstruct
 	public void iniciaWakanda() throws Exception {
+		log.info("[Inicia] WakandaSpringDataMongoDBService - iniciaWakanda");
 		if(wakandaRepository.findWakandaPadrao(CODIGO).isEmpty()) {
 			var wakanda = buildWakanda();
 			wakandaRepository.salva(wakanda);
 		};
+		log.info("[Finaliza] WakandaSpringDataMongoDBService - iniciaWakanda");
 	}
 
 	private Wakanda buildWakanda() throws Exception {
