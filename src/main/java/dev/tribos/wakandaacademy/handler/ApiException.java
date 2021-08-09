@@ -1,9 +1,10 @@
 package dev.tribos.wakandaacademy.handler;
 
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 @Getter
 @Slf4j
