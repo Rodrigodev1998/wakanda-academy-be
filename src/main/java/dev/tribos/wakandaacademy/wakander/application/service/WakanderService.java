@@ -1,10 +1,10 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
-import java.util.List;
-
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
+
+import java.util.List;
 
 public interface  WakanderService {
 	Wakander criaWakander(Wakander wakander);
@@ -12,12 +12,14 @@ public interface  WakanderService {
 	List<Wakander> buscaWakanderPorEmail(String email);
 	
 	Wakander findByEmail(String email);
-	
+
 	Wakander save(Wakander wakander);
 
 	void eventoCredencialCriada(Credencial credencial);
 
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
+
+//	void iniciaJornadaDaAtitude(WakandaRepository wakandaRepository, WakandaService wakandaService);
 	
-	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitude etapa);
+	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitudeWakander etapa);
 }

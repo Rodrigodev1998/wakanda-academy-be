@@ -1,13 +1,12 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
 
-import org.junit.jupiter.api.Test;
-
-import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class WakanderSpringDataMongoDBServiceTest {
 	@Test

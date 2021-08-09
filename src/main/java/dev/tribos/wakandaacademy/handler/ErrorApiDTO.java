@@ -15,9 +15,9 @@ import lombok.Getter;
 public class ErrorApiDTO {
 	private String message;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private String description;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<ValidationDTO> validationsError;
+	@JsonInclude(JsonInclude.Include.NON_NULL)
+	private List<ValidationDTO> validationsError;
 }

@@ -1,15 +1,23 @@
 package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude;
 
+import java.time.LocalDateTime;
+
+import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
 @Builder
 @Getter
-public class JornadaClareza implements EtapaJornadaAtitude {
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+public class JornadaClareza implements EtapaJornadaAtitudeWakander {
+	private String codigo;
 	private String logo;
 	private String nome;
 	private StatusEtapaJornadaAtitude status;
 	private String descricao;
+	private LocalDateTime dataConclusao;
 
 	private String seOMundoAcabasse;
 	private String umaLista;
@@ -27,7 +35,7 @@ public class JornadaClareza implements EtapaJornadaAtitude {
 	private String feedback;
 
 	@Override
-	public void preenche(EtapaJornadaAtitude etapaJornadaAtitude) {
+	public void preenche(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
 		JornadaClareza jornadaClareza = (JornadaClareza) etapaJornadaAtitude;
 		this.seOMundoAcabasse = jornadaClareza.getSeOMundoAcabasse();
 		this.umaLista = jornadaClareza.getUmaLista();
@@ -43,5 +51,9 @@ public class JornadaClareza implements EtapaJornadaAtitude {
 		this.ondeEstudar = jornadaClareza.getOndeEstudar();
 		this.tempoEstudo = jornadaClareza.getTempoEstudo();
 		this.feedback = jornadaClareza.getFeedback();
+	}
+
+	public JornadaClareza(EtapaJornadaAtitudeWakanda etapaWakanda) {
+		
 	}
 }
