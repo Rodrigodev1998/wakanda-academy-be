@@ -18,14 +18,8 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @AllArgsConstructor
 public class JornadaDaCompetenciaRestcontroller implements JornadaDaCompetenciaAPI {
-	@Autowired
-	WakanderService wakanderService;
 
-	/**
-	 * @query = seleciona jornada da atitude onde idWakander= tal e etapadaatidude=
-	 *        jornadaDaCompetencia
-	 * 
-	 */
+	WakanderService wakanderService;
 
 	@Override
 	public void preencheJornadaDaCompetenciaNoWakander(@PathVariable String wakanderCodigo,
@@ -38,14 +32,13 @@ public class JornadaDaCompetenciaRestcontroller implements JornadaDaCompetenciaA
 	}
 
 	@Override
-	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(String codigoWakander, EtapaJornadaAtitude nomeDaJornada) {
-		
-			log.info("[Inicia] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
-			
-			wakanderService.buscaEtapaParaWakanderAtravesCodigo(codigoWakander, nomeDaJornada);
-			log.info("[Finaliza] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
-			return null;
-		}
+	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(String codigoWakander,
+			EtapaJornadaAtitude nomeDaJornada) {
+
+		log.info("[Inicia] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
+
+		wakanderService.buscaEtapaParaWakanderAtravesCodigo(codigoWakander, nomeDaJornada);
+		log.info("[Finaliza] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
+		return null;
 	}
-
-
+}

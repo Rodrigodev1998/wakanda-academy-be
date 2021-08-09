@@ -12,21 +12,19 @@ import lombok.Getter;
 
 @Getter
 public class JornadaDaCompetenciaForm {
-    
+
 	@NotEmpty
 	@Length(min = 5)
 	private String nome;
-	
+
 	@NotEmpty
 	private String inicio;
 
 	@NotEmpty
 	private String conclusao;
 
-	
 	private Competencia primeiraCompetenciaSelecionada;
 
-	
 	private Competencia segundaCompetenciaSelecionada;
 
 	@NotEmpty
@@ -34,13 +32,9 @@ public class JornadaDaCompetenciaForm {
 
 	public JornadaDaCompetencia paraEntidade() {
 
-		return JornadaDaCompetencia.builder()
-				.nome(nome)
-				.inicio(inicio)
-				.conclusao(conclusao)
+		return JornadaDaCompetencia.builder().nome(nome).inicio(inicio).conclusao(conclusao)
 				.primeiraCompetenciaSelecionada(primeiraCompetenciaSelecionada)
-				.segundaCompetenciaSelecionada(segundaCompetenciaSelecionada)
-				.listaCompetencias(listaCompetencias)
+				.segundaCompetenciaSelecionada(segundaCompetenciaSelecionada).listaCompetencias(listaCompetencias)
 				.build();
 	}
 

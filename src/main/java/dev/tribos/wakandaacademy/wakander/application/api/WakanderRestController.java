@@ -3,16 +3,12 @@ package dev.tribos.wakandaacademy.wakander.application.api;
 import java.net.URI;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia.JornadaDaCompetenciaDTO;
-import dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia.JornadaDaCompetenciaForm;
 import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -20,7 +16,7 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @AllArgsConstructor
 public class WakanderRestController implements WakanderAPI {
-	@Autowired
+
 	private WakanderService wakanderService;
 
 	@Override
@@ -40,10 +36,5 @@ public class WakanderRestController implements WakanderAPI {
 		log.info("[Finaliza] WakanderRestController - buscaEmail");
 		return WakanderDetalheDTO.parseListDTO(wakanders);
 	}
-	
-	
-
-	
-
 
 }
