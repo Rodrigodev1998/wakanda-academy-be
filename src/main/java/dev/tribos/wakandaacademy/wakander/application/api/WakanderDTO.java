@@ -22,6 +22,7 @@ public class WakanderDTO {
 	private String entendimentoSobreWakanda;
 	private String motivoParaParticiparWakanda;
 	private StatusWakander statusWakander;
+	private String dataHora;
 
 	public WakanderDTO(Wakander wakander) {
 		this.nome = wakander.getNome();
@@ -36,6 +37,7 @@ public class WakanderDTO {
 		this.entendimentoSobreWakanda = wakander.getPreCadastro().getEntendimentoSobreWakanda();
 		this.motivoParaParticiparWakanda = wakander.getPreCadastro().getMotivoParaParticiparWakanda();
 		this.statusWakander = wakander.getStatusWakander();
+		this.dataHora = wakander.getDataHora();
 	}
 
 	public static List<WakanderDTO> parseListDTO(List<Wakander> wakanderPorEmail) {
