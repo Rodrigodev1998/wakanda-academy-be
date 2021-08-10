@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.tribos.wakandaacademy.wakander.application.api.WakanderDetalheDTO;
+
 @RestController
 public interface JornadaDaCompetenciaAPI {
 	
@@ -23,5 +25,5 @@ public interface JornadaDaCompetenciaAPI {
  
 	@GetMapping("/public/v1/wakander/{wakanderCodigo}/jornada-competencia")
 	@ResponseStatus(value = HttpStatus.OK)
-	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(@RequestParam(required = true) String codigoWakander);
+	public List<WakanderDetalheDTO> listaJornadaCompetencia(@RequestParam(required = true) String codigoWakander);
 }

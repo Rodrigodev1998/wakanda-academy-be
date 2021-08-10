@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.tribos.wakandaacademy.wakander.application.api.WakanderDetalheDTO;
 import dev.tribos.wakandaacademy.wakander.application.service.WakanderService;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
@@ -31,13 +32,13 @@ public class JornadaDaCompetenciaRestcontroller implements JornadaDaCompetenciaA
 	}
 
 	@Override
-	public List<JornadaDaCompetenciaDTO> listaJornadaCompetencia(String codigoWakander) {
+	public List<WakanderDetalheDTO> listaJornadaCompetencia(String codigoWakander) {
         
 		log.info("[Inicia] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
-         Wakander wakander = wakanderService.buscaJornadaDaCompetenciaWakander(codigoWakander);
+		Wakander wakander = wakanderService.buscaJornadaDaCompetenciaWakander(codigoWakander);
          
-        JornadaDaCompetenciaDTO jornadaDaCompetenciaDTO = jornadaDaCompetenciaDTO.converte(wakander);
+      //  JornadaDaCompetenciaDTO jornadaDaCompetenciaDTO = jornadaDaCompetenciaDTO.converte(wakander);
 		log.info("[Finaliza] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
-		return null;
+		return WakanderDetalheDTO.parseListDTO(wakander);
 	}
 }
