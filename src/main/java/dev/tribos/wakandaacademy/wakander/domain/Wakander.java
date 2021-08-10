@@ -71,9 +71,9 @@ public class Wakander {
 	}
 
 	public void iniciaWakanda(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
-		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaWakanda");
+		log.info("[Inicia] Wakander - iniciaWakanda");
 		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda,strategy);
-		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaWakanda");
+		log.info("[Finaliza] Wakander - iniciaWakanda");
 	}
 
 	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
