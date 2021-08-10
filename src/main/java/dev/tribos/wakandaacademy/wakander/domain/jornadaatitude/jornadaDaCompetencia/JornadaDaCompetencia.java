@@ -21,8 +21,6 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitudeWakander {
 	private String descricao;
 	private LocalDateTime dataInicio;
 	private LocalDateTime dataConclusao;
-
-	private String inicio;
 	private Competencia primeiraCompetenciaSelecionada;
 	private Competencia segundaCompetenciaSelecionada;
 	private List<Competencia> listaCompetencias;
@@ -32,6 +30,11 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitudeWakander {
 	@Override
 	public void preenche(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
 		JornadaDaCompetencia jornadaDaCompetencia = (JornadaDaCompetencia) etapaJornadaAtitude;
+		this.codigo = jornadaDaCompetencia.getCodigo();
+		this.logo = jornadaDaCompetencia.getLogo();
+		this.nome = jornadaDaCompetencia.getNome();
+		this.status = jornadaDaCompetencia.getStatus();
+		this.descricao = jornadaDaCompetencia.getDescricao();
 		this.dataInicio = jornadaDaCompetencia.getDataInicio();
 		this.dataConclusao = jornadaDaCompetencia.getDataConclusao();
 		this.primeiraCompetenciaSelecionada = jornadaDaCompetencia.getPrimeiraCompetenciaSelecionada();
