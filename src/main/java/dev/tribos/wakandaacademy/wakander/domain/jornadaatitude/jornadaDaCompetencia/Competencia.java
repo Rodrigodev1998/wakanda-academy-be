@@ -10,8 +10,7 @@ public class Competencia {
 	
 	@NotEmpty
     private String nome;
-	
-    @NotEmpty @Size(min=0, max=10)
+	@NotEmpty @Size(min=0, max=10)
     private Integer nota;
     @NotEmpty
     private TipoCompetencia tipoCompetencia;
