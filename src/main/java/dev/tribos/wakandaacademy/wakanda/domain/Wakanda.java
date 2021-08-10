@@ -10,9 +10,11 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import lombok.Builder;
 import lombok.Value;
+import lombok.extern.log4j.Log4j2;
 
 @Value
 @Builder
+@Log4j2
 @Document(collection = "Wakanda")
 public class Wakanda {
 
@@ -23,6 +25,8 @@ public class Wakanda {
     JornadaAtitudeWakanda jornadaAtitude;
 
     public List<EtapaJornadaAtitudeWakanda> getEtapasJornadaAtitudePadrao() {
+    	log.info("[Inicia] Wakanda - getEtapasJornadaAtitudePadrao");
+    	log.info("[Finaliza] Wakanda - getEtapasJornadaAtitudePadrao");
     	return this.jornadaAtitude.getEtapasPadrao();
     }
 }
