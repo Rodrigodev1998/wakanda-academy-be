@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 
 public class JornadaAtitudeWakander {
@@ -46,5 +47,13 @@ public class JornadaAtitudeWakander {
 		.filter(e -> e.getNome().equals(nome))
 		.findFirst()
 		.orElseThrow(() -> ApiException.throwApiException(HttpStatus.BAD_REQUEST, "Etapa não encontrada"));
+	}
+
+	public EtapaJornadaAtitudeWakander procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude codigo) {
+		instaciaEtapasSeNulo();
+		return this.etapas.stream()
+				.filter(e -> e.getCodigo().equals(codigo.name()))
+				.findFirst()
+				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.BAD_REQUEST, "Etapa não encontrada"));
 	}
 }

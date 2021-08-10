@@ -40,17 +40,5 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitudeWakander {
 		this.definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas = jornadaDaCompetencia.getDefinaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas();
 		this.porqueFoImportanteParticiparHj = jornadaDaCompetencia.porqueFoImportanteParticiparHj;
 	}
-
-	@Override
-	public String getCodigo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public LocalDateTime getDataConclusao() {
-		// TODO Auto-generated method stub
-		return null;
-	}	
 }
 
