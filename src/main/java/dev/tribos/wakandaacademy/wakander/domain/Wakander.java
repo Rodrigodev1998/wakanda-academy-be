@@ -12,17 +12,12 @@ import javax.validation.constraints.Positive;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-<<<<<<< HEAD
 import dev.tribos.wakandaacademy.wakander.application.api.FormataDataHora;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitude;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitude;
-=======
 
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
->>>>>>> 49deb07016d0e3ab72f8970c7e4d4d92777549d9
 import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Getter;
@@ -56,22 +51,15 @@ public class Wakander {
 	private Boolean possuiFilhos;
 
 	private PreCadastroWakander preCadastro;
-<<<<<<< HEAD
-	
-	private JornadaAtitude jornadaAtitude;
 	
 	private String dataHora = FormataDataHora.formataDiaHora(LocalDateTime.now());
 	
 
 	@Default  
-	private  StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO;
-=======
-
 	private JornadaAtitudeWakander jornadaAtitudeWakander;
 
 	@Default
 	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO;
->>>>>>> 49deb07016d0e3ab72f8970c7e4d4d92777549d9
 
 	public void mudaStatusParaCadastrado() {
 		this.statusWakander = StatusWakander.CADASTRADO;
@@ -89,9 +77,9 @@ public class Wakander {
 	}
 
 	public void iniciaWakanda(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
-		log.info("[Inicia] WakanderSpringDataMongoDBService - iniciaWakanda");
+		log.info("[Inicia] Wakander - iniciaWakanda");
 		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda,strategy);
-		log.info("[Finaliza] WakanderSpringDataMongoDBService - iniciaWakanda");
+		log.info("[Finaliza] Wakander - iniciaWakanda");
 	}
 
 	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
