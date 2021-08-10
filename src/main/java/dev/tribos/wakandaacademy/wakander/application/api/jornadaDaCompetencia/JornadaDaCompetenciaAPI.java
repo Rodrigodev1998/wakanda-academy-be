@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public interface JornadaDaCompetenciaAPI {
-	
-	
 	@PatchMapping("/public/v1/wakander/{wakanderCodigo}/jornada-competencia")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void preencheJornadaDaCompetenciaNoWakander(@PathVariable String wakanderCodigo,@RequestBody @Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm);

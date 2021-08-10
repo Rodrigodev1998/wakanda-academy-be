@@ -10,14 +10,16 @@ import lombok.Getter;
 @Getter
 public class JornadaDaCompetenciaDTO {
     private String nome;
+    private List<Competencia> listaCompetencias;
     private Competencia primeiraCompetenciaSelecionada;
 	private Competencia segundaCompetenciaSelecionada;
-	private List<Competencia> listaCompetencias;
 	private String definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas; 
 	private String porqueFoImportanteParticiparHj;
 
 	public JornadaDaCompetenciaDTO(Wakander wakander) {
 		JornadaDaCompetencia jornadaCompetencia = wakander.getJornadaCompetencia();
+		this.nome = jornadaCompetencia.getNome();
+		this.listaCompetencias = jornadaCompetencia.getListaCompetencias();
 		this.primeiraCompetenciaSelecionada = jornadaCompetencia.getPrimeiraCompetenciaSelecionada();
 		this.segundaCompetenciaSelecionada = jornadaCompetencia.getSegundaCompetenciaSelecionada();
 		this.definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas = jornadaCompetencia.getDefinaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas();
