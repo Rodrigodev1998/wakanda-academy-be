@@ -1,19 +1,16 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
+
 import java.time.LocalDateTime;
 import java.util.Optional;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-import dev.tribos.wakandaacademy.wakander.application.api.FormataDataHora;
-
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
@@ -21,9 +18,11 @@ import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWa
 import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
 @Getter
+@Setter
 @Builder
 @Document(collection = "Wakander")
 @Log4j2
@@ -52,9 +51,8 @@ public class Wakander {
 
 	private PreCadastroWakander preCadastro;
 	
-	private String dataHora = FormataDataHora.formataDiaHora(LocalDateTime.now());
+	private LocalDateTime dataHora;
 	
-
 	@Default  
 	private JornadaAtitudeWakander jornadaAtitudeWakander;
 
@@ -88,5 +86,10 @@ public class Wakander {
 
 	public EtapaJornadaAtitudeWakander procuraEtapaPeloNome(String nome) {
 		return jornadaAtitudeWakander.procuraEtapaPeloNome(nome);
+	}
+	
+	public void start() {
+				this.dataHora = LocalDateTime.now();
+
 	}
 }

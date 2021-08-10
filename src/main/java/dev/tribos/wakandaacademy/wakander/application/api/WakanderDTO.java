@@ -1,5 +1,6 @@
 package dev.tribos.wakandaacademy.wakander.application.api;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,7 +23,7 @@ public class WakanderDTO {
 	private String entendimentoSobreWakanda;
 	private String motivoParaParticiparWakanda;
 	private StatusWakander statusWakander;
-	private String dataHora;
+	private LocalDateTime dataHora;
 
 	public WakanderDTO(Wakander wakander) {
 		this.nome = wakander.getNome();

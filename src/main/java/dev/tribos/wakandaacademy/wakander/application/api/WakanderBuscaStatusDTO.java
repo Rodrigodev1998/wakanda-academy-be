@@ -1,10 +1,8 @@
 package dev.tribos.wakandaacademy.wakander.application.api;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
-import dev.tribos.wakandaacademy.wakander.domain.PreCadastroWakander;
-import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
-import dev.tribos.wakandaacademy.wakander.domain.TipoRelacionamento;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
@@ -14,7 +12,7 @@ public class WakanderBuscaStatusDTO {
 	private String nome;
 	private String email;
 	private String whatsapp;
-	private String dataHora;
+	private LocalDateTime dataHora;
 	
 	public WakanderBuscaStatusDTO(Wakander wakander) {
 		this.nome = wakander.getNome();
@@ -27,4 +25,5 @@ public class WakanderBuscaStatusDTO {
 		return wakanderPorStatus.stream().map(WakanderBuscaStatusDTO::new).collect(Collectors.toList());
 	}
 }
+
 

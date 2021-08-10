@@ -58,6 +58,8 @@ public class WakanderPreCadastroForm {
 	@NotEmpty
 	@Length(min = 5)
 	private String motivoParaParticiparWakanda;
+	
+	private LocalDateTime dataHora;
 
 	public Wakander paraEntidade() {
 		return Wakander.builder()

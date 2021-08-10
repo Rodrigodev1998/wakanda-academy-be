@@ -1,12 +1,10 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
+
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.aplication.service.WakandaService;
@@ -32,6 +30,8 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	public Wakander criaWakander(@Valid Wakander wakander) {
 		log.info("[Inicia] WakanderSpringDataMongoDBService - preCadastraCidadao");
 		wakander.buildCodigoByEmail();
+		wakander.start();
+       log.info(wakander);		
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderSpringDataMongoDBService - preCadastraCidadao");
 		return wakanderSalvo;
@@ -99,4 +99,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		this.save(wakanderPorCodigo);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 	}
+	
+	
+	
 }
