@@ -16,25 +16,24 @@ public class JornadaDaCompetenciaForm {
 	@NotEmpty
 	@Length(min = 5)
 	private String nome;
-
 	@NotEmpty
-	private String inicio;
-
-	@NotEmpty
-	private String conclusao;
-
 	private Competencia primeiraCompetenciaSelecionada;
-
+	@NotEmpty
 	private Competencia segundaCompetenciaSelecionada;
-
 	@NotEmpty
 	private List<Competencia> listaCompetencias;
+	@NotEmpty
+	private String  definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas; 
+	@NotEmpty
+	private String porqueFoImportanteParticiparHj;
 
 	public JornadaDaCompetencia paraEntidade() {
 
-		return JornadaDaCompetencia.builder().nome(nome).inicio(inicio).conclusao(conclusao)
+		return JornadaDaCompetencia.builder().nome(nome)
 				.primeiraCompetenciaSelecionada(primeiraCompetenciaSelecionada)
 				.segundaCompetenciaSelecionada(segundaCompetenciaSelecionada).listaCompetencias(listaCompetencias)
+				.definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas(definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas)
+				.porqueFoImportanteParticiparHj(porqueFoImportanteParticiparHj)
 				.build();
 	}
 

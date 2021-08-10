@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -49,13 +47,6 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		Wakander wakanderSalvo = wakanderSpringDataMongoDBRepository.save(wakander);
 		log.info("[Finaliza] WakanderMongoDBRepository - save");
 		return wakanderSalvo;
-	}
-
-	@Override
-	public Optional<JornadaDaCompetencia> buscaEtapaParaWakanderAtravesCodigo(String codigo,
-			EtapaJornadaAtitudeWakander etapa) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
