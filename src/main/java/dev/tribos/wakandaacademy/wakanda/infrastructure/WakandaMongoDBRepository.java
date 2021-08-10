@@ -12,7 +12,6 @@ import java.util.Optional;
 @Log4j2
 @Component
 public class WakandaMongoDBRepository implements WakandaRepository {
-
 	private WakandaSpringDataMongoDBRepository wakandaSpringDataMongoDBRepository;
 
 	@Override
@@ -21,5 +20,12 @@ public class WakandaMongoDBRepository implements WakandaRepository {
 		Optional<Wakanda> retornoJornada = wakandaSpringDataMongoDBRepository.findById(codigo);
 		log.info("[Finaliza] WakandaMongoDBRepository - findWakandaPadrao");
 		return retornoJornada;
+	}
+
+	@Override
+	public void salva(Wakanda wakanda) {
+		log.info("[Inicia] WakandaMongoDBRepository - salva");
+		wakandaSpringDataMongoDBRepository.save(wakanda);
+		log.info("[Finaliza] WakandaMongoDBRepository - salva");
 	}
 }
