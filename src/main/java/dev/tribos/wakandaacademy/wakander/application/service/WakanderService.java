@@ -8,21 +8,12 @@ import java.util.List;
 
 public interface WakanderService {
 	Wakander criaWakander(Wakander wakander);
-
 	List<Wakander> buscaWakanderPorEmail(String email);
-
 	Wakander findByEmail(String email);
-
 	Wakander save(Wakander wakander);
-
 	void eventoCredencialCriada(Credencial credencial);
-
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
-
 	List<Wakander> buscarWakandersPorStatus();
-
-//	void iniciaJornadaDaAtitude(WakandaRepository wakandaRepository, WakandaService wakandaService);
-
 	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitudeWakander etapa);
 }
 
