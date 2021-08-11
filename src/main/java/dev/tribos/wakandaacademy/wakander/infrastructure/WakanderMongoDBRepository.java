@@ -15,14 +15,10 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @Component
 public class WakanderMongoDBRepository implements WakanderRepository {
-<<<<<<< HEAD
-	
-	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
-	
-=======
+
 	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
 
->>>>>>> develop
+
 	@Override
 	public Optional<Wakander> buscaWakanderPorCodigo(String codigoWakander) {
 		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorCodigo");
@@ -55,9 +51,7 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		return wakanderSalvo;
 	}
 
-<<<<<<< HEAD
-}
-=======
+
 	@Override
 	public List<Wakander> buscaWakanderPorStatus(StatusWakander status) {
 		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorStatus");
@@ -67,4 +61,3 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		return wakandersPorStatus;
 	}
 }
->>>>>>> develop

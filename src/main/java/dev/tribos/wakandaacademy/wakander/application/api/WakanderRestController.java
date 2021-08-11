@@ -2,6 +2,7 @@ package dev.tribos.wakandaacademy.wakander.application.api;
 
 import java.net.URI;
 import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -15,7 +16,6 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @AllArgsConstructor
 public class WakanderRestController implements WakanderAPI {
-
 	private WakanderService wakanderService;
 
 	@Override
@@ -36,9 +36,6 @@ public class WakanderRestController implements WakanderAPI {
 		return WakanderDetalheDTO.parseListDTO(wakanders);
 	}
 
-<<<<<<< HEAD
-}
-=======
 	@Override
 	public List<WakanderBuscaStatusDTO> buscaWakandersPreCadastros() {
 		log.info("[inicia] WakanderRestController - buscaPorStatus");
@@ -46,5 +43,6 @@ public class WakanderRestController implements WakanderAPI {
 		log.info("[Finaliza] WakanderRestController - buscaPorStatus");
 		return WakanderBuscaStatusDTO.parseListBuscaStatusDTO(wakendersNaoAutoruizado);
 	}
+	
 }
->>>>>>> develop
+
