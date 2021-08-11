@@ -56,5 +56,6 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		log.info("[Finaliza] WakanderMongoDBRepository - buscaWakanderPorStatusNaoAutorizado");
 		return buscaWakanderPorStatusNaoAutorizado;
 	}
+
 	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
 }

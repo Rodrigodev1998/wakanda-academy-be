@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
-
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -17,7 +16,6 @@ import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtit
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
-
 @Service
 @Log4j2
 @AllArgsConstructor
@@ -25,13 +23,12 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	private WakanderRepository wakanderRepository;
 	private WakandaService wakandaService;
 	private JornadaAtitudeStrategy strategyEtapaJornadaAtitude;
-	
+
 	@Override
 	public Wakander criaWakander(@Valid Wakander wakander) {
 		log.info("[Inicia] WakanderSpringDataMongoDBService - preCadastraCidadao");
 		wakander.buildCodigoByEmail();
 		wakander.start();
-       log.info(wakander);		
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderSpringDataMongoDBService - preCadastraCidadao");
 		return wakanderSalvo;
@@ -39,7 +36,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 
 	private void vinculaJornadaWakandaAoWakander(Wakander wakander) {
 		Wakanda wakanda = wakandaService.getWakanda();
-		wakander.iniciaWakanda(wakanda,strategyEtapaJornadaAtitude);
+		wakander.iniciaWakanda(wakanda, strategyEtapaJornadaAtitude);
 	}
 
 	@Override
@@ -91,7 +88,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - buscarWakanderPorStatusNaoAutorizado");
 		return wakanderStatusNaoAutorizado;
 	}
-		
+
 	public void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitudeWakander etapa) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 		Wakander wakanderPorCodigo = buscaWakanderPorCodigo(codigo);
@@ -99,7 +96,5 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		this.save(wakanderPorCodigo);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 	}
-	
-	
-	
+
 }
