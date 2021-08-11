@@ -17,6 +17,7 @@ import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaati
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.Builder;
 import lombok.Builder.Default;
@@ -89,5 +90,10 @@ public class Wakander {
 	public JornadaDaCompetencia getJornadaCompetencia() {
 		return (JornadaDaCompetencia)this.getJornadaAtitudeWakander()
 				.procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude.JORNADA_COMPETENCIA);
+	}
+	
+	public JornadaClareza getJornadaClareza() {
+		return (JornadaClareza)this.getJornadaAtitudeWakander()
+				.procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude.JORNADA_CLAREZA);
 	}
 }

@@ -1,12 +1,13 @@
 package dev.tribos.wakandaacademy.wakander.application.api.jornadaclareza;
 
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.Area;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import lombok.Getter;
 
 @Getter
 public class JornadaClarezaDTO {
-	
+	private String nome;
 	private String seOMundoAcabasse;
 	private String umaLista;
 	private String seusSonhos;
@@ -23,7 +24,9 @@ public class JornadaClarezaDTO {
 	private String feedback;
 	
 	
-	JornadaClarezaDTO(JornadaClareza jornadaClareza) {
+	JornadaClarezaDTO(Wakander wakander) {
+		JornadaClareza jornadaClareza = wakander.getJornadaClareza();
+		this.nome = jornadaClareza.getNome();
 		this.seOMundoAcabasse = jornadaClareza.getSeOMundoAcabasse();
 		this.umaLista = jornadaClareza.getUmaLista();
 		this.seusSonhos = jornadaClareza.getSeusSonhos();
