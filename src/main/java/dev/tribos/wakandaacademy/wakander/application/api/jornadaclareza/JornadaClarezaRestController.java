@@ -21,9 +21,9 @@ public class JornadaClarezaRestController implements JornadaClarezaAPI {
 	}
 	
 	@Override
-	public JornadaClarezaDTO getJornadaClareza(String codigoWakander) {
+	public JornadaClarezaDTO getJornadaClareza(String codigo) {
 		log.info("[Inicia] JornadaClarezaRestController - jornadaClareza");
-		var wakanderPorCodigo = wakanderService.buscaWakanderPorCodigo(codigoWakander);
+		var wakanderPorCodigo = wakanderService.buscaWakanderPorCodigo(codigo);
 		log.info("[Finaliza] JornadaCompetenciaRestController - jornadaClareza");
 		return new JornadaClarezaDTO(wakanderPorCodigo);
 	}

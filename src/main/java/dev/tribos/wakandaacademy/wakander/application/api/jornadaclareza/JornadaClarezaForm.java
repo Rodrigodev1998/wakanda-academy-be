@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.Area;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import lombok.Getter;
@@ -75,6 +76,7 @@ public class JornadaClarezaForm {
 	
 	public JornadaClareza paraEntidade() {
 		return JornadaClareza.builder()
+				.codigo(CodigoEtapaJornadaAtitude.JORNADA_CLAREZA.name())
 				.nome(nome)
 				.seOMundoAcabasse(seOMundoAcabasse)
 				.umaLista(umaLista)

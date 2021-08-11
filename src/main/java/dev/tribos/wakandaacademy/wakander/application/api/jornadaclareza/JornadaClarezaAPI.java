@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +21,5 @@ public interface JornadaClarezaAPI {
 	
 	@GetMapping("/v1/wakander/{codigo}/jornada-clareza")
 	@ResponseStatus(value = HttpStatus.OK)
-	public JornadaClarezaDTO getJornadaClareza(@RequestParam(required = true) String codigoWakander);
+	public JornadaClarezaDTO getJornadaClareza(@PathVariable String codigo);
 }
