@@ -65,7 +65,9 @@ public class Wakander {
 	}
 
 	private String getFirstPartOfEmail() {
-		return Optional.ofNullable(this.email).map(s -> s.split("@")[0]).orElseThrow();
+		return Optional.ofNullable(this.email)
+				.map(s -> s.split("@")[0])
+				.orElseThrow();
 	}
 
 	public void iniciaWakanda(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
