@@ -16,4 +16,3 @@ public interface WakanderService {
 	List<Wakander> buscarWakandersPorStatus();
 	void preencheEtapaParaWakanderAtravesCodigo(String codigo, EtapaJornadaAtitudeWakander etapa);
 }
-
