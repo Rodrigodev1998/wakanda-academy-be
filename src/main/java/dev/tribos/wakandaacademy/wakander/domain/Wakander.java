@@ -50,7 +50,6 @@ public class Wakander {
 
 	private LocalDateTime dataHora;
 
-	@Default
 	private JornadaAtitudeWakander jornadaAtitudeWakander;
 
 	@Default
