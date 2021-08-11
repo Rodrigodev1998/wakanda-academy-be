@@ -49,12 +49,12 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 	}
 
 	@Override
-	public List<Wakander> buscaWakanderPorStatus(StatusWakander naoAutorizado) {
+	public List<Wakander> buscaWakanderPorStatus(StatusWakander status) {
 		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorStatusNaoAutorizado");
-		List<Wakander> buscaWakanderPorStatusNaoAutorizado = wakanderSpringDataMongoDBRepository
-				.findByStatusWakander(naoAutorizado);
+		List<Wakander> wakandersPorStatus = wakanderSpringDataMongoDBRepository
+				.findByStatusWakander(status);
 		log.info("[Finaliza] WakanderMongoDBRepository - buscaWakanderPorStatusNaoAutorizado");
-		return buscaWakanderPorStatusNaoAutorizado;
+		return wakandersPorStatus;
 	}
 
 	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
