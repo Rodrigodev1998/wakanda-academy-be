@@ -12,5 +12,5 @@ public interface WakanderRepository {
 	List<Wakander> buscaWakanderPorEmailEhPorStatusAutorizado(String email);
 	Optional<Wakander> findByEmail(String email);
 	Optional<Wakander> buscaWakanderPorCodigo(String codigoWakander);
-	List<Wakander> buscaWakanderPorStatus(StatusWakander naoAutorizado);
+	List<Wakander> buscaWakanderPorStatus(StatusWakander statusWakander);
 }
