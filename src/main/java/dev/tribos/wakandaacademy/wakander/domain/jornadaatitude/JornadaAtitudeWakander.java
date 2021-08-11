@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -41,15 +42,19 @@ public class JornadaAtitudeWakander {
 	}
 
 	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
-		EtapaJornadaAtitudeWakander etapaPeloNome = procuraEtapaPeloNome(etapaJornadaAtitude.getNome());
+		EtapaJornadaAtitudeWakander etapaPeloNome = procuraEtapaPeloCodigo(etapaJornadaAtitude.getCodigo());
 		etapaPeloNome.preenche(etapaJornadaAtitude);
 	}
 
-	public EtapaJornadaAtitudeWakander procuraEtapaPeloNome(String nome) {
+	public EtapaJornadaAtitudeWakander procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude codigo) {
+		return procuraEtapaPeloCodigo(codigo.name());
+	}
+
+	private EtapaJornadaAtitudeWakander procuraEtapaPeloCodigo(String codigo) {
 		instaciaEtapasSeNulo();
 		return this.etapas.stream()
-		.filter(e -> e.getNome().equals(nome))
-		.findFirst()
-		.orElseThrow(() -> ApiException.throwApiException(HttpStatus.BAD_REQUEST, "Etapa não encontrada"));
+				.filter(e -> e.getCodigo().equals(codigo))
+				.findFirst()
+				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.BAD_REQUEST, "Etapa não encontrada"));
 	}
 }

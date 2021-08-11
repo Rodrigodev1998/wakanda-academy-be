@@ -2,18 +2,24 @@ package dev.tribos.wakandaacademy.wakander.domain;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
+
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Getter;
@@ -80,11 +86,18 @@ public class Wakander {
 		jornadaAtitudeWakander.preencheEtapaJornadaAtitude(etapaJornadaAtitude);
 	}
 
-	public EtapaJornadaAtitudeWakander procuraEtapaPeloNome(String nome) {
-		return jornadaAtitudeWakander.procuraEtapaPeloNome(nome);
+	public JornadaDaCompetencia getJornadaCompetencia() {
+		return (JornadaDaCompetencia)this.getJornadaAtitudeWakander()
+				.procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude.JORNADA_COMPETENCIA);
+	}
+	
+	public JornadaClareza getJornadaClareza() {
+		return (JornadaClareza)this.getJornadaAtitudeWakander()
+				.procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude.JORNADA_CLAREZA);
 	}
 
 	public void start() {
 		this.dataHora = LocalDateTime.now();
 	}
 }
+

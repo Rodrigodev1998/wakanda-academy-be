@@ -15,7 +15,9 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @Component
 public class WakanderMongoDBRepository implements WakanderRepository {
+
 	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
+
 
 	@Override
 	public Optional<Wakander> buscaWakanderPorCodigo(String codigoWakander) {
@@ -48,6 +50,7 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		log.info("[Finaliza] WakanderMongoDBRepository - save");
 		return wakanderSalvo;
 	}
+
 
 	@Override
 	public List<Wakander> buscaWakanderPorStatus(StatusWakander status) {
