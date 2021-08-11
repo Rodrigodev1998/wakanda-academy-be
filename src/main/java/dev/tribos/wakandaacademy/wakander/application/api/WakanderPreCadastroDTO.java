@@ -1,6 +1,8 @@
 package dev.tribos.wakandaacademy.wakander.application.api;
 
 
+import java.time.LocalDateTime;
+
 import dev.tribos.wakandaacademy.wakander.domain.TipoRelacionamento;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
@@ -18,6 +20,7 @@ public class WakanderPreCadastroDTO {
 	private Boolean jaTrabalhouProgramacao;
 	private String entendimentoSobreWakanda;
 	private String motivoParaParticiparWakanda;
+	private LocalDateTime dataHora;
 
 	public WakanderPreCadastroDTO(Wakander wakander) {
 		this.codigo = wakander.getCodigo();
@@ -32,6 +35,7 @@ public class WakanderPreCadastroDTO {
 		this.jaTrabalhouProgramacao = wakander.getPreCadastro().getJaTrabalhouProgramacao();
 		this.entendimentoSobreWakanda = wakander.getPreCadastro().getEntendimentoSobreWakanda();
 		this.motivoParaParticiparWakanda = wakander.getPreCadastro().getMotivoParaParticiparWakanda();
+		this.dataHora = wakander.getDataHora();
 	}
 }
 

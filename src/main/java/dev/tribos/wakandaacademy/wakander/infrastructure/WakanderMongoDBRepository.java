@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Component;
 
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
+import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -14,9 +15,8 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @Component
 public class WakanderMongoDBRepository implements WakanderRepository {
-	
 	private WakanderSpringDataMongoDBRepository wakanderSpringDataMongoDBRepository;
-	
+
 	@Override
 	public Optional<Wakander> buscaWakanderPorCodigo(String codigoWakander) {
 		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorCodigo");
@@ -49,4 +49,12 @@ public class WakanderMongoDBRepository implements WakanderRepository {
 		return wakanderSalvo;
 	}
 
+	@Override
+	public List<Wakander> buscaWakanderPorStatus(StatusWakander status) {
+		log.info("[Inicia] WakanderMongoDBRepository - buscaWakanderPorStatus");
+		List<Wakander> wakandersPorStatus = wakanderSpringDataMongoDBRepository
+				.findByStatusWakander(status);
+		log.info("[Finaliza] WakanderMongoDBRepository - buscaWakanderPorStatus");
+		return wakandersPorStatus;
+	}
 }
