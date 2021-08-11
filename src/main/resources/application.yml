@@ -7,7 +7,7 @@ spring:
   data:
     mongodb:
       authentication-database: admin
-      uri: mongodb+srv://wakanda:jnjmuc0GxHsPHuoH@wakandacluster.frepd.mongodb.net/wakanda?retryWrites=true&w=majority
+      uri: ${MONGO_DB_URI:mongodb://root:root@127.0.0.1:27017/wakanda?authSource=admin}
       auto-index-creation: true
 
 wakanda:

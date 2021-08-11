@@ -22,7 +22,6 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
 @Getter
-@Setter
 @Builder
 @Document(collection = "Wakander")
 @Log4j2
