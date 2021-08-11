@@ -1,6 +1,5 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
-
 import java.time.LocalDateTime;
 import java.util.Optional;
 import javax.validation.constraints.Email;
@@ -49,10 +48,10 @@ public class Wakander {
 	private Boolean possuiFilhos;
 
 	private PreCadastroWakander preCadastro;
-	
+
 	private LocalDateTime dataHora;
-	
-	@Default  
+
+	@Default
 	private JornadaAtitudeWakander jornadaAtitudeWakander;
 
 	@Default
@@ -68,14 +67,12 @@ public class Wakander {
 	}
 
 	private String getFirstPartOfEmail() {
-		return Optional.ofNullable(this.email)
-				.map(s -> s.split("@")[0])
-				.orElseThrow();
+		return Optional.ofNullable(this.email).map(s -> s.split("@")[0]).orElseThrow();
 	}
 
 	public void iniciaWakanda(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
 		log.info("[Inicia] Wakander - iniciaWakanda");
-		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda,strategy);
+		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda, strategy);
 		log.info("[Finaliza] Wakander - iniciaWakanda");
 	}
 
@@ -86,9 +83,9 @@ public class Wakander {
 	public EtapaJornadaAtitudeWakander procuraEtapaPeloNome(String nome) {
 		return jornadaAtitudeWakander.procuraEtapaPeloNome(nome);
 	}
-	
+
 	public void start() {
-				this.dataHora = LocalDateTime.now();
+		this.dataHora = LocalDateTime.now();
 
 	}
 }
