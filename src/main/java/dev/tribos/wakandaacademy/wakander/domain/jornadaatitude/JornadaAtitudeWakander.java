@@ -42,22 +42,18 @@ public class JornadaAtitudeWakander {
 	}
 
 	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
-		EtapaJornadaAtitudeWakander etapaPeloNome = procuraEtapaPeloNome(etapaJornadaAtitude.getNome());
+		EtapaJornadaAtitudeWakander etapaPeloNome = procuraEtapaPeloCodigo(etapaJornadaAtitude.getCodigo());
 		etapaPeloNome.preenche(etapaJornadaAtitude);
 	}
 
-	public EtapaJornadaAtitudeWakander procuraEtapaPeloNome(String nome) {
-		instaciaEtapasSeNulo();
-		return this.etapas.stream()
-		.filter(e -> e.getNome().equals(nome))
-		.findFirst()
-		.orElseThrow(() -> ApiException.throwApiException(HttpStatus.BAD_REQUEST, "Etapa não encontrada"));
+	public EtapaJornadaAtitudeWakander procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude codigo) {
+		return procuraEtapaPeloCodigo(codigo.name());
 	}
 
-	public EtapaJornadaAtitudeWakander procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude codigo) {
+	private EtapaJornadaAtitudeWakander procuraEtapaPeloCodigo(String codigo) {
 		instaciaEtapasSeNulo();
 		return this.etapas.stream()
-				.filter(e -> e.getCodigo().equals(codigo.name()))
+				.filter(e -> e.getCodigo().equals(codigo))
 				.findFirst()
 				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.BAD_REQUEST, "Etapa não encontrada"));
 	}

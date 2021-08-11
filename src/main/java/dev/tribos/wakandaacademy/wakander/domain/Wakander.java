@@ -86,11 +86,6 @@ public class Wakander {
 		jornadaAtitudeWakander.preencheEtapaJornadaAtitude(etapaJornadaAtitude);
 	}
 
-	public EtapaJornadaAtitudeWakander procuraEtapaPeloNome(String nome) {
-		return jornadaAtitudeWakander.procuraEtapaPeloNome(nome);
-	}
-
-
 	public JornadaDaCompetencia getJornadaCompetencia() {
 		return (JornadaDaCompetencia)this.getJornadaAtitudeWakander()
 				.procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude.JORNADA_COMPETENCIA);
