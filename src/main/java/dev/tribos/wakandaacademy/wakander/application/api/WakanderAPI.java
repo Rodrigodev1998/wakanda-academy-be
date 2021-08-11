@@ -21,10 +21,14 @@ public interface WakanderAPI {
 	@PostMapping("/public/v1/wakander/pre-cadastro")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(
-			@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm, UriComponentsBuilder uriBuilder);
+			@RequestBody @Valid WakanderPreCadastroForm wakanderPreCadastroForm, 
+			UriComponentsBuilder uriBuilder);
 
 	@GetMapping("/public/v1/wakander")
 	@ResponseStatus(value = HttpStatus.OK)
 	List<WakanderDetalheDTO> buscaPorEmail(
-			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
+			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$",
+			message = "o email deve ser um gmail") String gmail);
+
+	
 }

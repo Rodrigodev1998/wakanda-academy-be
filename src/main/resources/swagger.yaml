@@ -1,0 +1,110 @@
+swagger : '2.0'
+
+schemes:
+    - http
+    - https
+    
+host : localhost:8080
+basePath: /wakanda-academy/app
+
+info:
+  version: 1.0.0
+  title: Wakanda academy
+  description: swagger feito para a historia WB-141 de Back-End
+  termsOfService: http://localhost:8080/wakanda-academy/app/v1/termo-uso
+  contact: 
+    name: wakandaCity suporte
+    url: http://localhost:8080/wakanda-academy/app/v1/termo-uso
+    email: suporte@wakandacity.com.br
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+
+
+paths:
+ '/v1/wakander/{wakanderCodigo}/jornada-clareza/jornada-competencia':
+  post:
+    summary: buscar municipio
+    description: buscar municipios 
+    consumes:
+        - application/json
+    operationId: getMunicipio
+    parameters:
+      - in: path
+        name: wakanderCodigo
+        type: string
+        required: true
+      - in: body
+        name: jornadaCompetencia
+        required: true
+        schema:
+          $ref: '#/definitions/jornadaCompetencia'
+    responses:
+      204:
+        description: No content
+      404:
+        description: Wakander Não encontrado
+      500: 
+        description: Erro interno no servidor
+  
+definitions:
+  
+  jornadaCompetencia:
+    type: object
+    properties:
+      apiBackEndJava:
+        type: integer
+        minimum: 0
+        maximum: 10
+      bancoDeDados:
+        type: integer
+        minimum: 0
+        maximum: 10
+      gitHub:
+        type: integer
+        minimum: 0
+        maximum: 10
+      devOps:
+        type: integer
+        minimum: 0
+        maximum: 10
+      testes:
+        type: integer
+        minimum: 0
+        maximum: 10
+      agile:
+        type: integer
+        minimum: 0
+        maximum: 10
+      scrum:
+        type: integer
+        minimum: 0
+        maximum: 10
+      definicaoPrimeiraCompetencia:
+        type: string
+        maxLength: 255
+        minLength: 3
+      mediaPrimeiraCompetencia:
+        type: integer
+        minimum: 0
+        maximum: 10
+      definicaoSegundaCompetencia:
+        type: string
+        maxLength: 255
+        minLength: 3
+      mediaSegundaCompetencia:
+        type: integer
+        minimum: 0
+        maximum: 10
+      competenciasSelecionadas:
+          type: array
+          items:
+            type: string
+      acoesDesenvolverCompetencias:
+        type: string
+        maxLength: 255
+        minLength: 3
+      importanciaEmParticipar:
+        type: string
+        maxLength: 255
+        minLength: 3

@@ -16,6 +16,7 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @AllArgsConstructor
 public class WakanderRestController implements WakanderAPI {
+
 	private WakanderService wakanderService;
 
 	@Override
@@ -35,4 +36,5 @@ public class WakanderRestController implements WakanderAPI {
 		log.info("[Finaliza] WakanderRestController - buscaEmail");
 		return WakanderDetalheDTO.parseListDTO(wakanders);
 	}
+
 }

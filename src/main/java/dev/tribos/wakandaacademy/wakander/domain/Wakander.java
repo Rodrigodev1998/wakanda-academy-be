@@ -13,9 +13,11 @@ import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Getter;
@@ -82,5 +84,10 @@ public class Wakander {
 
 	public EtapaJornadaAtitudeWakander procuraEtapaPeloNome(String nome) {
 		return jornadaAtitudeWakander.procuraEtapaPeloNome(nome);
+	}
+
+	public JornadaDaCompetencia getJornadaCompetencia() {
+		return (JornadaDaCompetencia)this.getJornadaAtitudeWakander()
+				.procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude.JORNADA_COMPETENCIA);
 	}
 }

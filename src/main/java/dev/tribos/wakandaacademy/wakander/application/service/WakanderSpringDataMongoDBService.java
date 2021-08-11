@@ -23,6 +23,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @AllArgsConstructor
 public class WakanderSpringDataMongoDBService implements WakanderService {
+	
 	private WakanderRepository wakanderRepository;
 	private WakandaService wakandaService;
 	private JornadaAtitudeStrategy strategyEtapaJornadaAtitude;
@@ -89,5 +90,6 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
 		this.save(wakanderPorCodigo);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
+
 	}
 }
