@@ -12,8 +12,13 @@ import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import lombok.extern.log4j.Log4j2;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Getter
 @Log4j2
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JornadaAtitudeWakander {
 	List<EtapaJornadaAtitudeWakander> etapas;
 	
