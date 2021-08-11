@@ -57,7 +57,7 @@ public class JornadaClarezaForm {
 	private String nivelResponsabilidade;
 	
 	@Min(0)
-	@Max(value = 100, message = "nível não pode ser maior que 100")
+	@Max(value = 10, message = "nível não pode ser maior que 10")
 	@NotNull
 	private Integer nivelComprometimento;
 	
