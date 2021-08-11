@@ -12,7 +12,12 @@ import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Getter
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JornadaAtitudeWakander {
 	List<EtapaJornadaAtitudeWakander> etapas;
 	

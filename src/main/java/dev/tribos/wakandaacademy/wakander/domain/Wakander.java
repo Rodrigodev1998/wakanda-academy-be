@@ -1,17 +1,15 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
@@ -52,6 +50,8 @@ public class Wakander {
 
 	private PreCadastroWakander preCadastro;
 
+	private LocalDateTime dataHora;
+
 	private JornadaAtitudeWakander jornadaAtitudeWakander;
 
 	@Default
@@ -74,7 +74,7 @@ public class Wakander {
 
 	public void iniciaWakanda(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
 		log.info("[Inicia] Wakander - iniciaWakanda");
-		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda,strategy);
+		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda, strategy);
 		log.info("[Finaliza] Wakander - iniciaWakanda");
 	}
 
@@ -86,8 +86,14 @@ public class Wakander {
 		return jornadaAtitudeWakander.procuraEtapaPeloNome(nome);
 	}
 
+
 	public JornadaDaCompetencia getJornadaCompetencia() {
 		return (JornadaDaCompetencia)this.getJornadaAtitudeWakander()
 				.procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude.JORNADA_COMPETENCIA);
 	}
+
+	public void start() {
+		this.dataHora = LocalDateTime.now();
+	}
 }
+
