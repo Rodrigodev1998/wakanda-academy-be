@@ -86,6 +86,5 @@ public class Wakander {
 
 	public void start() {
 		this.dataHora = LocalDateTime.now();
-
 	}
 }
