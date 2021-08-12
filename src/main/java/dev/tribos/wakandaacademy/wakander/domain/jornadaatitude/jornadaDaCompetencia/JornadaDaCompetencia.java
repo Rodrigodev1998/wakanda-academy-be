@@ -3,21 +3,28 @@ package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompet
 import java.time.LocalDateTime;
 import java.util.List;
 
+import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.StatusEtapaJornadaAtitude;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Builder
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class JornadaDaCompetencia implements EtapaJornadaAtitudeWakander {
+	@Setter
 	private String codigo;
+	@Setter
 	private String logo;
+	@Setter
 	private String nome;
+	@Setter
 	private StatusEtapaJornadaAtitude status;
+	@Setter
 	private String descricao;
 	private LocalDateTime dataInicio;
 	private LocalDateTime dataConclusao;
@@ -42,6 +49,10 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitudeWakander {
 		this.listaCompetencias = jornadaDaCompetencia.getListaCompetencias();
 		this.definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas = jornadaDaCompetencia.getDefinaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas();
 		this.porqueFoImportanteParticiparHj = jornadaDaCompetencia.porqueFoImportanteParticiparHj;
+	}
+
+	public JornadaDaCompetencia(EtapaJornadaAtitudeWakanda etapaWakanda) {
+		iniciaEtapaJornadaAtitude(etapaWakanda);
 	}
 }
 

@@ -8,16 +8,22 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Builder
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JornadaClareza implements EtapaJornadaAtitudeWakander {
+	@Setter
 	private String codigo;
+	@Setter
 	private String logo;
+	@Setter
 	private String nome;
+	@Setter
 	private StatusEtapaJornadaAtitude status;
+	@Setter
 	private String descricao;
 	private LocalDateTime dataConclusao;
 
@@ -56,10 +62,6 @@ public class JornadaClareza implements EtapaJornadaAtitudeWakander {
 	}
 
 	public JornadaClareza(EtapaJornadaAtitudeWakanda etapaWakanda) {
-		this.codigo = etapaWakanda.getCodigo();
-		this.logo = etapaWakanda.getLogo();
-		this.nome = etapaWakanda.getNome();
-		this.status = StatusEtapaJornadaAtitude.BLOQUEADA;
-		this.descricao = etapaWakanda.getDescricao();
+		iniciaEtapaJornadaAtitude(etapaWakanda);
 	}
 }
