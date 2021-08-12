@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public interface JornadaDaCompetenciaAPI {
-	@PatchMapping("/public/v1/wakander/{wakanderCodigo}/jornada-competencia")
+	@PatchMapping("/public/v1/wakander/{codigo}/jornada-competencia")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public void preencheJornadaDaCompetenciaNoWakander(@PathVariable String wakanderCodigo,@RequestBody @Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm);
+	public void preencheJornadaDaCompetenciaNoWakander(@PathVariable String codigo,@RequestBody @Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm);
  
-	@GetMapping("/public/v1/wakander/{wakanderCodigo}/jornada-competencia")
+	@GetMapping("/public/v1/wakander/{codigo}/jornada-competencia")
 	@ResponseStatus(value = HttpStatus.OK)
-	public JornadaDaCompetenciaDTO getJornadaCompetencia(@PathVariable  String codigoWakander);
+	public JornadaDaCompetenciaDTO getJornadaCompetencia(@PathVariable  String codigo);
 }

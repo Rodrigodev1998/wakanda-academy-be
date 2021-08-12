@@ -17,18 +17,18 @@ public class JornadaDaCompetenciaRestcontroller implements JornadaDaCompetenciaA
 	WakanderService wakanderService;
 
 	@Override
-	public void preencheJornadaDaCompetenciaNoWakander(@PathVariable String wakanderCodigo,
+	public void preencheJornadaDaCompetenciaNoWakander(@PathVariable String codigo,
 			@RequestBody @Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm) {
 		log.info("[Inicia] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
 		log.info("Form: {}", jornadaDaCompetenciaForm);
-		wakanderService.preencheEtapaParaWakanderAtravesCodigo(wakanderCodigo, jornadaDaCompetenciaForm.paraEntidade());
+		wakanderService.preencheEtapaParaWakanderAtravesCodigo(codigo, jornadaDaCompetenciaForm.paraEntidade());
 		log.info("[Finaliza] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
 	}
 
 	@Override
-	public JornadaDaCompetenciaDTO getJornadaCompetencia(String codigoWakander) {
+	public JornadaDaCompetenciaDTO getJornadaCompetencia(String codigo) {
 		log.info("[Inicia] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
-		var wakanderPorCodigo = wakanderService.buscaWakanderPorCodigo(codigoWakander);
+		var wakanderPorCodigo = wakanderService.buscaWakanderPorCodigo(codigo);
 		log.info("[Finaliza] JornadaDaCompetenciaRestController - jornadaDaCompetencia");
 		return new JornadaDaCompetenciaDTO(wakanderPorCodigo);
 	}
