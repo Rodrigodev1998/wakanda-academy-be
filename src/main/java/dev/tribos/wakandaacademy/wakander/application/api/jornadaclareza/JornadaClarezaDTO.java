@@ -1,32 +1,13 @@
-package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude;
+package dev.tribos.wakandaacademy.wakander.application.api.jornadaclareza;
 
-import java.time.LocalDateTime;
-
-import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import dev.tribos.wakandaacademy.wakander.domain.Wakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.Area;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Builder
 @Getter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class JornadaClareza implements EtapaJornadaAtitudeWakander {
-	@Setter
-	private String codigo;
-	@Setter
-	private String logo;
-	@Setter
+public class JornadaClarezaDTO {
 	private String nome;
-	@Setter
-	private StatusEtapaJornadaAtitude status;
-	@Setter
-	private String descricao;
-	private LocalDateTime dataConclusao;
-
 	private String seOMundoAcabasse;
 	private String umaLista;
 	private String seusSonhos;
@@ -41,10 +22,11 @@ public class JornadaClareza implements EtapaJornadaAtitudeWakander {
 	private String ondeEstudar;
 	private String tempoEstudo;
 	private String feedback;
-
-	@Override
-	public void preenche(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
-		JornadaClareza jornadaClareza = (JornadaClareza) etapaJornadaAtitude;
+	
+	
+	JornadaClarezaDTO(Wakander wakander) {
+		JornadaClareza jornadaClareza = wakander.getJornadaClareza();
+		this.nome = jornadaClareza.getNome();
 		this.seOMundoAcabasse = jornadaClareza.getSeOMundoAcabasse();
 		this.umaLista = jornadaClareza.getUmaLista();
 		this.seusSonhos = jornadaClareza.getSeusSonhos();
@@ -59,14 +41,5 @@ public class JornadaClareza implements EtapaJornadaAtitudeWakander {
 		this.ondeEstudar = jornadaClareza.getOndeEstudar();
 		this.tempoEstudo = jornadaClareza.getTempoEstudo();
 		this.feedback = jornadaClareza.getFeedback();
-	}
-
-	public JornadaClareza(EtapaJornadaAtitudeWakanda etapaWakanda) {
-		this.codigo = etapaWakanda.getCodigo();
-		this.logo = etapaWakanda.getLogo();
-		this.nome = etapaWakanda.getNome();
-		this.status = StatusEtapaJornadaAtitude.BLOQUEADA;
-		this.descricao = etapaWakanda.getDescricao();
-		iniciaEtapaJornadaAtitude(etapaWakanda);
 	}
 }

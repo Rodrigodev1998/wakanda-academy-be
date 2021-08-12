@@ -1,7 +1,5 @@
 package dev.tribos.wakandaacademy.wakander.application.api;
 
-import java.time.LocalDateTime;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
@@ -59,8 +57,6 @@ public class WakanderPreCadastroForm {
 	@Length(min = 5)
 	private String motivoParaParticiparWakanda;
 	
-	private LocalDateTime dataHora;
-
 	public Wakander paraEntidade() {
 		return Wakander.builder()
 			.nome(nome).email(email).idade(idade).possuiFilhos(possuiFilhos)
