@@ -4,10 +4,10 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.Area;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import lombok.Getter;
@@ -58,7 +58,7 @@ public class JornadaClarezaForm {
 	private String nivelResponsabilidade;
 	
 	@Min(0)
-	@Max(value = 100, message = "nível não pode ser maior que 100")
+	@Max(value = 10, message = "nível não pode ser maior que 10")
 	@NotNull
 	private Integer nivelComprometimento;
 	
@@ -76,6 +76,7 @@ public class JornadaClarezaForm {
 	
 	public JornadaClareza paraEntidade() {
 		return JornadaClareza.builder()
+				.codigo(CodigoEtapaJornadaAtitude.JORNADA_CLAREZA.name())
 				.nome(nome)
 				.seOMundoAcabasse(seOMundoAcabasse)
 				.umaLista(umaLista)

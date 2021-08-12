@@ -17,7 +17,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 public interface WakanderAPI {
-
 	@PostMapping("/public/v1/wakander/pre-cadastro")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public ResponseEntity<WakanderPreCadastroDTO> preCadastraWakander(
@@ -26,11 +25,9 @@ public interface WakanderAPI {
 	@GetMapping("/public/v1/wakander")
 	@ResponseStatus(value = HttpStatus.OK)
 	List<WakanderDetalheDTO> buscaPorEmail(
-
 			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
 
 	@GetMapping("/public/v1/pre-cadastros")
 	@ResponseStatus(value = HttpStatus.OK)
 	List<WakanderBuscaStatusDTO> buscaWakandersPreCadastros();
-
 }
