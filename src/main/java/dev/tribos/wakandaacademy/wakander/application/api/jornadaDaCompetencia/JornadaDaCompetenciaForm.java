@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.Competencia;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import lombok.Getter;
@@ -32,8 +33,9 @@ public class JornadaDaCompetenciaForm {
 	private String importanciaEmParticipar;
 
 	public JornadaDaCompetencia paraEntidade() {
-
-		return JornadaDaCompetencia.builder().nome(nome)
+		return JornadaDaCompetencia.builder()
+				.codigo(CodigoEtapaJornadaAtitude.JORNADA_COMPETENCIA.name())
+				.nome(nome)
 				.primeiraCompetenciaSelecionada(primeiraCompetenciaSelecionada)
 				.segundaCompetenciaSelecionada(segundaCompetenciaSelecionada).listaCompetencias(listaCompetencias)
 				.definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas(acoesDesenvolverCompetencias)

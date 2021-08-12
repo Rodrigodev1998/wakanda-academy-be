@@ -101,7 +101,5 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
 		this.save(wakanderPorCodigo);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
-
 	}
-
 }
