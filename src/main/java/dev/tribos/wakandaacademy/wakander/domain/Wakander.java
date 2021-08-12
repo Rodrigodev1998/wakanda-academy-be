@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.domain;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.constraints.Email;
@@ -98,6 +99,10 @@ public class Wakander {
 
 	public void start() {
 		this.dataHora = LocalDateTime.now();
+	}
+
+	public List<EtapaJornadaAtitudeWakander> getEtapasJornadaAtitude() {
+		return this.jornadaAtitudeWakander.getEtapas();
 	}
 }
 
