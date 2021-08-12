@@ -6,9 +6,7 @@ import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 
-
 public interface WakanderService {
-
 	Wakander criaWakander(Wakander wakander);
 	List<Wakander> buscaWakanderPorEmail(String email);
 	Wakander findByEmail(String email);

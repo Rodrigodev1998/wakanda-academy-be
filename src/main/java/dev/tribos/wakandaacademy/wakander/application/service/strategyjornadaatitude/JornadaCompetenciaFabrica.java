@@ -4,13 +4,13 @@ import org.springframework.stereotype.Component;
 
 import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 
 @Component
 public class JornadaCompetenciaFabrica implements EtapaJornadaAtitudeWakanderFabrica {
 	@Override
 	public EtapaJornadaAtitudeWakander cria(EtapaJornadaAtitudeWakanda etapaWakanda) {
-		return new JornadaClareza(etapaWakanda);
+		return new JornadaDaCompetencia(etapaWakanda);
 	}
 
 	@Override
