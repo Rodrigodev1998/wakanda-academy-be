@@ -18,6 +18,8 @@ public interface JornadaAtitudeAPI {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void adicionaEtapaJornadaAtitude(@PathVariable String codigo, @RequestBody @Valid JornadaAtitudeForm jornadaAtitudeForm);
 
+    
+    
     @GetMapping("/v1/wakanda/{codigo}/jornada-atitude-wakanda")
     @ResponseStatus(value = HttpStatus.OK)
     public JornadaAtitudeDTO getJornadaAtitude(@PathVariable String codigo);

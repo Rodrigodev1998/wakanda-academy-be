@@ -4,11 +4,14 @@ import java.io.File;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.aplication.repository.WakandaRepository;
+import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -55,5 +58,15 @@ public class WakandaSpringDataMongoDBService implements WakandaService{
                 Wakanda.class);
         log.info("Wakanda {}",wakanda);
 		return wakanda ;
+	}
+
+	
+	public void adicionaEtapaJornadaAtitude(String codigo, EtapaJornadaAtitudeWakanda etapaJornadaAtitudeWakanda) {
+		log.info("[Inicia] WakandaSpringDataMongoDBService - adicionaEtapaJornadaAtitude");
+		 Wakanda wakanda =  wakandaRepository.findWakandaPadrao(codigo)
+				 .orElseThrow(() -> ApiException.throwApiException(HttpStatus.NOT_FOUND, "Wakander não encontrado!"));
+		 wakanda.adicionaEtapaJornadaAtitude(etapaJornadaAtitudeWakanda);
+		 this.save(wakanda);
+		 log.info("[Finaliza] WakandaSpringDataMongoDBService - adicionaEtapaJornadaAtitude");
 	}
 }
