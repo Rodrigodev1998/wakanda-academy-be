@@ -7,5 +7,5 @@ import java.util.Optional;
 public interface WakandaRepository {
 	Optional<Wakanda> findWakandaPadrao(String codigo);
 
-	void salva(Wakanda wakanda);
+	Wakanda salva(Wakanda wakanda);
 }

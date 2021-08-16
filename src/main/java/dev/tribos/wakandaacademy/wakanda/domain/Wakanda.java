@@ -34,4 +34,8 @@ public class Wakanda {
     	log.info("[Finaliza] Wakanda - getEtapasJornadaAtitudePadrao");
     	return this.jornadaAtitude.getEtapasPadrao();
     }
+
+    public void adicionaEtapaJornadaAtitude(EtapaJornadaAtitudeWakanda etapaJornadaAtitude) {
+        jornadaAtitude.adicionaEtapaJornadaAtitude(etapaJornadaAtitude);
+    }
 }

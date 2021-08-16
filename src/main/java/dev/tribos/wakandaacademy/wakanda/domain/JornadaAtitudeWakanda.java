@@ -22,4 +22,7 @@ public class JornadaAtitudeWakanda {
         		.filter(e -> e.getPadrao())
         		.collect(Collectors.toList());
     }
+
+    public void adicionaEtapaJornadaAtitude(EtapaJornadaAtitudeWakanda etapaJornadaAtitude) {
+    }
 }

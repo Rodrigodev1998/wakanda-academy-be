@@ -40,6 +40,14 @@ public class WakandaSpringDataMongoDBService implements WakandaService{
 		log.info("[Finaliza] WakandaSpringDataMongoDBService - iniciaWakanda");
 	}
 
+	@Override
+	public Wakanda save(Wakanda wakanda) {
+    	log.info("[Inicia] WakandaSpringDataMongoDBService - Salva Wakanda");
+    	Wakanda wakandaSalvo = wakandaRepository.salva(wakanda);
+		log.info("[Finaliza] WakandaSpringDataMongoDBService - Salva Wakanda");
+		return wakandaSalvo;
+	}
+
 	private Wakanda buildWakanda() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         Wakanda wakanda = mapper.readValue(
