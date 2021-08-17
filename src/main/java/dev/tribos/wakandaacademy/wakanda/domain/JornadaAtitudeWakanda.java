@@ -24,5 +24,6 @@ public class JornadaAtitudeWakanda {
     }
 
     public void adicionaEtapaJornadaAtitude(EtapaJornadaAtitudeWakanda etapaJornadaAtitude) {
+    	etapas.add(etapaJornadaAtitude);
     }
 }

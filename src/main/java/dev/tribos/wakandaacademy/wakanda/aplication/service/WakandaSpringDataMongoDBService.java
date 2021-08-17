@@ -4,12 +4,10 @@ import java.io.File;
 
 import javax.annotation.PostConstruct;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.aplication.repository.WakandaRepository;
 import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
@@ -20,14 +18,13 @@ import lombok.extern.log4j.Log4j2;
 @AllArgsConstructor
 @Service
 public class WakandaSpringDataMongoDBService implements WakandaService{
-    private static final String CODIGO = "PADRAO";
+    private static final String CODIGO_PADRAO = "PADRAO";
     private WakandaRepository wakandaRepository;
 
     @Override
     public Wakanda getWakanda() {
         log.info("[Inicia] WakandaSpringDataMongoDBService - getWakanda");
-        Wakanda wakanda =  wakandaRepository.findWakandaPadrao(CODIGO)
-                .orElseThrow();
+        Wakanda wakanda =  wakandaRepository.findWakandaPadrao(CODIGO_PADRAO).orElseThrow();
         log.info("[Finaliza] WakandaSpringDataMongoDBService - getWakanda");
         return wakanda;
     }
@@ -36,7 +33,7 @@ public class WakandaSpringDataMongoDBService implements WakandaService{
 	@PostConstruct
 	public void iniciaWakanda() throws Exception {
 		log.info("[Inicia] WakandaSpringDataMongoDBService - iniciaWakanda");
-		if(wakandaRepository.findWakandaPadrao(CODIGO).isEmpty()) {
+		if(wakandaRepository.findWakandaPadrao(CODIGO_PADRAO).isEmpty()) {
 			var wakanda = buildWakanda();
 			wakandaRepository.salva(wakanda);
 		};
@@ -60,11 +57,10 @@ public class WakandaSpringDataMongoDBService implements WakandaService{
 		return wakanda ;
 	}
 
-	
-	public void adicionaEtapaJornadaAtitude(String codigo, EtapaJornadaAtitudeWakanda etapaJornadaAtitudeWakanda) {
+	@Override
+	public void adicionaEtapaJornadaAtitude(EtapaJornadaAtitudeWakanda etapaJornadaAtitudeWakanda) {
 		log.info("[Inicia] WakandaSpringDataMongoDBService - adicionaEtapaJornadaAtitude");
-		 Wakanda wakanda =  wakandaRepository.findWakandaPadrao(codigo)
-				 .orElseThrow(() -> ApiException.throwApiException(HttpStatus.NOT_FOUND, "Wakander não encontrado!"));
+		 Wakanda wakanda =  this.getWakanda();
 		 wakanda.adicionaEtapaJornadaAtitude(etapaJornadaAtitudeWakanda);
 		 this.save(wakanda);
 		 log.info("[Finaliza] WakandaSpringDataMongoDBService - adicionaEtapaJornadaAtitude");
