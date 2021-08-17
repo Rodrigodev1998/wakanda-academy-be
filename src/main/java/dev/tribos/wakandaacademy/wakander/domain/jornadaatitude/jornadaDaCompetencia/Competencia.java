@@ -13,5 +13,5 @@ public class Competencia {
 	@Size(min = 0, max = 10)
 	private Integer nota;
 	@NotEmpty
-	private TipoCompetencia tipo;
+	private TipoCompetencia tipoCompetencia;
 }

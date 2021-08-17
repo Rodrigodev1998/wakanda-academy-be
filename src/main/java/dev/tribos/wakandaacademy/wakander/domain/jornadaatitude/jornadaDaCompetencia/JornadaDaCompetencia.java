@@ -3,6 +3,9 @@ package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompet
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.StatusEtapaJornadaAtitude;
@@ -28,12 +31,19 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitudeWakander {
 	private StatusEtapaJornadaAtitude status;
 	@Setter
 	private String descricao;
+	@NotEmpty 
 	private LocalDateTime dataInicio;
+	@NotEmpty 
 	private LocalDateTime dataConclusao;
+	@NotEmpty @NotNull
 	private Competencia primeiraCompetenciaSelecionada;
+	@NotEmpty 
 	private Competencia segundaCompetenciaSelecionada;
+	@NotEmpty 
 	private List<Competencia> listaCompetencias;
+	@NotEmpty 
 	private String  definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas; 
+	@NotEmpty
 	private String porqueFoImportanteParticiparHj;
 	
 	@Override

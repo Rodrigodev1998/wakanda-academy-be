@@ -18,8 +18,6 @@ public class JornadaDaCompetenciaForm {
 	@NotEmpty @Length(min = 5)
 	private String nome;
 	@NotNull
-	private LocalDateTime inicio;
-	@NotNull
 	private LocalDateTime conclusao;
 	@NotNull
 	private Competencia primeiraCompetenciaSelecionada;
