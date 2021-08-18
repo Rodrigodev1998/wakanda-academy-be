@@ -3,6 +3,7 @@ package dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -19,25 +20,26 @@ public class JornadaDaCompetenciaForm {
 	private String nome;
 	@NotNull
 	private LocalDateTime conclusao;
-	@NotNull
-	private Competencia primeiraCompetenciaSelecionada;
-	@NotNull
-	private Competencia segundaCompetenciaSelecionada;
-	@NotEmpty
+	@NotNull @Valid
 	private List<Competencia> listaCompetencias;
-	@NotEmpty
+	@NotNull @Valid
+	private Competencia primeiraCompetenciaSelecionada;
+	@NotNull @Valid
+	private Competencia segundaCompetenciaSelecionada;
+	@NotEmpty @Length(min = 5)
 	private String acoesDesenvolverCompetencias; 
-	@NotEmpty
+	@NotEmpty @Length(min = 5)
 	private String importanciaEmParticipar;
 
 	public JornadaDaCompetencia paraEntidade() {
 		return JornadaDaCompetencia.builder()
 				.codigo(CodigoEtapaJornadaAtitude.JORNADA_COMPETENCIA.name())
 				.nome(nome)
+				.dataConclusao(conclusao)
 				.primeiraCompetenciaSelecionada(primeiraCompetenciaSelecionada)
 				.segundaCompetenciaSelecionada(segundaCompetenciaSelecionada).listaCompetencias(listaCompetencias)
-				.definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas(acoesDesenvolverCompetencias)
-				.porqueFoImportanteParticiparHj(importanciaEmParticipar)
+				.acoesDesenvolverCompetencias(acoesDesenvolverCompetencias)
+				.importanciaEmParticipar(importanciaEmParticipar)
 				.build();
 	}
 

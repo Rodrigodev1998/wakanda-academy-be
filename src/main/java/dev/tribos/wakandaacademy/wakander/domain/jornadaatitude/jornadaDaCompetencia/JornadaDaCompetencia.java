@@ -6,6 +6,8 @@ import java.util.List;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
+
 import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.StatusEtapaJornadaAtitude;
@@ -35,16 +37,16 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitudeWakander {
 	private LocalDateTime dataInicio;
 	@NotEmpty 
 	private LocalDateTime dataConclusao;
-	@NotEmpty @NotNull
+	@NotNull
 	private Competencia primeiraCompetenciaSelecionada;
-	@NotEmpty 
+	@NotNull
 	private Competencia segundaCompetenciaSelecionada;
-	@NotEmpty 
+	@NotNull
 	private List<Competencia> listaCompetencias;
-	@NotEmpty 
-	private String  definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas; 
-	@NotEmpty
-	private String porqueFoImportanteParticiparHj;
+	@NotEmpty @Length(min = 5)
+	private String  acoesDesenvolverCompetencias; 
+	@NotEmpty @Length(min = 5)
+	private String importanciaEmParticipar;
 	
 	@Override
 	public void preenche(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
@@ -59,8 +61,8 @@ public class JornadaDaCompetencia implements EtapaJornadaAtitudeWakander {
 		this.primeiraCompetenciaSelecionada = jornadaDaCompetencia.getPrimeiraCompetenciaSelecionada();
 		this.segundaCompetenciaSelecionada = jornadaDaCompetencia.getSegundaCompetenciaSelecionada();
 		this.listaCompetencias = jornadaDaCompetencia.getListaCompetencias();
-		this.definaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas = jornadaDaCompetencia.getDefinaAcoesParaDesenvolverEMelhorarAsCompetenciasEscolhidas();
-		this.porqueFoImportanteParticiparHj = jornadaDaCompetencia.porqueFoImportanteParticiparHj;
+		this.acoesDesenvolverCompetencias = jornadaDaCompetencia.getAcoesDesenvolverCompetencias();
+		this.importanciaEmParticipar = jornadaDaCompetencia.getImportanciaEmParticipar();
 	}
 
 	public JornadaDaCompetencia(EtapaJornadaAtitudeWakanda etapaWakanda) {
