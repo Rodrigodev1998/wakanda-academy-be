@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.wakanda.domain;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.constraints.Max;
 
@@ -28,8 +29,14 @@ public class Wakanda {
     private String codigo;
 
     JornadaAtitudeWakanda jornadaAtitude;
+    List<JornadaConhecimentoWakanda> jornadasConhecimento;
 
     public List<EtapaJornadaAtitudeWakanda> getEtapasJornadaAtitudePadrao() {
     	return this.jornadaAtitude.getEtapasPadrao();
+    }
+    public List<JornadaConhecimentoWakanda> getJornadasConhecimentoPadroes() {
+        return this.jornadasConhecimento.stream()
+        		.filter(e -> e.getPadrao())
+        		.collect(Collectors.toList());
     }
 }
