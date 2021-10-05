@@ -18,8 +18,8 @@ public class TriboWakander {
 	private String nome;
 	private String descricao;
 	private String logo;
-	private LocalDateTime dataInicio;
-	private LocalDateTime dataConclusao;
+	private LocalDateTime inicio;
+	private LocalDateTime conclusao;
 	private List<SabedoriaWakander> sabedorias;
 	private StatusJornadaConhecimento status;
 }
