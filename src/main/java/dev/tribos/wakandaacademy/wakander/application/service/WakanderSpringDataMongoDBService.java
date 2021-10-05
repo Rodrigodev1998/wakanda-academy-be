@@ -37,7 +37,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 
 	private void vinculaJornadaWakandaAoWakander(Wakander wakander) {
 		Wakanda wakanda = wakandaService.getWakanda();
-		wakander.iniciaWakanda(wakanda, strategyEtapaJornadaAtitude);
+		wakander.iniciaWakanda(wakanda);
 	}
 
 	@Override

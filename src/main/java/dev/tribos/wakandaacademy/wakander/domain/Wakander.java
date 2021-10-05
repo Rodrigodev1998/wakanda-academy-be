@@ -79,7 +79,7 @@ public class Wakander {
 				.orElseThrow();
 	}
 
-	public void iniciaWakanda(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
+	public void iniciaWakanda(Wakanda wakanda) {
 		log.info("[Inicia] Wakander - iniciaWakanda");
 		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda, strategy);
 		log.info("[Finaliza] Wakander - iniciaWakanda");
