@@ -1,8 +1,10 @@
-package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude;
+package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza;
 
 import java.time.LocalDateTime;
 
 import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.StatusEtapaJornadaAtitude;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

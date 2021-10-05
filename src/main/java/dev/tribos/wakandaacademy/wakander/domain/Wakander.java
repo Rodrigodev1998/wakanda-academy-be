@@ -18,8 +18,9 @@ import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaati
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaconhecimento.JornadaConhecimentoWakander;
 import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Getter;
@@ -57,6 +58,8 @@ public class Wakander {
 	private LocalDateTime dataHora;
 
 	private JornadaAtitudeWakander jornadaAtitudeWakander;
+
+	private JornadaConhecimentoWakander jornadaConhecimentoWakander;
 
 	@Default
 	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO;

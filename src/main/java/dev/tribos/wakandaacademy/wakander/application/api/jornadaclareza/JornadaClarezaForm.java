@@ -8,8 +8,8 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.Area;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.Area;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.JornadaClareza;
 import lombok.Getter;
 
 @Getter

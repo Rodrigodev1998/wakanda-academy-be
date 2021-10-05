@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.JornadaClareza;
 
 @Component
 public class JornadaClarezaFabrica implements EtapaJornadaAtitudeWakanderFabrica {
