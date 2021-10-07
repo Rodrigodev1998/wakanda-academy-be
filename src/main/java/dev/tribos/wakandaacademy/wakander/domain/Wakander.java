@@ -81,6 +81,7 @@ public class Wakander {
 	public void iniciaWakanda(Wakanda wakanda) {
 		log.info("[Inicia] Wakander - iniciaWakanda");
 		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda);
+		this.jornadaConhecimentoWakander = new JornadaConhecimentoWakander(wakanda);
 		log.info("[Finaliza] Wakander - iniciaWakanda");
 	}
 

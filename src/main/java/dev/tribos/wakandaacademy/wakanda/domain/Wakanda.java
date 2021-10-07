@@ -38,6 +38,7 @@ public class Wakanda {
     public List<EtapaJornadaAtitudeWakanda> getEtapasJornadaAtitudePadrao() {
     	return this.jornadaAtitude.getEtapasPadrao();
     }
+    
     public List<JornadaConhecimentoWakanda> getJornadasConhecimentoPadroes() {
         return this.jornadasConhecimento.stream()
         		.filter(e -> e.getPadrao())
