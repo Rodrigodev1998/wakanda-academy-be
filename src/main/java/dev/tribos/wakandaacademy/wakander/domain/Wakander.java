@@ -15,7 +15,6 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
-import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
@@ -81,7 +80,7 @@ public class Wakander {
 
 	public void iniciaWakanda(Wakanda wakanda) {
 		log.info("[Inicia] Wakander - iniciaWakanda");
-		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda, strategy);
+		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda);
 		log.info("[Finaliza] Wakander - iniciaWakanda");
 	}
 
