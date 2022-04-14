@@ -15,4 +15,10 @@ public interface WakanderTribeAPI {
 		@GetMapping("/{wakanderCode}/tribe/")
 		@ResponseStatus(code = HttpStatus.OK)
 		List<WakanderTribeResponse> listaWakanderTribe(@PathVariable String wakanderCode);	
+		
+		@GetMapping("/{wakanderCode}/tribe/{tribeCode}")
+		@ResponseStatus(code = HttpStatus.OK)
+		WakanderTribeDetailResponse listarDetailWakanderTribe(@PathVariable String wakanderCode, @PathVariable String tribeCode);
+		
 }
+

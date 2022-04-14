@@ -29,4 +29,29 @@ public class WakanderTribeController implements WakanderTribeAPI {
 					.build();
 			return Arrays.asList(wakanderTribe);
 		}
+
+		@Override
+		@ResponseStatus(value = HttpStatus.OK)
+		public WakanderTribeDetailResponse listarDetailWakanderTribe(String wakanderCode, String tribeCode) {
+			log.info("[start] WakanderTribeController - listarDetailWakanderTribe");
+			var lesson = WakanderTribeSkillLessonResponse.builder()
+					.lessonCode("AULA-1")
+					.lessonName("Aula 1")
+					.status(StatusWakanderTribe.DOING)
+					.link("https://www.youtube.com/watch?v=5pAsUbEZCig")
+					.build();
+			var lessons = Arrays.asList(lesson);
+			var skill = WakanderTribeSkillResponse.builder()
+					.skillCode("JAVASCRIPT-1")
+					.skillName("Javascript 1")
+					.skillStatus(StatusWakanderTribe.DONE)
+					.wakanderTribeSkillLessons(lessons)
+					.build();
+			var skills = Arrays.asList(skill);
+			var wakanderTribeDetail = WakanderTribeDetailResponse.builder()
+					.name("LOGICA DE PROGRAMACAO")
+					.wakanderTribeSkills(skills)	
+					.build();
+			return wakanderTribeDetail;
+		}
 }
