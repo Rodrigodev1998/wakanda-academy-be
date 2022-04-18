@@ -1,6 +1,7 @@
 package dev.tribos.wakandaacademy.wakander.application.api.wakanderTribe;
 
 import dev.tribos.wakandaacademy.wakander.domain.StatusWakanderTribe;
+import dev.tribos.wakandaacademy.wakander.domain.TipoAula;
 import lombok.Builder;
 import lombok.Value;
 
@@ -11,4 +12,5 @@ public class WakanderTribeSkillLessonResponse {
 	private String lessonName;
 	private StatusWakanderTribe status;
 	private String link;
+	private TipoAula tipo;
 }
