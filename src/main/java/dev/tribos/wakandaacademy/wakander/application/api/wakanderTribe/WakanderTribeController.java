@@ -91,8 +91,8 @@ public class WakanderTribeController implements WakanderTribeAPI {
 		
 		private WakanderTribeSkillResponse buildJavaRaizSkill() {
 			return WakanderTribeSkillResponse.builder()
-					.skillCode("JAVA-RAIZ")
-					.skillName("Java Raiz")
+					.skillCode("JAVA-VARIAVEIS")
+					.skillName("Java Variaveis - Universidade XTI")
 					.skillStatus(StatusWakanderTribe.DONE)
 					.wakanderTribeSkillLessons(Arrays.asList(buildJavaRaizLesson()))
 					.build();
@@ -100,10 +100,10 @@ public class WakanderTribeController implements WakanderTribeAPI {
 
 		private WakanderTribeSkillLessonResponse buildJavaRaizLesson() {
 			return WakanderTribeSkillLessonResponse.builder()
-					.lessonCode("JAVA-VARIAVEIS")
-					.lessonName("Java Variaveis")
+					.lessonCode("INTRODUÇÃO")
+					.lessonName("Introdução")
 					.status(StatusWakanderTribe.TODO)
-					.link("https://youtube.com/playlist?list=PLDB-H9GYJqNKt6gGjxkaJKy1th8u1mXsW")
+					.link("https://www.youtube.com/embed/NZDzuve7kho")	
 					.tipo(TipoAula.YOUTUBE)
 					.build();
 		}
