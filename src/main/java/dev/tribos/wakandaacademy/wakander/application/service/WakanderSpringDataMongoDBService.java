@@ -8,6 +8,7 @@ import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.aplication.service.WakandaService;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
+import dev.tribos.wakandaacademy.wakander.application.api.preCadastroWakander.WakanderPreCadastroRequest;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
 import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
@@ -26,10 +27,9 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	private JornadaAtitudeStrategy strategyEtapaJornadaAtitude;
 
 	@Override
-	public Wakander criaWakander(@Valid Wakander wakander) {
+	public Wakander criaWakander(@Valid WakanderPreCadastroRequest wakanderPreCadastroRequest) {
 		log.info("[Inicia] WakanderSpringDataMongoDBService - preCadastraCidadao");
-		wakander.buildCodigoByEmail();
-		wakander.start();
+		Wakander wakander = new Wakander(wakanderPreCadastroRequest);
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
 		log.info("[Finaliza] WakanderSpringDataMongoDBService - preCadastraCidadao");
 		return wakanderSalvo;
