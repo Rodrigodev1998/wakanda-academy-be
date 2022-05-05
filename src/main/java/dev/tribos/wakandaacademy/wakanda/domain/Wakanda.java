@@ -19,15 +19,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import lombok.extern.log4j.Log4j2;
 
 @Getter
 @Builder
+@Log4j2
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @Document(collection = "Wakanda")
 public class Wakanda {
-
     @MongoId(targetType = FieldType.STRING)
     @Max(value = 60)
     private String codigo;
@@ -35,9 +36,13 @@ public class Wakanda {
     JornadaAtitudeWakanda jornadaAtitude;
     List<JornadaConhecimentoWakanda> jornadasConhecimento;
 
-    public List<EtapaJornadaAtitudeWakanda> getEtapasJornadaAtitudePadrao() {
-    	return this.jornadaAtitude.getEtapasPadrao();
-    }
+
+	public List<EtapaJornadaAtitudeWakanda> getEtapasJornadaAtitudePadrao() {
+		log.info("[Inicia] Wakanda - getEtapasJornadaAtitudePadrao");
+		var etapasPadrao = this.jornadaAtitude.getEtapasPadrao();
+		log.info("[Finaliza] Wakanda - getEtapasJornadaAtitudePadrao");
+		return etapasPadrao;
+	}
     
     public List<JornadaConhecimentoWakanda> getJornadasConhecimentoPadroes() {
         return this.jornadasConhecimento.stream()
@@ -52,5 +57,9 @@ public class Wakanda {
 	public JornadaAtitudeStrategy getJornadaAtitudeStrategy() {
 		return Optional.ofNullable(this.jornadaAtitude.getStrategy())
 				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.INTERNAL_SERVER_ERROR, "Erro ao criar Jornada atitude!"));
+	}
+	
+	public void adicionaEtapaJornadaAtitude(EtapaJornadaAtitudeWakanda etapaJornadaAtitude) {
+		jornadaAtitude.adicionaEtapaJornadaAtitude(etapaJornadaAtitude);
 	}
 }

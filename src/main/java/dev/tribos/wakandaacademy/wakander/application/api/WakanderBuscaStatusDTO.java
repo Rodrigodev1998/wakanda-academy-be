@@ -18,7 +18,7 @@ public class WakanderBuscaStatusDTO {
 		this.nome = wakander.getNome();
 		this.email=wakander.getEmail();
 		this.whatsapp = wakander.getWhatsapp();
-		this.dataHora = wakander.getDataHora();
+		this.dataHora = wakander.getDataHoraCriacao();
 	}
 
 	public static List<WakanderBuscaStatusDTO> parseListBuscaStatusDTO(List<Wakander> wakanderPorStatus) {

@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.wakander.application.api.jornadaDaCompetencia;
+package dev.tribos.wakandaacademy.wakanda.aplication.api;
 
 import javax.validation.Valid;
 
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public interface JornadaDaCompetenciaAPI {
-	@PatchMapping("/v1/wakander/{codigo}/jornada-competencia")
+public interface WakandaJornadaAtitudeAPI {
+	@PatchMapping("/v1/wakanda/jornada-atitude/etapa")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public void preencheJornadaDaCompetenciaNoWakander(@PathVariable String codigo,@RequestBody @Valid JornadaDaCompetenciaForm jornadaDaCompetenciaForm);
- 
-	@GetMapping("/v1/wakander/{codigo}/jornada-competencia")
+	public void adicionaEtapaJornadaAtitude(@RequestBody @Valid JornadaAtitudeForm jornadaAtitudeForm);
+
+	@GetMapping("/v1/wakanda/{codigo}/jornada-atitude-wakanda")
 	@ResponseStatus(value = HttpStatus.OK)
-	public JornadaDaCompetenciaDTO getJornadaCompetencia(@PathVariable  String codigo);
+	public JornadaAtitudeDTO getJornadaAtitude(@PathVariable String codigo);
 }

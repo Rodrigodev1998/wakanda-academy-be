@@ -20,5 +20,4 @@ public class WakanderDashboardRestController implements WakanderDashboardAPI {
 		log.info("[Finaliza] WakanderRestController - buscaDashboardPorCodigo");
 		return new WakanderDashboardResponse(wakander);
 	}
-
 }
