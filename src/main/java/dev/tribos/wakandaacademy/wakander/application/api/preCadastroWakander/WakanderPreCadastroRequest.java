@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.wakander.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api.preCadastroWakander;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
@@ -15,7 +15,7 @@ import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 
 @Getter
-public class WakanderPreCadastroForm {
+public class WakanderPreCadastroRequest {
 
 	@NotEmpty(message = "o nome não pode estar vazio")
 	private String nome;

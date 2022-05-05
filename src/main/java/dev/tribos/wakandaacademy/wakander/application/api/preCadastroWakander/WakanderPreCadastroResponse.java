@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.wakander.application.api;
+package dev.tribos.wakandaacademy.wakander.application.api.preCadastroWakander;
 
 
 import java.time.LocalDateTime;
@@ -7,7 +7,7 @@ import dev.tribos.wakandaacademy.wakander.domain.TipoRelacionamento;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import lombok.Getter;
 @Getter
-public class WakanderPreCadastroDTO {
+public class WakanderPreCadastroResponse {
 	private String codigo;
 	private String nome;
 	private String email;
@@ -22,7 +22,7 @@ public class WakanderPreCadastroDTO {
 	private String motivoParaParticiparWakanda;
 	private LocalDateTime dataHora;
 
-	public WakanderPreCadastroDTO(Wakander wakander) {
+	public WakanderPreCadastroResponse(Wakander wakander) {
 		this.codigo = wakander.getCodigo();
 		this.nome = wakander.getNome();
 		this.email = wakander.getEmail();
