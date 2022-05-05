@@ -1,17 +1,20 @@
 package dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 import lombok.Getter;
 
 @Getter
 public class Competencia {
-	@NotEmpty
+	@NotEmpty @Length(min = 3, max = 255)
 	private String nome;
-	@NotEmpty
-	@Size(min = 0, max = 10)
+	@NotNull @Min(0) @Max(10) 
 	private Integer nota;
-	@NotEmpty
+	@NotNull
 	private TipoCompetencia tipoCompetencia;
 }
