@@ -20,8 +20,6 @@ import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWa
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.JornadaClareza;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaconhecimento.JornadaConhecimentoWakander;
-import lombok.Builder;
-import lombok.Builder.Default;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -52,8 +50,13 @@ public class Wakander {
 
 	private JornadaConhecimentoWakander jornadaConhecimentoWakander;
 
-	@Default
-	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO;
+	private StatusWakander statusWakander;
+
+	public Wakander(WakanderPreCadastroRequest wakanderPreCadastroRequest) {
+		this.buildCodigoByEmail();
+		this.dataHoraCriacao = LocalDateTime.now();
+		this.statusWakander = StatusWakander.AUTORIZADO;
+	}
 
 	public void mudaStatusParaCadastrado() {
 		log.info("[Inicia] Wakander - mudaStatusParaCadastrado");
@@ -95,12 +98,6 @@ public class Wakander {
 	public JornadaClareza getJornadaClareza() {
 		return (JornadaClareza)this.getJornadaAtitudeWakander()
 				.procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude.JORNADA_CLAREZA);
-	}
-
-	public Wakander(WakanderPreCadastroRequest wakanderPreCadastroRequest) {
-		this.buildCodigoByEmail();
-		this.dataHoraCriacao = LocalDateTime.now();
-		this.statusWakander = StatusWakander.AUTORIZADO;
 	}
 
 	public List<EtapaJornadaAtitudeWakander> getEtapasJornadaAtitude() {

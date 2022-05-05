@@ -21,7 +21,7 @@ public class WakandaJornadaAtitudeRestController implements WakandaJornadaAtitud
 
     @Override
     public JornadaAtitudeDTO getJornadaAtitude(String codigo) {
-        var wakanda = wakandaService.getWakanda();
+//        var wakanda = wakandaService.getWakanda();
         return new JornadaAtitudeDTO();
     }
 }
