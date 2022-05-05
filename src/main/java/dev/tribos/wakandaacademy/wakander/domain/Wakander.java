@@ -15,11 +15,13 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.api.preCadastroWakander.WakanderPreCadastroRequest;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
-import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaconhecimento.JornadaConhecimentoWakander;
+import lombok.Builder;
+import lombok.Builder.Default;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -48,7 +50,10 @@ public class Wakander {
 
 	private JornadaAtitudeWakander jornadaAtitudeWakander;
 
-	private StatusWakander statusWakander;
+	private JornadaConhecimentoWakander jornadaConhecimentoWakander;
+
+	@Default
+	private StatusWakander statusWakander = StatusWakander.NAO_AUTORIZADO;
 
 	public void mudaStatusParaCadastrado() {
 		log.info("[Inicia] Wakander - mudaStatusParaCadastrado");
@@ -69,9 +74,10 @@ public class Wakander {
 				.orElseThrow();
 	}
 
-	public void iniciaWakanda(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
+	public void iniciaWakanda(Wakanda wakanda) {
 		log.info("[Inicia] Wakander - iniciaWakanda");
-		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda, strategy);
+		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda);
+		this.jornadaConhecimentoWakander = new JornadaConhecimentoWakander(wakanda);
 		log.info("[Finaliza] Wakander - iniciaWakanda");
 	}
 

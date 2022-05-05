@@ -17,5 +17,17 @@
                 "padrao": true
             }
         ]
-    }
+    },
+    "jornadasConhecimento": [
+        {
+            "codigo": "LOGICA",
+            "nome": "Lógica com JavaScript",
+            "padrao": true
+        },
+        {
+            "codigo": "JAVA_BASICO",
+            "nome": "Java Básico",
+            "padrao": false
+        }
+    ]
 }

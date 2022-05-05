@@ -1,17 +1,20 @@
 package dev.tribos.wakandaacademy.wakander.application.service;
 
 import java.util.List;
+
 import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
 import dev.tribos.wakandaacademy.credencial.domain.Credencial;
 import dev.tribos.wakandaacademy.handler.ApiException;
 import dev.tribos.wakandaacademy.wakanda.aplication.service.WakandaService;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.api.preCadastroWakander.WakanderPreCadastroRequest;
 import dev.tribos.wakandaacademy.wakander.application.repository.WakanderRepository;
-import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
+import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
 import lombok.AllArgsConstructor;
@@ -38,9 +41,9 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	private void vinculaJornadaWakandaAoWakander(Wakander wakander) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - vinculaJornadaWakandaAoWakander");
 		Wakanda wakanda = wakandaService.getWakanda();
-		wakander.iniciaWakanda(wakanda,strategyEtapaJornadaAtitude);
+		wakanda.setJornadaAtitudeStrategy(strategyEtapaJornadaAtitude);
+		wakander.iniciaWakanda(wakanda);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - vinculaJornadaWakandaAoWakander");
-		wakander.iniciaWakanda(wakanda, strategyEtapaJornadaAtitude);
 	}
 
 	@Override

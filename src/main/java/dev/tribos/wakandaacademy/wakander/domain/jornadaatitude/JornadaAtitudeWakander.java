@@ -23,9 +23,9 @@ import lombok.NoArgsConstructor;
 public class JornadaAtitudeWakander {
 	List<EtapaJornadaAtitudeWakander> etapas;
 	
-	public JornadaAtitudeWakander(Wakanda wakanda, JornadaAtitudeStrategy strategy) {
+	public JornadaAtitudeWakander(Wakanda wakanda) {
 		var etapasWakandaPadrao = wakanda.getEtapasJornadaAtitudePadrao();
-		this.etapas = constroiEtapasWakanderAtravesEtapasWakanda(strategy,etapasWakandaPadrao);
+		this.etapas = constroiEtapasWakanderAtravesEtapasWakanda(wakanda.getJornadaAtitudeStrategy(),etapasWakandaPadrao);
 	}
 
     private List<EtapaJornadaAtitudeWakander> constroiEtapasWakanderAtravesEtapasWakanda(JornadaAtitudeStrategy strategy, List<EtapaJornadaAtitudeWakanda> etapasWakandaPadrao) {

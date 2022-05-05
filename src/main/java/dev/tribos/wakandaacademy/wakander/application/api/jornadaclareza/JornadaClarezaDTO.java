@@ -1,8 +1,8 @@
 package dev.tribos.wakandaacademy.wakander.application.api.jornadaclareza;
 
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.Area;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaClareza;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.Area;
+import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.JornadaClareza;
 import lombok.Getter;
 
 @Getter
