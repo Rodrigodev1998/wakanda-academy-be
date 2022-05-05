@@ -14,22 +14,30 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import lombok.extern.log4j.Log4j2;
 
 @Getter
 @Builder
+@Log4j2
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @Document(collection = "Wakanda")
 public class Wakanda {
+	@MongoId(targetType = FieldType.STRING)
+	@Max(value = 60)
+	private String codigo;
 
-    @MongoId(targetType = FieldType.STRING)
-    @Max(value = 60)
-    private String codigo;
+	JornadaAtitudeWakanda jornadaAtitude;
 
-    JornadaAtitudeWakanda jornadaAtitude;
+	public List<EtapaJornadaAtitudeWakanda> getEtapasJornadaAtitudePadrao() {
+		log.info("[Inicia] Wakanda - getEtapasJornadaAtitudePadrao");
+		var etapasPadrao = this.jornadaAtitude.getEtapasPadrao();
+		log.info("[Finaliza] Wakanda - getEtapasJornadaAtitudePadrao");
+		return etapasPadrao;
+	}
 
-    public List<EtapaJornadaAtitudeWakanda> getEtapasJornadaAtitudePadrao() {
-    	return this.jornadaAtitude.getEtapasPadrao();
-    }
+	public void adicionaEtapaJornadaAtitude(EtapaJornadaAtitudeWakanda etapaJornadaAtitude) {
+		jornadaAtitude.adicionaEtapaJornadaAtitude(etapaJornadaAtitude);
+	}
 }

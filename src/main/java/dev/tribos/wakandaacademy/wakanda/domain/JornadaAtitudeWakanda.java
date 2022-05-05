@@ -14,11 +14,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JornadaAtitudeWakanda {
+
     List<EtapaJornadaAtitudeWakanda> etapas;
 
     public List<EtapaJornadaAtitudeWakanda> getEtapasPadrao() {
         return etapas.stream()
         		.filter(e -> e.getPadrao())
         		.collect(Collectors.toList());
+    }
+
+    public void adicionaEtapaJornadaAtitude(EtapaJornadaAtitudeWakanda etapaJornadaAtitude) {
+    	etapas.add(etapaJornadaAtitude);
     }
 }

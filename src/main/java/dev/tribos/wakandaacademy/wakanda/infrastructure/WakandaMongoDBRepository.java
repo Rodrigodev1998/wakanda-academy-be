@@ -23,9 +23,10 @@ public class WakandaMongoDBRepository implements WakandaRepository {
 	}
 
 	@Override
-	public void salva(Wakanda wakanda) {
+	public Wakanda salva(Wakanda wakanda) {
 		log.info("[Inicia] WakandaMongoDBRepository - salva");
 		wakandaSpringDataMongoDBRepository.save(wakanda);
 		log.info("[Finaliza] WakandaMongoDBRepository - salva");
-	}
+        return wakanda;
+    }
 }

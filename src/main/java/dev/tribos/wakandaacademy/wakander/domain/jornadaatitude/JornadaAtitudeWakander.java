@@ -12,11 +12,13 @@ import dev.tribos.wakandaacademy.wakanda.domain.EtapaJornadaAtitudeWakanda;
 import dev.tribos.wakandaacademy.wakanda.domain.Wakanda;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.CodigoEtapaJornadaAtitude;
 import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaatitude.JornadaAtitudeStrategy;
+import lombok.extern.log4j.Log4j2;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
+@Log4j2
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JornadaAtitudeWakander {
 	List<EtapaJornadaAtitudeWakander> etapas;
@@ -27,12 +29,16 @@ public class JornadaAtitudeWakander {
 	}
 
     private List<EtapaJornadaAtitudeWakander> constroiEtapasWakanderAtravesEtapasWakanda(JornadaAtitudeStrategy strategy, List<EtapaJornadaAtitudeWakanda> etapasWakandaPadrao) {
+    	log.info("[Inicia] JornadaAtitudeWakander - constroiEtapasWakanderAtravesEtapasWakanda");
+    	log.info("[Finaliza] JornadaAtitudeWakander - constroiEtapasWakanderAtravesEtapasWakanda");
     	return etapasWakandaPadrao.stream()
     			.map(e -> criaEtapaWakander(strategy, e))
     			.collect(Collectors.toList());
     }
 
 	private EtapaJornadaAtitudeWakander criaEtapaWakander(JornadaAtitudeStrategy strategy, EtapaJornadaAtitudeWakanda etapaWakanda) {
+		log.info("[Inicia] JornadaAtitudeWakander - criaEtapaWakander");
+    	log.info("[Finaliza] JornadaAtitudeWakander - criaEtapaWakander");
 		return strategy.getFabrica(etapaWakanda.getCodigo())
 				.cria(etapaWakanda);
 	}
@@ -44,6 +50,7 @@ public class JornadaAtitudeWakander {
 	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
 		EtapaJornadaAtitudeWakander etapaPeloNome = procuraEtapaPeloCodigo(etapaJornadaAtitude.getCodigo());
 		etapaPeloNome.preenche(etapaJornadaAtitude);
+		log.info("[Finaliza] JornadaAtitudeWakander - preencheEtapaJornadaAtitude");
 	}
 
 	public EtapaJornadaAtitudeWakander procuraEtapaPeloCodigo(CodigoEtapaJornadaAtitude codigo) {
@@ -52,6 +59,7 @@ public class JornadaAtitudeWakander {
 
 	private EtapaJornadaAtitudeWakander procuraEtapaPeloCodigo(String codigo) {
 		instaciaEtapasSeNulo();
+		log.info("[Finaliza] JornadaAtitudeWakander - procuraEtapaPeloNome");
 		return this.etapas.stream()
 				.filter(e -> e.getCodigo().equals(codigo))
 				.findFirst()

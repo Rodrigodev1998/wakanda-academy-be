@@ -36,7 +36,10 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	}
 
 	private void vinculaJornadaWakandaAoWakander(Wakander wakander) {
+		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - vinculaJornadaWakandaAoWakander");
 		Wakanda wakanda = wakandaService.getWakanda();
+		wakander.iniciaWakanda(wakanda,strategyEtapaJornadaAtitude);
+		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - vinculaJornadaWakandaAoWakander");
 		wakander.iniciaWakanda(wakanda, strategyEtapaJornadaAtitude);
 	}
 
@@ -59,7 +62,9 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 
 	@Override
 	public Wakander save(Wakander wakander) {
+		log.info("[Inicia] WakanderSpringDataMongoDBService - Save Wakander");
 		Wakander wakanderSalvo = wakanderRepository.save(wakander);
+		log.info("[Finaliza] WakanderSpringDataMongoDBService - Save Wakander");
 		return wakanderSalvo;
 	}
 

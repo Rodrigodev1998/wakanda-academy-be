@@ -62,6 +62,11 @@ public class JornadaClareza implements EtapaJornadaAtitudeWakander {
 	}
 
 	public JornadaClareza(EtapaJornadaAtitudeWakanda etapaWakanda) {
+		this.codigo = etapaWakanda.getCodigo();
+		this.logo = etapaWakanda.getLogo();
+		this.nome = etapaWakanda.getNome();
+		this.status = StatusEtapaJornadaAtitude.BLOQUEADA;
+		this.descricao = etapaWakanda.getDescricao();
 		iniciaEtapaJornadaAtitude(etapaWakanda);
 	}
 }

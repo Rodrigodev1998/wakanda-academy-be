@@ -51,12 +51,16 @@ public class Wakander {
 	private StatusWakander statusWakander;
 
 	public void mudaStatusParaCadastrado() {
+		log.info("[Inicia] Wakander - mudaStatusParaCadastrado");
 		this.statusWakander = StatusWakander.CADASTRADO;
+		log.info("[Finaliza] Wakander - mudaStatusParaCadastrado");
 	}
 
 	public void buildCodigoByEmail() {
+		log.info("[Inicia] Wakander - buildCodigoByEmail");
 		String primeiraParteDoEmail = getFirstPartOfEmail();
 		this.codigo = primeiraParteDoEmail.replaceAll("\\W", "");
+		log.info("[Finaliza] Wakander - buildCodigoByEmail");
 	}
 
 	private String getFirstPartOfEmail() {
@@ -72,7 +76,9 @@ public class Wakander {
 	}
 
 	public void preencheEtapaJornadaAtitude(EtapaJornadaAtitudeWakander etapaJornadaAtitude) {
+		log.info("[Inicia] Wakander - preencheEtapaJornadaAtitude");
 		jornadaAtitudeWakander.preencheEtapaJornadaAtitude(etapaJornadaAtitude);
+		log.info("[Finaliza] Wakander - preencheEtapaJornadaAtitude");
 	}
 
 	public JornadaDaCompetencia getJornadaCompetencia() {
