@@ -9,9 +9,7 @@ import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtit
 
 public interface WakanderService {
 	Wakander criaWakander(WakanderPreCadastroRequest wakanderPreCadastroRequest);
-	List<Wakander> buscaWakanderPorEmail(String email);
-	Wakander findByEmail(String email);
-	Wakander save(Wakander wakander);
+	Wakander buscaWakanderPorEmail(String email);
 	void eventoCredencialCriada(Credencial credencial);
 	Wakander buscaWakanderPorCodigo(String codigoWakander);
 	List<Wakander> buscarWakandersPorStatus();

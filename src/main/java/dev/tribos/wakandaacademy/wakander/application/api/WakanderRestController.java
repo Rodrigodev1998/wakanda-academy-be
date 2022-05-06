@@ -16,11 +16,11 @@ public class WakanderRestController implements WakanderAPI {
 	private WakanderService wakanderService;
 
 	@Override
-	public List<WakanderDetalheDTO> buscaPorEmail(String gmail) {
+	public WakanderDetalheDTO buscaPorEmail(String gmail) {
 		log.info("[Inicia] WakanderRestController - buscaEmail");
-		List<Wakander> wakanders = wakanderService.buscaWakanderPorEmail(gmail);
+		Wakander wakanderPorEmail = wakanderService.buscaWakanderPorEmail(gmail);
 		log.info("[Finaliza] WakanderRestController - buscaEmail");
-		return WakanderDetalheDTO.parseListDTO(wakanders);
+		return new WakanderDetalheDTO(wakanderPorEmail);
 	}
 
 	@Override

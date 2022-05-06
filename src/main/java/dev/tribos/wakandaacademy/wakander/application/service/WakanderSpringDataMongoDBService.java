@@ -24,7 +24,6 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @AllArgsConstructor
 public class WakanderSpringDataMongoDBService implements WakanderService {
-	
 	private WakanderRepository wakanderRepository;
 	private WakandaService wakandaService;
 	private JornadaAtitudeStrategy strategyEtapaJornadaAtitude;
@@ -38,46 +37,30 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		return wakanderSalvo;
 	}
 
+	@Override
+	public Wakander buscaWakanderPorEmail(String email) {
+		log.info("[Inicia] WakanderSpringDataMongoDBService - buscaWakanderPorEmail");
+		Wakander wakanderByEmail = this.wakanderRepository.findByEmail(email)
+				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.NOT_FOUND, "Wakander não encontrado!"));
+		log.info("[Finaliza] WakanderSpringDataMongoDBService - buscaWakanderPorEmail");
+		return wakanderByEmail;
+	}
+	
+	@Override
+	public void eventoCredencialCriada(Credencial credencial) {
+		Wakander wakander = buscaWakanderPorEmail(credencial.getUsuario());
+		vinculaJornadaWakandaAoWakander(wakander);
+		wakander.mudaStatusParaCadastrado();
+		credencial.setCodigoWakander(wakander.getCodigo());
+		wakanderRepository.save(wakander);
+	}
+
 	private void vinculaJornadaWakandaAoWakander(Wakander wakander) {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - vinculaJornadaWakandaAoWakander");
 		Wakanda wakanda = wakandaService.getWakanda();
 		wakanda.setJornadaAtitudeStrategy(strategyEtapaJornadaAtitude);
 		wakander.iniciaWakanda(wakanda);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - vinculaJornadaWakandaAoWakander");
-	}
-
-	@Override
-	public List<Wakander> buscaWakanderPorEmail(String email) {
-		log.info("[Inicia] WakanderSpringDataMongoDBService - buscaWakanderPorEmail");
-		List<Wakander> listaDeEmail = this.wakanderRepository.buscaWakanderPorEmailEhPorStatusAutorizado(email);
-		log.info("[Finaliza] WakanderSpringDataMongoDBService - buscaWakanderPorEmail");
-		return listaDeEmail;
-	}
-
-	@Override
-	public Wakander findByEmail(String email) {
-		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - findByEmail");
-		Wakander wakanderByEmail = this.wakanderRepository.findByEmail(email)
-				.orElseThrow(() -> ApiException.throwApiException(HttpStatus.NOT_FOUND, "Wakander não encontrado!"));
-		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - findByEmail");
-		return wakanderByEmail;
-	}
-
-	@Override
-	public Wakander save(Wakander wakander) {
-		log.info("[Inicia] WakanderSpringDataMongoDBService - Save Wakander");
-		Wakander wakanderSalvo = wakanderRepository.save(wakander);
-		log.info("[Finaliza] WakanderSpringDataMongoDBService - Save Wakander");
-		return wakanderSalvo;
-	}
-
-	@Override
-	public void eventoCredencialCriada(Credencial credencial) {
-		Wakander wakander = findByEmail(credencial.getUsuario());
-		vinculaJornadaWakandaAoWakander(wakander);
-		wakander.mudaStatusParaCadastrado();
-		credencial.setCodigoWakander(wakander.getCodigo());
-		save(wakander);
 	}
 
 	@Override
@@ -102,7 +85,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		log.info("[Inicia] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 		Wakander wakanderPorCodigo = buscaWakanderPorCodigo(codigo);
 		wakanderPorCodigo.preencheEtapaJornadaAtitude(etapa);
-		this.save(wakanderPorCodigo);
+		wakanderRepository.save(wakanderPorCodigo);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - salvaJornadaClareza");
 	}
 }

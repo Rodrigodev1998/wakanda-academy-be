@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public interface WakanderAPI {
 	@GetMapping("/public/v1/wakander")
 	@ResponseStatus(value = HttpStatus.OK)
-	List<WakanderDetalheDTO> buscaPorEmail(
+	WakanderDetalheDTO buscaPorEmail(
 			@RequestParam(required = false) @Pattern(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail") String gmail);
 
 	@GetMapping("/public/v1/pre-cadastros")
