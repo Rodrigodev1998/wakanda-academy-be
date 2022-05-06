@@ -8,6 +8,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -38,10 +39,12 @@ public class Wakander {
 
 	@Email(regexp = "^.+@gmail.com$", message = "o email deve ser um gmail")
 	@NotEmpty(message = "o email não pode estar vazio")
+	@Indexed(unique=true)
 	private String email;
 
 	@NotEmpty
 	@Pattern(regexp = "^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$", message = "o numero de celular  deve ser valido")
+	@Indexed(unique=true)
 	private String whatsapp;
 
 	private LocalDateTime dataHoraCriacao;
