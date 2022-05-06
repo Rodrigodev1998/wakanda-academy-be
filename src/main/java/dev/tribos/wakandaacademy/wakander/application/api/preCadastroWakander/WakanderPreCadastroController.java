@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RestController
 @RequiredArgsConstructor
-public class WakanderRestController implements WakanderPreCadastroAPI {
+public class WakanderPreCadastroController implements WakanderPreCadastroAPI {
 	private final WakanderService wakanderService;
 
 	@Override
