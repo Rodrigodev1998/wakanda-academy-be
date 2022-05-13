@@ -20,7 +20,6 @@ import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtit
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.JornadaAtitudeWakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaDaCompetencia.JornadaDaCompetencia;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.jornadaclareza.JornadaClareza;
-import dev.tribos.wakandaacademy.wakander.domain.jornadaconhecimento.JornadaConhecimentoWakander;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -50,8 +49,6 @@ public class Wakander {
 	private LocalDateTime dataHoraCriacao;
 
 	private JornadaAtitudeWakander jornadaAtitudeWakander;
-
-	private JornadaConhecimentoWakander jornadaConhecimentoWakander;
 
 	private StatusWakander statusWakander;
 
@@ -83,7 +80,6 @@ public class Wakander {
 	public void iniciaWakanda(Wakanda wakanda) {
 		log.info("[Inicia] Wakander - iniciaWakanda");
 		this.jornadaAtitudeWakander = new JornadaAtitudeWakander(wakanda);
-		this.jornadaConhecimentoWakander = new JornadaConhecimentoWakander(wakanda);
 		log.info("[Finaliza] Wakander - iniciaWakanda");
 	}
 
@@ -107,4 +103,3 @@ public class Wakander {
 		return this.jornadaAtitudeWakander.getEtapas();
 	}
 }
-

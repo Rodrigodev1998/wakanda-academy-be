@@ -7,8 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.tribos.wakandaacademy.wakander.domain.StatusWakanderTribe;
-import dev.tribos.wakandaacademy.wakander.domain.TipoAula;
+import dev.tribos.wakandaacademy.wakanderJornadaConhecimento.domain.StatusWakanderConhecimento;
+import dev.tribos.wakandaacademy.wakanderJornadaConhecimento.domain.TipoAula;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -30,7 +30,7 @@ public class WakanderTribeController implements WakanderTribeAPI {
 					.name("LOGICA DE PROGRAMACAO")
 					.description("PRIMEIROS PASSOS")
 					.iconUrl("https://imagensemoldes.com.br/wp-content/uploads/2020/05/Engrenagem-Colorida-PNG.png")
-					.status(StatusWakanderTribe.DOING)
+					.status(StatusWakanderConhecimento.DOING)
 					.build();
 		}
 		
@@ -40,7 +40,7 @@ public class WakanderTribeController implements WakanderTribeAPI {
 					.name("JAVA RAIZ")
 					.description("PRINCIPIOS JAVA")
 					.iconUrl("https://cdn-icons-png.flaticon.com/512/226/226777.png")
-					.status(StatusWakanderTribe.DONE)
+					.status(StatusWakanderConhecimento.DONE)
 					.build();
 		}
 		
@@ -73,7 +73,7 @@ public class WakanderTribeController implements WakanderTribeAPI {
 			return WakanderTribeSkillResponse.builder()
 					.skillCode("PROGRAMACAO-BASIC")
 					.skillName("Jogos clássicos parte I - Iniciando no Javascript com Pong")
-					.skillStatus(StatusWakanderTribe.DOING)
+					.skillStatus(StatusWakanderConhecimento.DOING)
 					.wakanderTribeSkillLessons(Arrays.asList(buildLogica1Lesson()))
 					.build();
 		}
@@ -82,7 +82,7 @@ public class WakanderTribeController implements WakanderTribeAPI {
 			return WakanderTribeSkillLessonResponse.builder()
 					.lessonCode("PARTE-I")
 					.lessonName("Pong no Scratch")
-					.status(StatusWakanderTribe.DONE)
+					.status(StatusWakanderConhecimento.DONE)
 					.link("https://drive.google.com/drive/folders/1C_lkJcIoDOc0G09AH1_8T7qdif2Orju9?usp=sharing")
 					.tipo(TipoAula.GDRIVE)
 					.build();
@@ -93,7 +93,7 @@ public class WakanderTribeController implements WakanderTribeAPI {
 			return WakanderTribeSkillResponse.builder()
 					.skillCode("JAVA-VARIAVEIS")
 					.skillName("Java Variaveis - Universidade XTI")
-					.skillStatus(StatusWakanderTribe.DONE)
+					.skillStatus(StatusWakanderConhecimento.DONE)
 					.wakanderTribeSkillLessons(Arrays.asList(buildJavaRaizLesson()))
 					.build();
 		}
@@ -102,7 +102,7 @@ public class WakanderTribeController implements WakanderTribeAPI {
 			return WakanderTribeSkillLessonResponse.builder()
 					.lessonCode("INTRODUÇÃO")
 					.lessonName("Introdução")
-					.status(StatusWakanderTribe.DONE)
+					.status(StatusWakanderConhecimento.DONE)
 					.link("https://www.youtube.com/embed/NZDzuve7kho")	
 					.tipo(TipoAula.YOUTUBE)
 					.build();

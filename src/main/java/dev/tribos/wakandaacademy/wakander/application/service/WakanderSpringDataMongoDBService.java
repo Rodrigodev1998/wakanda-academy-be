@@ -17,6 +17,7 @@ import dev.tribos.wakandaacademy.wakander.application.service.strategyjornadaati
 import dev.tribos.wakandaacademy.wakander.domain.StatusWakander;
 import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 import dev.tribos.wakandaacademy.wakander.domain.jornadaatitude.EtapaJornadaAtitudeWakander;
+import dev.tribos.wakandaacademy.wakanderJornadaConhecimento.application.service.JornadaConhecimentoWakanderService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -27,6 +28,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 	private WakanderRepository wakanderRepository;
 	private WakandaService wakandaService;
 	private JornadaAtitudeStrategy strategyEtapaJornadaAtitude;
+	private JornadaConhecimentoWakanderService jornadaConhecimentoService;
 
 	@Override
 	public Wakander criaWakander(@Valid WakanderPreCadastroRequest wakanderPreCadastroRequest) {
@@ -60,6 +62,7 @@ public class WakanderSpringDataMongoDBService implements WakanderService {
 		Wakanda wakanda = wakandaService.getWakanda();
 		wakanda.setJornadaAtitudeStrategy(strategyEtapaJornadaAtitude);
 		wakander.iniciaWakanda(wakanda);
+		jornadaConhecimentoService.criaJornadaConhecimentoWakander(wakander,wakanda);
 		log.info("[Finaliza] WakanderPreRegistroSpringDataJPAService - vinculaJornadaWakandaAoWakander");
 	}
 

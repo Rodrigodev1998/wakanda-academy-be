@@ -1,4 +1,4 @@
-package dev.tribos.wakandaacademy.wakander.application.api.wakanderTribe;
+package dev.tribos.wakandaacademy.wakanderJornadaConhecimento.application.api;
 
 import dev.tribos.wakandaacademy.wakanderJornadaConhecimento.domain.StatusWakanderConhecimento;
 import dev.tribos.wakandaacademy.wakanderJornadaConhecimento.domain.TipoAula;
@@ -7,7 +7,7 @@ import lombok.Value;
 
 @Value
 @Builder
-public class WakanderTribeSkillLessonResponse {
+public class WakanderLicaoResponse {
 	private String lessonCode;
 	private String lessonName;
 	private StatusWakanderConhecimento status;
