@@ -12,6 +12,12 @@ import dev.tribos.wakandaacademy.wakander.domain.Wakander;
 @Repository
 public interface WakanderSpringDataMongoDBRepository extends MongoRepository<Wakander,String> {
 	List<Wakander> findByEmailContainingIgnoreCase(String email);
+
 	Optional<Wakander> findByEmail(String email);
-	List<Wakander> findByStatusWakander(StatusWakander naoAutorizado);
+
+	List<Wakander> findByStatusWakander(StatusWakander status);
+
+
+
+
 }

@@ -2,6 +2,7 @@ package dev.tribos.wakandaacademy.wakander.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import javax.validation.constraints.Email;
@@ -24,6 +25,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -53,6 +56,9 @@ public class Wakander {
 	private StatusWakander statusWakander;
 
 	public Wakander(WakanderPreCadastroRequest wakanderPreCadastroRequest) {
+		this.email = wakanderPreCadastroRequest.getEmail();
+		this.nome = wakanderPreCadastroRequest.getNome();
+		this.whatsapp = wakanderPreCadastroRequest.getWhatsapp();
 		this.buildCodigoByEmail();
 		this.dataHoraCriacao = LocalDateTime.now();
 		this.statusWakander = StatusWakander.AUTORIZADO;
